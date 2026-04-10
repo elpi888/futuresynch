@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Team AI — AI Operations Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0d0b;
+    --ink-muted: #5a5850;
+    --ink-faint: #a09e96;
+    --surface: #faf9f6;
+    --surface-card: #ffffff;
+    --surface-alt: #f3f1ec;
+    --border: rgba(14,13,11,0.1);
+    --border-strong: rgba(14,13,11,0.2);
+    --accent: #1a3a2a;
+    --accent-mid: #2e6648;
+    --accent-light: #d4ede0;
+    --accent-text: #0d2218;
+    --gold: #b87c2a;
+    --gold-light: #f5e9d3;
+    --red-soft: #f7ede8;
+    --red-text: #7a2e1a;
+    --serif: 'Montserrat', sans-serif;
+    --sans: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem; color: var(--ink-muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 0.875rem; font-weight: 500;
+    background: var(--accent); color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent-mid); }
+
+  /* HERO */
+  .hero {
+    max-width: 900px; margin: 0 auto;
+    padding: 7rem 2rem 5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-mid);
+    background: var(--accent-light);
+    padding: 0.35rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  h1 em { font-style: italic; color: var(--accent-mid); }
+  .hero-sub {
+    font-size: 1.125rem; color: var(--ink-muted);
+    max-width: 560px; margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-size: 0.9375rem; font-weight: 500;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent-mid); }
+  .btn-secondary {
+    background: transparent; color: var(--ink);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    border: 0.5px solid var(--border-strong);
+    font-size: 0.9375rem; font-weight: 400;
+    text-decoration: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { background: var(--surface-alt); }
+
+  /* SECTION */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.75rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+  .section-lead {
+    font-size: 1.0625rem; color: var(--ink-muted);
+    max-width: 560px; line-height: 1.7;
+  }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 900px; margin: 0 auto;
+    border: none; border-top: 0.5px solid var(--border);
+  }
+
+  /* HOW IT WORKS */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3rem; }
+  .step {
+    background: var(--surface-card);
+    border: 0.5px solid var(--border);
+    padding: 2rem 1.75rem;
+  }
+  .step:first-child { border-radius: 8px 0 0 8px; }
+  .step:last-child { border-radius: 0 8px 8px 0; }
+  .step-num {
+    font-family: var(--serif); font-size: 2.5rem;
+    color: var(--accent-light); line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .step h3 {
+    font-size: 1rem; font-weight: 500;
+    margin-bottom: 0.5rem; color: var(--ink);
+  }
+  .step p { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.6; }
+  .step-connector {
+    position: relative;
+    grid-column: span 3;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    padding: 0.75rem 0;
+    letter-spacing: 0.05em;
+  }
+
+  /* WHAT YOU GET */
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 3rem; }
+  .what-item {
+    background: var(--surface-card);
+    border: 0.5px solid var(--border);
+    padding: 1.75rem;
+  }
+  .what-item:nth-child(1) { border-radius: 8px 0 0 0; }
+  .what-item:nth-child(2) { border-radius: 0 8px 0 0; }
+  .what-item:nth-child(3) { border-radius: 0; }
+  .what-item:nth-child(4) { border-radius: 0; }
+  .what-item:nth-child(5) { border-radius: 0 0 0 8px; }
+  .what-item:nth-child(6) { border-radius: 0 0 8px 0; }
+  .what-icon {
+    width: 32px; height: 32px;
+    background: var(--accent-light);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .what-icon svg { width: 16px; height: 16px; stroke: var(--accent-mid); fill: none; stroke-width: 1.5; }
+  .what-item h3 { font-size: 0.9375rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .what-item p { font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6; }
+
+  /* PRICING */
+  .pricing-note {
+    font-size: 0.875rem; color: var(--ink-muted);
+    margin-top: 1rem; margin-bottom: 3rem;
+  }
+  .pricing-note strong { color: var(--ink); }
+
+  .onboarding-bar {
+    background: var(--surface-alt);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .onboarding-bar-left h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.25rem; }
+  .onboarding-bar-left p { font-size: 0.8125rem; color: var(--ink-muted); }
+  .onboarding-price {
+    text-align: right; flex-shrink: 0;
+  }
+  .onboarding-price .amount {
+    font-family: var(--serif); font-size: 1.75rem;
+    color: var(--ink);
+  }
+  .onboarding-price .label {
+    display: block; font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.1rem;
+  }
+
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+  .tier {
+    background: var(--surface-card);
+    border: 0.5px solid var(--border);
+    padding: 2rem 1.75rem;
+    position: relative;
+  }
+  .tier:first-child { border-radius: 8px 0 0 8px; }
+  .tier:last-child { border-radius: 0 8px 8px 0; }
+  .tier.featured {
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    z-index: 1;
+  }
+  .tier-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--accent); color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0 0 4px 4px;
+  }
+  .tier-name {
+    font-size: 0.6875rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.5rem;
+  }
+  .tier-desc {
+    font-size: 0.8125rem; color: var(--ink-muted);
+    margin-bottom: 1.5rem; line-height: 1.5;
+  }
+  .tier-price {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .tier-price .amount {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .tier-price .period {
+    font-size: 0.8125rem; color: var(--ink-faint); margin-left: 4px;
+  }
+  .tier-features { list-style: none; margin-bottom: 2rem; }
+  .tier-features li {
+    font-size: 0.8125rem; color: var(--ink-muted);
+    padding: 0.4rem 0;
+    display: flex; align-items: flex-start; gap: 0.5rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .tier-features li:last-child { border-bottom: none; }
+  .tier-features li::before {
+    content: '';
+    display: inline-block; width: 5px; height: 5px;
+    background: var(--accent-mid); border-radius: 50%;
+    margin-top: 7px; flex-shrink: 0;
+  }
+  .tier-cta {
+    display: block; text-align: center;
+    font-size: 0.875rem; font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .tier-cta-default {
+    background: var(--surface-alt); color: var(--ink);
+    border: 0.5px solid var(--border-strong);
+  }
+  .tier-cta-default:hover { background: var(--border); }
+  .tier-cta-featured {
+    background: var(--accent); color: #fff;
+  }
+  .tier-cta-featured:hover { background: var(--accent-mid); }
+
+  .enterprise-bar {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1px;
+    flex-wrap: wrap;
+  }
+  .enterprise-bar h3 {
+    font-family: var(--serif); font-size: 1.5rem;
+    margin-bottom: 0.5rem; font-weight: 400;
+  }
+  .enterprise-bar p { font-size: 0.875rem; color: rgba(255,255,255,0.6); max-width: 420px; }
+  .btn-enterprise {
+    background: #fff; color: var(--ink);
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-size: 0.875rem; font-weight: 500;
+    text-decoration: none; white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .btn-enterprise:hover { background: var(--surface-alt); }
+
+  /* INVESTMENT */
+  .investment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .invest-card {
+    background: var(--surface-card);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .invest-card h3 { font-size: 0.9375rem; font-weight: 500; margin-bottom: 0.75rem; }
+  .invest-card p { font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6; }
+  .invest-highlight {
+    background: var(--accent-light);
+    border: 0.5px solid rgba(46,102,72,0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    grid-column: span 2;
+  }
+  .invest-highlight h3 {
+    font-family: var(--serif); font-size: 1.5rem;
+    color: var(--accent-text);
+    margin-bottom: 1rem; font-weight: 400;
+  }
+  .invest-stat-row {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    margin: 1.25rem 0;
+  }
+  .invest-stat { flex: 1; min-width: 120px; }
+  .invest-stat .num {
+    font-family: var(--serif); font-size: 2rem;
+    color: var(--accent-text);
+  }
+  .invest-stat .lbl {
+    font-size: 0.75rem; color: var(--accent-mid);
+    letter-spacing: 0.05em;
+  }
+  .invest-fine {
+    font-size: 0.75rem; color: rgba(13,34,24,0.55);
+    margin-top: 1rem; line-height: 1.6;
+  }
+  .btn-invest {
+    display: inline-block; margin-top: 1.5rem;
+    background: var(--accent); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 4px;
+    font-size: 0.875rem; font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-invest:hover { background: var(--accent-mid); }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2.5rem 2rem;
+  }
+  .footer-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand { font-size: 0.875rem; font-weight: 700; color: var(--ink); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8125rem; color: var(--ink-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--ink); }
+  .footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .steps { grid-template-columns: 1fr; }
+    .step:first-child { border-radius: 8px 8px 0 0; }
+    .step:last-child { border-radius: 0 0 8px 8px; }
+    .what-grid { grid-template-columns: 1fr; }
+    .what-item:nth-child(n) { border-radius: 0; }
+    .what-item:first-child { border-radius: 8px 8px 0 0; }
+    .what-item:last-child { border-radius: 0 0 8px 8px; }
+    .tiers { grid-template-columns: 1fr; }
+    .tier:nth-child(n) { border-radius: 0; }
+    .tier:first-child { border-radius: 8px 8px 0 0; }
+    .tier:last-child { border-radius: 0 0 8px 8px; }
+    .tier.featured { border-radius: 8px; }
+    .investment-grid { grid-template-columns: 1fr; }
+    .invest-highlight { grid-column: span 1; }
+    .enterprise-bar { flex-direction: column; }
+    .onboarding-bar { flex-direction: column; }
+    .onboarding-price { text-align: left; }
+    nav .nav-links { display: none; }
+  }
+
+  /* FADE IN */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * {
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero > *:nth-child(2) { animation-delay: 0.15s; }
+  .hero > *:nth-child(3) { animation-delay: 0.25s; }
+  .hero > *:nth-child(4) { animation-delay: 0.35s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Future Synch</a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#invest">Invest</a></li>
+  </ul>
+  <a href="apply.html" class="nav-cta">Apply for review</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-eyebrow">My Team AI — AI Operating System</span>
+  <h1>The operating system<br><em>your business</em><br>has been missing</h1>
+  <p class="hero-sub">
+    My Team AI is an AI OS — deployed for your business in 90 days. It coordinates autonomous agents across your apps, files, and cloud services, moving you from click-based work to AI-driven outcomes.
+  </p>
+  <div class="hero-actions">
+    <a href="apply.html" class="btn-primary">Deploy your AI OS</a>
+    <a href="#how-it-works" class="btn-secondary">See how it works</a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <p class="section-label">How it works</p>
+    <h2>Not a tool you use.<br>An OS that runs your business.</h2>
+    <p class="section-lead">
+      Traditional software waits for you to click. My Team AI coordinates autonomous agents that act across your entire stack — executing decisions, routing tasks, and producing outcomes without you in the loop.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Audit & architect</h3>
+        <p>We map how your business actually operates — the decisions, the repetitions, the gaps. Then we design the AI OS architecture around your specific operational model. The system is built for your business, not adapted from a template.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Deploy & embed</h3>
+        <p>Over 90 days, we deploy your AI OS — configuring agents, connecting your stack, and installing autonomous workflows across sales, content, ops, and BizDev. Your team operates differently because the system operates for them.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Run & compound</h3>
+        <p>After go-live, the subscription keeps your AI OS running, maintained, and expanding. Every workflow added compounds the system's value. The OS learns your business — and gets better at running it.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 1px; background: var(--surface-alt); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.75rem 2rem;">
+      <p style="font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem;">What an AI OS does differently</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+        <div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem;">Coordinates agents</div>
+          <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.55;">Multiple AI agents working in concert — not one model answering one prompt.</div>
+        </div>
+        <div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem;">Manages resources</div>
+          <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.55;">Routes tasks, allocates tools, and selects the right model per job — automatically.</div>
+        </div>
+        <div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem;">Executes outcomes</div>
+          <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.55;">From click-based workflows to agent-driven results. You define the outcome, the OS handles the steps.</div>
+        </div>
+        <div>
+          <div style="font-size: 0.875rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem;">Runs across your stack</div>
+          <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.55;">Apps, files, cloud services — the AI OS operates across all of them, not inside any one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">What's included</p>
+    <h2>An AI OS for your business,<br>not a chatbot</h2>
+    <p class="section-lead">
+      Every deployment is built around your specific operational model. Agents coordinate across your stack — not inside a single app.
+    </p>
+
+    <div class="what-grid">
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>AI workflow library</h3>
+        <p>Pre-built and custom processes for your most repeated tasks — lead research, content production, reporting, and more — running on My Team AI.</p>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3>Multi-agent collaboration</h3>
+        <p>Agents that debate, compare, and co-create — so you get structured decisions, not just single-model answers. Collective intelligence built in.</p>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Glass Box execution</h3>
+        <p>Every step visible. No black boxes. Your team sees exactly what the AI is doing and why — building trust and enabling quick correction.</p>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Team workspace</h3>
+        <p>Shared process library, role-based access, and real-time collaboration so the whole team benefits — not just whoever built the workflow.</p>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>200+ integrations</h3>
+        <p>GitHub, Slack, Gmail, Notion, Linear, HubSpot, and 195+ more — via Composio. Your AI operates across your entire stack from day one.</p>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Multi-model resilience</h3>
+        <p>Claude, GPT, Gemini — routed automatically via Vercel AI Gateway. No single point of failure. Right model for each task, always available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <p class="section-label">Pricing</p>
+    <h2>Built for you first.<br>Then it runs itself.</h2>
+    <p class="section-lead">
+      Choose the build that fits where you are — then subscribe to keep it running and growing. Three ways to get started, one standard of delivery.
+    </p>
+
+    <!-- Step 1: Pick your build -->
+    <div style="margin-bottom: 0.5rem;">
+      <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 1 — choose your build</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;">
+
+        <div style="background: var(--surface-card); padding: 1.75rem;">
+          <div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem;">Starter build</div>
+          <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">£3,500</div>
+          <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">30 days · 1–2 workflows</div>
+          <ul style="list-style: none; font-size: 0.8125rem; color: var(--ink-muted);">
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> 1–2 core workflows configured</li>
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Key integrations connected</li>
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Handover + documentation</li>
+            <li style="padding: 0.35rem 0; display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Upgradeable to full build anytime</li>
+          </ul>
+          <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--ink-faint);">£1,750 deposit · £1,750 on delivery</div>
+        </div>
+
+        <div style="background: var(--surface-card); padding: 1.75rem; border-left: 2px solid var(--accent);">
+          <div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.5rem;">Full build</div>
+          <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">£12,000</div>
+          <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">90 days · complete ops layer</div>
+          <ul style="list-style: none; font-size: 0.8125rem; color: var(--ink-muted);">
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Full workflow audit + architecture</li>
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> AI agents across sales, ops, content</li>
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> 200+ integrations configured</li>
+            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Engineer + advisor + tools included</li>
+            <li style="padding: 0.35rem 0; display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Handover running, not just documented</li>
+          </ul>
+          <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--ink-faint);">£6,000 deposit · £6,000 on delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: How to pay -->
+    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 2 — choose how to pay</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;">
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.25rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Pay in full</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Deposit + completion. Standard terms. Subscription begins after handover.</div>
+      </div>
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.25rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Payment plan</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Spread the build cost over 6 months. £2,000/mo for full build. Subscription begins after handover.</div>
+      </div>
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.25rem; position: relative;">
+        <div style="position: absolute; top: 0; right: 0; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.2rem 0.6rem; border-radius: 0 0 0 4px;">10 spots only</div>
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Equity swap</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">No cash upfront. We build in exchange for a small equity stake. Early cohort founders only — applied for privately.</div>
+        <a href="apply.html" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light);">Apply for equity cohort →</a>
+      </div>
+    </div>
+
+    <!-- Step 3: Subscription -->
+    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 3 — subscribe after go-live</p>
+    <div class="tiers">
+      <div class="tier">
+        <p class="tier-name">Starter</p>
+        <p class="tier-desc">Solo founders who completed the starter build and want to keep it running.</p>
+        <div class="tier-price">
+          <span class="amount">£290</span>
+          <span class="period">/ month</span>
+        </div>
+        <ul class="tier-features">
+          <li>1–2 active workflows maintained</li>
+          <li>Platform access + updates</li>
+          <li>Core integrations kept live</li>
+          <li>Async support</li>
+          <li>1 seat</li>
+        </ul>
+        <a href="apply.html" class="tier-cta tier-cta-default">Apply for starter build</a>
+      </div>
+
+      <div class="tier featured">
+        <div class="tier-badge">Most popular</div>
+        <p class="tier-name">Growth</p>
+        <p class="tier-desc">Founders and small teams running the full ops layer across sales, content, and operations.</p>
+        <div class="tier-price">
+          <span class="amount">£490–1,490</span>
+          <span class="period">/ month</span>
+        </div>
+        <ul class="tier-features">
+          <li>Unlimited active workflows</li>
+          <li>Full platform + integrations</li>
+          <li>Sales, content, and ops coverage</li>
+          <li>Up to 5 team seats</li>
+          <li>Monthly strategy call (30 min)</li>
+          <li>Guided workflow expansion</li>
+        </ul>
+        <a href="apply.html" class="tier-cta tier-cta-featured">Apply for full build</a>
+      </div>
+
+      <div class="tier">
+        <p class="tier-name">Scale</p>
+        <p class="tier-desc">Accelerators, VCs, and ecosystem operators managing multiple ventures.</p>
+        <div class="tier-price">
+          <span class="amount">£3,490</span>
+          <span class="period">/ month</span>
+        </div>
+        <ul class="tier-features">
+          <li>Everything in Growth, plus:</li>
+          <li>Multi-portfolio dashboard</li>
+          <li>10+ team seats</li>
+          <li>Cross-portfolio AI reporting</li>
+          <li>API access + data security</li>
+          <li>Dedicated monthly strategy session</li>
+        </ul>
+        <a href="apply.html" class="tier-cta tier-cta-default">Apply for full build</a>
+      </div>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="enterprise-bar">
+      <div>
+        <h3>Enterprise & custom deployments</h3>
+        <p>White-label, custom integration architecture, compliance requirements, large team rollouts, or property management / operations-specific builds. Scoped and priced to match the system you need.</p>
+      </div>
+      <a href="apply.html" class="btn-enterprise">Book a scoping call</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY NOT JUST USE... -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">Why not just use Make, n8n, or Claude Teams?</p>
+    <h2>They're apps.<br>My Team AI is the OS beneath them.</h2>
+    <p class="section-lead">
+      Make, n8n, and Claude Teams are tools that run inside your business. My Team AI is the layer that coordinates across all of them — managing agents, routing decisions, and executing outcomes system-wide.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-top: 2.5rem;">
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.75rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem;">Claude Teams / ChatGPT</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.65;">Smarter chat, nothing more. No workflows, no configured processes, no execution layer. You still prompt from scratch every time. Tribal knowledge stays trapped.</div>
+        <div style="margin-top: 0.875rem; font-size: 0.75rem; color: var(--ink-faint);">From $25/seat/mo · no setup, no ops layer</div>
+      </div>
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.75rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem;">Make.com</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.65;">Powerful if you build it yourself. Credit-based billing means complex flows spike costs unpredictably. Every scenario requires design, testing, and maintenance — all on you.</div>
+        <div style="margin-top: 0.875rem; font-size: 0.75rem; color: var(--ink-faint);">From $10/mo · high setup burden, no advisory</div>
+      </div>
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.75rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem;">n8n cloud</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.65;">A developer tool, not a founder tool. Execution-based pricing is hard to budget. Each step in a workflow counts separately — complex flows drain quota fast. Requires technical fluency throughout.</div>
+        <div style="margin-top: 0.875rem; font-size: 0.75rem; color: var(--ink-faint);">From €24/mo · 2,500 executions, steep learning curve</div>
+      </div>
+
+      <div style="background: var(--surface-card); padding: 1.5rem 1.75rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem;">n8n self-hosted</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.65;">Free licence, real infrastructure cost. €100–200/mo in servers before you factor in the DevOps hours to keep it running. Requires a technical team — not realistic for most founding teams.</div>
+        <div style="margin-top: 0.875rem; font-size: 0.75rem; color: var(--ink-faint);">Free licence · ~€200/mo infra + maintenance overhead</div>
+      </div>
+
+    </div>
+
+    <div style="background: var(--accent-light); border: 0.5px solid rgba(46,102,72,0.2); border-radius: 8px; padding: 1.75rem 2rem; margin-top: 1px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <div style="font-size: 0.875rem; font-weight: 500; color: var(--accent-text); margin-bottom: 0.35rem;">An AI OS is infrastructure. The others are features.</div>
+        <div style="font-size: 0.8125rem; color: var(--accent-mid); max-width: 480px; line-height: 1.65;">Make.com and n8n build automations inside apps. My Team AI coordinates agents across your entire business — apps, files, cloud services — the way an operating system manages a computer. That's a different category entirely.</div>
+      </div>
+      <a href="apply.html" class="btn-primary" style="white-space: nowrap; flex-shrink: 0;">Deploy your AI OS</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- INVESTMENT -->
+<section id="invest" style="background: var(--surface-alt);">
+  <div class="section-inner">
+    <p class="section-label">For investors</p>
+    <h2>Revenue participation.<br>No equity. No exit required.</h2>
+    <p class="section-lead">
+      My Team AI is raising a focused pre-seed round structured as a revenue-based loan. You participate in what we build — not in a hypothetical exit.
+    </p>
+
+    <div class="investment-grid">
+      <div class="invest-card">
+        <h3>What the capital funds</h3>
+        <p style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 1rem;">Every pound goes into two things: making the platform better, and getting clients operational faster. No vanity spend.</p>
+        <p style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.7;">
+          40% — Platform & workflow development<br>
+          <span style="font-size: 0.75rem; color: var(--ink-faint);">Action Flow engine, integrations, reliability, new workflow templates</span><br><br>
+          40% — Engineering & delivery<br>
+          <span style="font-size: 0.75rem; color: var(--ink-faint);">Technical build, QA, onboarding execution for first 20–30 clients</span><br><br>
+          20% — Onboarding experience & tooling<br>
+          <span style="font-size: 0.75rem; color: var(--ink-faint);">Making client go-live faster, more repeatable, less manual</span>
+        </p>
+      </div>
+      <div class="invest-card">
+        <h3>Why revenue-based</h3>
+        <p>We are not optimising for an exit. We are building a profitable, recurring business. A revenue-based loan gives investors direct cash-flow participation — aligned from day one, without dilution, SAFEs, or liquidity event dependency. You get paid as we grow.</p>
+      </div>
+
+      <div class="invest-highlight">
+        <h3>Investment summary</h3>
+        <div class="invest-stat-row">
+          <div class="invest-stat">
+            <div class="num">$250K</div>
+            <div class="lbl">raise size · pre-seed</div>
+          </div>
+          <div class="invest-stat">
+            <div class="num">10%</div>
+            <div class="lbl">revenue share · 1.5x cap</div>
+          </div>
+          <div class="invest-stat">
+            <div class="num">£375K</div>
+            <div class="lbl">investor return at cap</div>
+          </div>
+          <div class="invest-stat">
+            <div class="num">£370K</div>
+            <div class="lbl">monthly revenue at M18</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; margin: 1.5rem 0; background: rgba(13,34,24,0.1); border-radius: 6px; overflow: hidden;">
+          <div style="background: rgba(212,237,224,0.4); padding: 0.875rem 1rem;">
+            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-mid); margin-bottom: 0.4rem;">Month 6</div>
+            <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--accent-text);">£85K/mo</div>
+            <div style="font-size: 0.75rem; color: var(--accent-mid); margin-top: 0.2rem;">£22K returned to investor</div>
+          </div>
+          <div style="background: rgba(212,237,224,0.55); padding: 0.875rem 1rem;">
+            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-mid); margin-bottom: 0.4rem;">Month 12</div>
+            <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--accent-text);">£280K/mo</div>
+            <div style="font-size: 0.75rem; color: var(--accent-mid); margin-top: 0.2rem;">£139K returned to investor</div>
+          </div>
+          <div style="background: rgba(212,237,224,0.75); padding: 0.875rem 1rem;">
+            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-mid); margin-bottom: 0.4rem;">Month 18</div>
+            <div style="font-family: var(--serif); font-size: 1.25rem; color: var(--accent-text);">£370K/mo</div>
+            <div style="font-size: 0.75rem; color: var(--accent-mid); margin-top: 0.2rem;">£345K returned · cap at £375K</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.875rem; color: var(--accent-text); line-height: 1.65;">
+          Repayment funded exclusively from operating revenue. Non-convertible — no equity at any point. Initial traction driven by a blockchain ecosystem (500+ startups) and existing operator relationships, substantially reducing customer acquisition cost. UK-incorporated, London-based.
+        </p>
+        <p class="invest-fine">
+          The $250K raise is sized to cover three entry paths — full-pay, payment plan, and equity cohort — where early cash flow varies significantly. At ~£22K/month operating costs, this provides 11+ months of runway to reach the £20K MRR milestone before the raise needs to carry the business. Revenue milestones are operational targets. Month 4 traction triggers strategic review if not met. Full investment memo and 10-month execution framework available on request.
+        </p>
+        <a href="apply.html" class="btn-invest">Request investment memo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">My Team AI · Future Synch</span>
+    <nav class="footer-links">
+      <a href="myteamai.html">My Team AI</a>
+      <a href="index.html">Future Synch</a>
+      <a href="apply.html">Apply for review</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <span class="footer-copy">© 2026 Future Synch Ltd. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

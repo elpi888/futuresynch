@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/my-team-ai", "destination": "/myteamai.html" },
+    { "source": "/apply-for-strategic-growth-review", "destination": "/apply.html" }
+  ]
+}
