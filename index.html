@@ -21,6 +21,7 @@ body { font-family: var(--font); background: var(--surface); color: var(--ink); 
 nav { position: sticky; top: 0; z-index: 100; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .nav-logo { font-size: 0.9375rem; font-weight: 700; color: var(--ink); text-decoration: none; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links li { list-style: none; }
 .nav-links a { font-size: 0.8125rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta { font-size: 0.8125rem; font-weight: 600; background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
@@ -92,12 +93,49 @@ h2 { font-size: clamp(1.875rem, 4vw, 2.875rem); line-height: 1.1; letter-spacing
 .btn-cta-white { background: #fff; color: var(--accent-text); padding: 1rem 2.5rem; border-radius: 4px; font-size: 0.9375rem; font-weight: 700; text-decoration: none; transition: background 0.2s; display: inline-block; font-family: var(--font); }
 .btn-cta-white:hover { background: var(--accent-light); }
 footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
-.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
 .footer-brand { font-size: 0.875rem; font-weight: 700; color: var(--ink); }
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; font-weight: 500; }
 .footer-links a:hover { color: var(--ink); }
 .footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-socials { display: flex; align-items: center; gap: 0.875rem; }
+.social-link { color: var(--ink-faint); transition: color 0.2s; display: flex; align-items: center; }
+.social-link:hover { color: var(--ink-muted); }
+/* TEAM */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; margin-top: 3rem; }
+.team-card { background: var(--surface-card); padding: 2rem 1.75rem; }
+.team-card.dark { background: var(--ink); }
+.team-role { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem; }
+.team-card.dark .team-role { color: rgba(255,255,255,0.35); }
+.team-name { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.375rem; letter-spacing: -0.01em; }
+.team-card.dark .team-name { color: #fff; }
+.team-bio { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+.team-card.dark .team-bio { color: rgba(255,255,255,0.45); }
+.team-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.team-link { font-size: 0.75rem; font-weight: 600; color: var(--accent-mid); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+.team-card.dark .team-link { color: rgba(255,255,255,0.5); border-bottom-color: rgba(255,255,255,0.15); }
+.team-link:hover { border-bottom-color: var(--accent-mid); }
+.team-card.dark .team-link:hover { border-bottom-color: rgba(255,255,255,0.4); }
+/* PLAYBOOK */
+.playbook-band { background: var(--surface-alt); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 5rem 2rem; }
+.playbook-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.playbook-meta { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem; }
+.playbook-band h2 { font-size: clamp(1.625rem, 3vw, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 700; color: var(--ink); margin-bottom: 1rem; }
+.playbook-how { display: flex; flex-direction: column; gap: 1px; }
+.playbook-step { background: var(--surface-card); border: 0.5px solid var(--border); padding: 1.125rem 1.375rem; display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.875rem; align-items: start; }
+.playbook-step:first-child { border-radius: 8px 8px 0 0; }
+.playbook-step:last-child { border-radius: 0 0 8px 8px; }
+.playbook-step-num { font-size: 0.6rem; font-weight: 800; color: var(--accent-mid); padding-top: 2px; }
+.playbook-step-title { font-size: 0.8125rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
+.playbook-step-desc { font-size: 0.775rem; color: var(--ink-muted); line-height: 1.6; }
+.playbook-purchase { margin-top: 1.5rem; border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+.playbook-purchase-inner { padding: 1.375rem 1.5rem; background: var(--surface-card); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.playbook-price { font-size: 1.5rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.25rem; }
+.playbook-price-note { font-size: 0.7rem; color: var(--ink-faint); font-weight: 500; }
+.btn-purchase { background: var(--accent); color: #fff; padding: 0.75rem 1.75rem; border-radius: 4px; font-size: 0.875rem; font-weight: 700; text-decoration: none; font-family: var(--font); transition: background 0.2s; white-space: nowrap; display: inline-block; }
+.btn-purchase:hover { background: var(--accent-mid); }
+.playbook-guarantee { font-size: 0.7rem; color: var(--ink-faint); padding: 0.75rem 1.5rem; background: var(--surface-alt); border-top: 0.5px solid var(--border); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .hero > * { animation: fadeUp 0.65s ease both; }
 .hero > *:nth-child(1) { animation-delay: 0.05s; }
@@ -107,8 +145,8 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
 .hero > *:nth-child(5) { animation-delay: 0.3s; }
 .hero > *:nth-child(6) { animation-delay: 0.4s; }
 @media (max-width: 720px) {
-  .services-grid, .difference-grid, .engage-grid { grid-template-columns: 1fr; }
-  .mtai-band-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .services-grid, .difference-grid, .engage-grid, .team-grid { grid-template-columns: 1fr; }
+  .mtai-band-inner, .playbook-inner { grid-template-columns: 1fr; gap: 2rem; }
   nav .nav-links { display: none; }
   .not-for { flex-direction: column; gap: 1rem; }
   .portfolio-bar { flex-direction: column; align-items: flex-start; }
@@ -116,15 +154,17 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
 </style>
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo">Future Synch</a>
   <ul class="nav-links">
-    <li><a href="#what-we-do">What we do</a></li>
-    <li><a href="#how">How to engage</a></li>
     <li><a href="/my-team-ai">My Team AI</a></li>
+    <li><a href="/apply-for-strategic-growth-review">Strategic Growth Review</a></li>
+    <li><a href="/blog">Insights</a></li>
   </ul>
   <a href="/apply-for-strategic-growth-review" class="nav-cta">Apply for review</a>
 </nav>
+
 <div class="hero">
   <div class="hero-eyebrow">Growth Operational Agency</div>
   <blockquote class="hero-quote">"We are all giants, raised by pygmies, who have learned to live in a mental crouch. How do we stand upright — at the full height and full power of our mind?"</blockquote>
@@ -137,14 +177,16 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     <a href="/my-team-ai" class="btn-secondary">See My Team AI</a>
   </div>
 </div>
+
 <hr class="divider">
+
 <section id="what-we-do">
   <div class="section-inner">
     <p class="section-label">What we do</p>
     <h2>Scattered activity<br>to structured growth.</h2>
     <p class="section-lead">Startups don't fail for lack of tools or talent. They fail from random priorities, inconsistent messaging, unstructured execution, and postponed strategy. We fix the structure — then we run it.</p>
     <div class="services-grid">
-      <div class="service"><div class="service-num">01</div><h3>Narrative & positioning</h3><p>We define what you are, who you're for, and why it matters — then make it consistent across every channel, conversation, and document.</p></div>
+      <div class="service"><div class="service-num">01</div><h3>Narrative &amp; positioning</h3><p>We define what you are, who you're for, and why it matters — then make it consistent across every channel, conversation, and document.</p></div>
       <div class="service"><div class="service-num">02</div><h3>Go-to-market strategy</h3><p>Sequenced, not scattered. We build the GTM framework around your actual sales motion — then execute it with you, not just hand it over as a deck.</p></div>
       <div class="service"><div class="service-num">03</div><h3>Business development cadence</h3><p>Pipeline built with discipline. Warm introductions, ecosystem activation, structured outreach — a repeatable rhythm, not random hustle.</p></div>
       <div class="service"><div class="service-num">04</div><h3>Capital strategy</h3><p>Structural fundraising perspective — not brokerage. We help you design the right instrument, build the right narrative, and approach the right people at the right time.</p></div>
@@ -153,7 +195,9 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     </div>
   </div>
 </section>
+
 <hr class="divider">
+
 <section>
   <div class="section-inner">
     <p class="section-label">The difference</p>
@@ -176,7 +220,9 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     </div>
   </div>
 </section>
+
 <hr class="divider">
+
 <section>
   <div class="section-inner">
     <p class="section-label">Who we work with</p>
@@ -186,7 +232,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
       <div>
         <div class="portfolio-label">Current portfolio focus</div>
         <div class="portfolio-tags">
-          <span class="portfolio-tag">Web3 & blockchain</span>
+          <span class="portfolio-tag">Web3 &amp; blockchain</span>
           <span class="portfolio-tag">AI startups</span>
           <span class="portfolio-tag">Seed stage</span>
           <span class="portfolio-tag">Pre-Series A</span>
@@ -198,7 +244,43 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     </div>
   </div>
 </section>
+
 <hr class="divider">
+
+<section id="team">
+  <div class="section-inner">
+    <p class="section-label">The team</p>
+    <h2>Small by design.<br>Built to execute.</h2>
+    <p class="section-lead">Future Synch runs lean — a founder, an engineer, and a technical adviser. Every engagement is worked directly, not delegated.</p>
+    <div class="team-grid">
+      <div class="team-card dark">
+        <div class="team-role">Founder &amp; Growth Architect</div>
+        <div class="team-name">Olesya Kovalskaya</div>
+        <div class="team-bio">Growth Architect and AI Operations specialist. Since 2022, Olesya has worked inside Web3 and AI companies building the operational infrastructure that lets founders scale without losing control. Founder of Future Synch and creator of My Team AI. Single mother. Builder. Direct by default.</div>
+        <div class="team-links">
+          <a href="https://www.linkedin.com/in/olesyakovalskaya" class="team-link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">AI Engineer</div>
+        <div class="team-name">Manthan</div>
+        <div class="team-bio">AI Engineer responsible for building and maintaining the My Team AI platform. Owns the n8n automation layer, HubSpot integrations, and the Claude API implementation across client deployments. Focused on making operational AI work in practice, not just in demos.</div>
+        <div class="team-links">
+          <a href="https://www.linkedin.com/in/manthan-patel-ai" class="team-link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">Technical Adviser</div>
+        <div class="team-name">John Smith</div>
+        <div class="team-bio">Technical Adviser supporting the My Team AI platform build. Brings deep expertise in software architecture and product development — providing structural guidance, PRD review, and technical oversight across the build and activation phases.</div>
+        <div class="team-links">
+          <a href="https://www.linkedin.com/in/johnsmith" class="team-link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="mtai-band">
   <div class="mtai-band-inner">
     <div>
@@ -216,7 +298,9 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     </div>
   </div>
 </div>
+
 <hr class="divider">
+
 <section id="how">
   <div class="section-inner">
     <p class="section-label">How to engage</p>
@@ -224,28 +308,82 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     <p class="section-lead">Not a discovery call. Not a pitch. A structured written review of your growth architecture — before we commit to anything.</p>
     <div class="engage-grid">
       <div class="engage-item"><div class="engage-step">Step 01</div><h3>Strategic Growth Review</h3><p>A focused written assessment of your positioning, GTM structure, business development rhythm, and capital strategy. You receive prioritised recommendations and a 90-day execution direction.</p><div class="engage-price">We deliver £2,500 of work. You commit. The difference is our stake in your success.</div></div>
-      <div class="engage-item"><div class="engage-step">Step 02</div><h3>Embed & Execute</h3><p>We implement the Growth Operating System with you — installing My Team AI, building operational rhythms, and running the execution layer. Not advisory. Present and doing.</p><div class="engage-price">Scoped per engagement · ongoing retainer or project</div></div>
-      <div class="engage-item"><div class="engage-step">Step 03</div><h3>Compound & Scale</h3><p>The system runs. The AI OS executes. We stay engaged as your business evolves — expanding workflows, refining strategy, and keeping growth structured as you scale.</p><div class="engage-price">Monthly subscription · from £490/month</div></div>
+      <div class="engage-item"><div class="engage-step">Step 02</div><h3>Embed &amp; Execute</h3><p>We implement the Growth Operating System with you — installing My Team AI, building operational rhythms, and running the execution layer. Not advisory. Present and doing.</p><div class="engage-price">Scoped per engagement · ongoing retainer or project</div></div>
+      <div class="engage-item"><div class="engage-step">Step 03</div><h3>Compound &amp; Scale</h3><p>The system runs. The AI OS executes. We stay engaged as your business evolves — expanding workflows, refining strategy, and keeping growth structured as you scale.</p><div class="engage-price">Monthly subscription · from £490/month</div></div>
     </div>
   </div>
 </section>
+
+<div class="playbook-band" id="playbook">
+  <div class="playbook-inner">
+    <div>
+      <p class="playbook-meta">Self-Serve · Property</p>
+      <h2>The Property Business<br>Database Automation<br>Playbook</h2>
+      <p class="section-lead">A complete growth system for estate agencies ready to turn their contact database into a revenue engine. Strategy, architecture, Claude prompts, automation workflows, and a 90-day roadmap — in one document.</p>
+      <div style="margin-top:2rem;">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.625rem;">What's included</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Growth strategy framework</span>
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Claude analysis prompts</span>
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Segmentation system</span>
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">5 automation workflows</span>
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">90-day implementation roadmap</span>
+          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Database architecture blueprints</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="playbook-how">
+        <div class="playbook-step"><span class="playbook-step-num">01</span><div><div class="playbook-step-title">Buy and open the Playbook</div><div class="playbook-step-desc">Download the PDF. It contains everything you need — strategy, architecture, prompts, and the full 90-day roadmap.</div></div></div>
+        <div class="playbook-step"><span class="playbook-step-num">02</span><div><div class="playbook-step-title">Add it to Notion AI</div><div class="playbook-step-desc">Upload the Playbook into a Notion page. Then ask Notion AI: <em>"Break this down into a task list for my marketing and sales team, week by week."</em> It will do it in minutes.</div></div></div>
+        <div class="playbook-step"><span class="playbook-step-num">03</span><div><div class="playbook-step-title">Follow step by step</div><div class="playbook-step-desc">Assign tasks. Work the roadmap. Month 1 foundation, Month 2 activation, Month 3 optimisation.</div></div></div>
+        <div class="playbook-step"><span class="playbook-step-num">04</span><div><div class="playbook-step-title">You have three months of work to do</div><div class="playbook-step-desc">The system is built, running, and compounding. A database that surfaces opportunities automatically — without relying on anyone's memory.</div></div></div>
+      </div>
+      <div class="playbook-purchase">
+        <div class="playbook-purchase-inner">
+          <div>
+            <div class="playbook-price">£400</div>
+            <div class="playbook-price-note">One-time · Instant PDF download · Yours to keep</div>
+          </div>
+          <a href="https://buy.stripe.com/5kQ6oH7zAfuh5Fj0x16EU0d" class="btn-purchase" target="_blank" rel="noopener">Buy the Playbook →</a>
+        </div>
+        <div class="playbook-guarantee">Setup works if you use it. This is not advisory theatre. It is a working system — built, tested, and refined with real property agencies.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="cta-section">
   <h2>Ready to stand at full height?</h2>
   <p>Apply for the Strategic Growth Review — a written assessment of where you are and what needs to change.</p>
   <a href="/apply-for-strategic-growth-review" class="btn-cta-white">Apply for Strategic Growth Review</a>
   <p style="margin-top:1.25rem;font-size:0.8rem;color:rgba(255,255,255,0.35);">We deliver £2,500 of strategic work · No discovery calls</p>
 </div>
+
 <footer>
   <div class="footer-inner">
     <span class="footer-brand">Future Synch</span>
     <nav class="footer-links">
       <a href="/my-team-ai">My Team AI</a>
       <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+      <a href="/blog">Insights</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <span class="footer-copy">© 2026 Future Synch Ltd. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/company/future-synch/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
+      </a>
+      <a href="https://t.me/futuresynch" class="social-link" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11l7 2.5M21.5 4.5L14 19l-4.5-5.5M21.5 4.5L9.5 13.5m0 0V19l3-3"/></svg>
+      </a>
+      <a href="https://x.com/FutureSynch" class="social-link" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+    <span class="footer-copy">© 2026 Future Synch · <a href="https://my-team-ai.uk" style="color:var(--ink-faint);text-decoration:none;">my-team-ai.uk</a></span>
   </div>
 </footer>
+
 </body>
 </html>
