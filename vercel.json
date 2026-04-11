@@ -1,7 +1,9 @@
 {
   "rewrites": [
     { "source": "/my-team-ai", "destination": "/myteamai.html" },
-    { "source": "/apply-for-strategic-growth-review", "destination": "/apply.html" }
+    { "source": "/apply-for-strategic-growth-review", "destination": "/apply.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/uk-startup-growth-observations-2026", "destination": "/blog-uk-startup-growth-2026.html" }
   ],
   "redirects": [
     { "source": "/", "has": [{"type": "host", "value": "my-team-ai.uk"}], "destination": "/myteamai.html", "permanent": false },
