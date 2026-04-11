@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +125,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
   </aside>
 
   <div class="form-wrap">
-    <form id="investor-form" novalidate>
+    <form id="investor-form" action="https://formspree.io/f/xqegrgkn" method="POST" novalidate>
 
       <div class="form-section">
         <div class="form-section-title">Your details</div>
@@ -262,7 +261,7 @@ document.getElementById('investor-form').addEventListener('submit', async functi
     // Replace PORTAL_ID and FORM_GUID with your HubSpot form details
     const PORTAL_ID = 'YOUR_PORTAL_ID';
     const FORM_GUID = 'YOUR_INVESTOR_FORM_GUID';
-    await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`, {
+    await fetch("https://formspree.io/f/xqegrgkn", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
