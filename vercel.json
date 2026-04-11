@@ -1,16 +1,30 @@
 {
-  "rewrites": [
-    { "source": "/my-team-ai", "destination": "/myteamai.html" },
-    { "source": "/apply-for-strategic-growth-review", "destination": "/apply.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/uk-startup-growth-observations-2026", "destination": "/blog-uk-startup-growth-2026.html" }
-  ],
-  "redirects": [
-    { "source": "/", "has": [{"type": "host", "value": "my-team-ai.uk"}], "destination": "/myteamai.html", "permanent": false },
-    { "source": "/", "has": [{"type": "host", "value": "www.my-team-ai.uk"}], "destination": "/myteamai.html", "permanent": false },
-    { "source": "/", "has": [{"type": "host", "value": "my-team-ai.com"}], "destination": "/myteamai.html", "permanent": false },
-    { "source": "/", "has": [{"type": "host", "value": "www.my-team-ai.com"}], "destination": "/myteamai.html", "permanent": false },
-    { "source": "/", "has": [{"type": "host", "value": "my-team-ai.co.uk"}], "destination": "/myteamai.html", "permanent": false },
-    { "source": "/", "has": [{"type": "host", "value": "my-team-ai.info"}], "destination": "/myteamai.html", "permanent": false }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/futuresynch-index.html"
+    },
+    {
+      "src": "/apply-for-strategic-growth-review",
+      "dest": "/futuresynch-apply.html"
+    },
+    {
+      "src": "/my-team-ai",
+      "dest": "/myteamai.html"
+    },
+    {
+      "src": "/blog",
+      "dest": "/blog.html"
+    },
+    {
+      "src": "/blog/uk-startup-growth-2026",
+      "dest": "/blog-uk-startup-growth-2026.html"
+    },
+    {
+      "src": "/investor-memo",
+      "dest": "/investor-memo.html"
+    }
   ]
 }
