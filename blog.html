@@ -3,22 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insights — Future Synch</title>
-<meta name="description" content="Operational thinking for founder-led companies. Positioning, AI systems, GTM, capital structure, and the way work actually changes." />
-<meta name="keywords" content="startup growth strategy, AI operations, UK startup, growth operating system, FutureSynch insights, founder strategy" />
-<link rel="canonical" href="https://my-team-ai.uk/blog" />
-<meta property="og:title" content="Insights — Future Synch" />
-<meta property="og:description" content="Operational thinking for founder-led companies. No hype. No theory." />
+<title>Insights — Operational Thinking for Founder-Led Companies | Future Synch</title>
+<meta name="description" content="Operational thinking for founder-led companies. Positioning, AI systems, GTM, capital structure, and the way work actually changes. No hype. No theory." />
+<meta name="keywords" content="startup insights, operational strategy, AI implementation, GTM thinking, founder strategy, Future Synch blog" />
+<meta name="author" content="Future Synch" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://futuresynch.com/blog" />
 <meta property="og:type" content="website" />
+<meta property="og:title" content="Insights — Operational Thinking for Founder-Led Companies | Future Synch" />
+<meta property="og:description" content="Operational thinking for founder-led companies. Positioning, AI systems, GTM, capital structure, and the way work actually changes. No hype. No theory." />
+<meta property="og:url" content="https://futuresynch.com/blog" />
+<meta property="og:site_name" content="Future Synch" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Insights — Operational Thinking for Founder-Led Companies | Future Synch" />
+<meta name="twitter:description" content="Operational thinking for founder-led companies. Positioning, AI systems, GTM, capital structure, and the way work actually changes. No hype. No theory." />
+<meta name="twitter:site" content="@FutureSynch" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Future Synch Insights",
-  "url": "https://my-team-ai.uk/blog",
+  "url": "https://futuresynch.com/blog",
   "description": "Operational thinking for founder-led companies on AI systems, positioning, GTM, and growth architecture.",
-  "publisher": { "@type": "Organization", "name": "Future Synch", "url": "https://my-team-ai.uk" }
+  "publisher": { "@type": "Organization", "name": "Future Synch", "url": "https://futuresynch.com" }
 }
 </script>
 
@@ -464,13 +472,30 @@ function filterArticles(category, btn) {
     card.style.display = show ? '' : 'none';
   });
 }
-document.querySelector('.newsletter-submit').addEventListener('click', function() {
+document.querySelector('.newsletter-submit').addEventListener('click', async function() {
   const input = document.querySelector('.newsletter-input');
+  const btn = this;
   if (!input.value.trim() || !input.value.includes('@')) { input.focus(); return; }
-  this.textContent = 'Subscribed ✓';
-  this.style.background = '#2e6648';
-  this.disabled = true;
-  input.value = '';
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/xeevqggq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: input.value })
+    });
+    if (res.ok) {
+      btn.textContent = 'Subscribed ✓';
+      btn.style.background = '#2e6648';
+      input.value = '';
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  }
 });
 </script>
 
