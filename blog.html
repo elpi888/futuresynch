@@ -183,6 +183,14 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
 .footer-socials { display: flex; align-items: center; gap: 0.875rem; }
 .social-link { color: var(--ink-faint); transition: color 0.2s; display: flex; align-items: center; }
 .social-link:hover { color: var(--ink-muted); }
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 0.9375rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mobile-cta { color: var(--accent); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -195,7 +203,16 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     <li><a href="/blog">Insights</a></li>
   </ul>
   <a href="/apply-for-strategic-growth-review" class="nav-cta">Apply for review</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/my-team-ai">My Team AI</a>
+  <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+  <a href="/blog">Insights</a>
+  <a href="/apply-for-strategic-growth-review" class="mobile-cta">Apply for review →</a>
+</div>
 
 <div class="page-hero">
   <div class="hero-eyebrow">Insights</div>
@@ -231,7 +248,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
     <!-- GRID -->
     <div class="articles-grid" id="articles-grid">
 
-      <a href="#" class="article-card" data-category="ai-operations">
+      <a href="/blog/why-ai-tools-fail-without-operational-system" class="article-card" data-category="ai-operations">
         <div class="article-tag">AI Operations</div>
         <h3>Why AI Tools Fail Without an Operational System Beneath Them</h3>
         <p>Adopting AI is not the same as building the infrastructure for AI to function within. Most founders get the order wrong.</p>
@@ -241,7 +258,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card" data-category="growth">
+      <a href="/blog/strategic-growth-review-what-we-deliver" class="article-card" data-category="growth">
         <div class="article-tag">Growth Systems</div>
         <h3>The Strategic Growth Review: What We Actually Deliver</h3>
         <p>It is not a discovery call. It is a written assessment that delivers real value before you commit to anything.</p>
@@ -284,7 +301,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card full-width" data-category="case-study">
+      <a href="/blog/robin-ai-legal-infrastructure-growth-review" class="article-card full-width" data-category="case-study">
         <div class="full-width-num">CS</div>
         <div>
           <div class="article-tag">Case Study · Legal Tech</div>
@@ -297,7 +314,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card" data-category="ai-operations">
+      <a href="/blog/structural-shift-before-ai-adoption" class="article-card" data-category="ai-operations">
         <div class="article-tag">AI Operations</div>
         <h3>Structural Shift Before AI Adoption — Not After</h3>
         <p>The companies that get the most from AI built the system first. The tools followed. The order of operations is everything.</p>
@@ -307,7 +324,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card" data-category="capital">
+      <a href="/blog/revenue-based-capital-pre-seed" class="article-card" data-category="capital">
         <div class="article-tag">Capital & Structure</div>
         <h3>Revenue-Based Capital at Pre-Seed: Why We Chose a 1.5x Cap Over Equity</h3>
         <p>Non-convertible, no dilution, clean exit. Why this structure suits a revenue-generating service business at first raise.</p>
@@ -317,7 +334,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card full-width" data-category="case-study">
+      <a href="/blog/tines-security-automation-growth-review" class="article-card full-width" data-category="case-study">
         <div class="full-width-num">CS</div>
         <div>
           <div class="article-tag">Case Study · Security</div>
@@ -330,7 +347,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card" data-category="gtm">
+      <a href="/blog/gtm-framework-seed-stage" class="article-card" data-category="gtm">
         <div class="article-tag">GTM</div>
         <h3>What a Go-To-Market Framework Actually Looks Like at Seed Stage</h3>
         <p>A working framework describes exactly how outreach runs, how pipeline is managed, and what happens when it doesn't convert.</p>
@@ -340,7 +357,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
         </div>
       </a>
 
-      <a href="#" class="article-card" data-category="ai-operations">
+      <a href="/blog/veed-io-ai-video-growth-review" class="article-card" data-category="ai-operations">
         <div class="article-tag">AI Operations</div>
         <h3>AI Video Editing Is Not Magic: A Growth Architecture Review of VEED.IO</h3>
         <p>The danger in the current AI video narrative is selling automation as creativity. Clarity builds trust. Illusion builds churn.</p>
@@ -416,11 +433,11 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
 <footer>
   <div class="footer-inner">
     <span class="footer-brand">Future Synch</span>
-    <nav class="footer-links">
+    <div class="footer-links">
       <a href="/my-team-ai">My Team AI</a>
       <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
       <a href="/blog">Insights</a>
-    </nav>
+    </div>
       <div class="footer-socials">
         <a href="https://www.linkedin.com/company/future-synch/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
@@ -432,7 +449,7 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
       </div>
-    <span class="footer-copy">© 2026 Future Synch · <a href="https://my-team-ai.uk" style="color:var(--ink-faint);text-decoration:none;">my-team-ai.uk</a></span>
+    <span class="footer-copy">© 2026 Future Synch. All rights reserved.</span>
   </div>
 </footer>
 
