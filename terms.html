@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Future Synch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0e0d0b; --ink-muted: #5a5850; --ink-faint: #a09e96;
+  --surface: #faf9f6; --surface-card: #ffffff; --surface-alt: #f3f1ec;
+  --border: rgba(14,13,11,0.1); --border-strong: rgba(14,13,11,0.22);
+  --accent: #1a3a2a; --accent-mid: #2e6648; --accent-light: #d4ede0; --accent-text: #0d2218;
+  --font: 'Montserrat', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--surface); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+nav { position: sticky; top: 0; z-index: 100; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nav-logo { font-size: 0.9375rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links li { list-style: none; }
+.nav-links a { font-size: 0.8125rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { font-size: 0.8125rem; font-weight: 600; background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent-mid); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 0.9375rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mobile-cta { color: var(--accent); font-weight: 700; }
+.content { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+.content h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
+.content .updated { font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 3rem; }
+.content h2 { font-size: 1.125rem; font-weight: 700; color: var(--ink); margin: 2.5rem 0 0.75rem; }
+.content p { font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 1rem; }
+.content ul { margin: 0.75rem 0 1rem 1.5rem; }
+.content ul li { font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.4rem; }
+.content a { color: var(--accent-mid); text-decoration: underline; }
+.content .company-box { background: var(--surface-alt); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2.5rem; font-size: 0.875rem; color: var(--ink-muted); line-height: 1.75; }
+.content .company-box strong { color: var(--ink); font-weight: 600; }
+footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
+.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
+.footer-brand { font-size: 0.875rem; font-weight: 700; color: var(--ink); }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; font-weight: 500; }
+.footer-links a:hover { color: var(--ink); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-socials { display: flex; align-items: center; gap: 0.875rem; }
+.social-link { color: var(--ink-muted); transition: color 0.2s; }
+.social-link:hover { color: var(--ink); }
+@media (max-width: 720px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Future Synch</a>
+  <ul class="nav-links">
+    <li><a href="/my-team-ai">My Team AI</a></li>
+    <li><a href="/apply-for-strategic-growth-review">Strategic Growth Review</a></li>
+    <li><a href="/blog">Insights</a></li>
+  </ul>
+  <a href="/apply-for-strategic-growth-review" class="nav-cta">Apply for review</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/my-team-ai">My Team AI</a>
+  <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+  <a href="/blog">Insights</a>
+  <a href="/apply-for-strategic-growth-review" class="mobile-cta">Apply for review →</a>
+</div>
+
+<div class="content">
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated: April 2026</p>
+
+  <div class="company-box">
+    <strong>Olesya Kovalskaya Ltd</strong><br>
+    trading as Future Synch and My Team AI<br>
+    United Kingdom<br>
+    Contact: <a href="/cdn-cgi/l/email-protection#315d417157444544435442485f52591f525e5c"><span class="__cf_email__" data-cfemail="3b574b7b5d4e4f4e495e484255585315585456">[email&#160;protected]</span></a>
+  </div>
+
+  <h2>1. Agreement to Terms</h2>
+  <p>By accessing or using futuresynch.com or my-team-ai.com (the "Sites"), or by purchasing any product or service from Olesya Kovalskaya Ltd ("we", "us", "our"), you agree to be bound by these Terms of Service. If you do not agree, please do not use our Sites or services.</p>
+
+  <h2>2. Services</h2>
+  <p>We provide growth strategy consultancy, operational systems design, and digital products including playbooks and guides, primarily through Future Synch and My Team AI. Specific terms for each engagement or product are set out in the relevant proposal, purchase confirmation, or service agreement.</p>
+
+  <h2>3. Purchases and Payments</h2>
+  <p>All purchases are processed securely via Stripe. By completing a purchase you confirm that:</p>
+  <ul>
+    <li>You are authorised to use the payment method provided</li>
+    <li>The information you provide is accurate and complete</li>
+    <li>You agree to pay the amount displayed at checkout</li>
+  </ul>
+  <p>Prices are displayed in GBP unless otherwise stated. All prices are exclusive of VAT where applicable.</p>
+
+  <h2>4. Digital Products — Playbooks and Guides</h2>
+  <p>Upon successful payment, digital products are delivered as downloadable PDF files. By purchasing a digital product you agree that:</p>
+  <ul>
+    <li>The product is for your personal or internal business use only</li>
+    <li>You will not redistribute, resell, or share the product with third parties</li>
+    <li>You will not reproduce or publish the content without our written permission</li>
+  </ul>
+  <p>Due to the nature of digital products, we do not offer refunds once a product has been downloaded. If you experience a technical issue with your download, contact us at <a href="/cdn-cgi/l/email-protection#99f5e9d9ffecedecebfceae0f7faf1b7faf6f4"><span class="__cf_email__" data-cfemail="f09c80b096858485829583899e9398de939f9d">[email&#160;protected]</span></a> within 7 days of purchase.</p>
+
+  <h2>5. Consultancy and Service Engagements</h2>
+  <p>Terms for consultancy engagements — including scope, deliverables, timelines, payment schedules, and cancellation terms — are set out in the individual service agreement provided before work commences. These Terms of Service apply in addition to any engagement-specific terms.</p>
+
+  <h2>6. Strategic Growth Review</h2>
+  <p>The Strategic Growth Review is a written assessment service. By submitting an application you acknowledge that:</p>
+  <ul>
+    <li>Submission does not guarantee acceptance — applications are reviewed selectively</li>
+    <li>The review is delivered as a written document, not a call or meeting</li>
+    <li>The investment value stated reflects the work delivered, not a guarantee of specific outcomes</li>
+  </ul>
+
+  <h2>7. Intellectual Property</h2>
+  <p>All content on our Sites — including text, frameworks, methodologies, and design — is owned by Olesya Kovalskaya Ltd and protected by UK and international intellectual property law. You may not copy, reproduce, or distribute any content without our prior written consent.</p>
+  <p>Purchased digital products are licensed to you for personal or internal business use only. The licence is non-transferable and does not grant any ownership rights.</p>
+
+  <h2>8. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by UK law, Olesya Kovalskaya Ltd shall not be liable for any indirect, incidental, or consequential loss arising from your use of our Sites or services, including loss of revenue, profit, or business opportunity.</p>
+  <p>Our total liability to you in connection with any service shall not exceed the amount paid by you for that service in the 12 months preceding the claim.</p>
+
+  <h2>9. Disclaimers</h2>
+  <p>Our content, frameworks, and advice are provided for informational and operational guidance purposes. We do not provide legal, financial, or regulatory advice. You are responsible for seeking appropriate professional advice before making decisions based on our work.</p>
+  <p>Results described in our materials are illustrative. We make no guarantee that your business will achieve the same or similar outcomes.</p>
+
+  <h2>10. Privacy</h2>
+  <p>Your use of our Sites is also governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These Terms are governed by the laws of England and Wales. Any disputes arising from these Terms or your use of our services shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+  <h2>12. Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. The date at the top of this page reflects the most recent revision. Continued use of our Sites or services after any update constitutes acceptance of the revised Terms.</p>
+
+  <h2>13. Contact</h2>
+  <p>For any questions regarding these Terms, contact us at <a href="/cdn-cgi/l/email-protection#7b170b3b1d0e0f0e091e080215181355181416"><span class="__cf_email__" data-cfemail="ea869aaa8c9f9e9f988f9993848982c4898587">[email&#160;protected]</span></a>.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Future Synch</span>
+    <nav class="footer-links">
+      <a href="/my-team-ai">My Team AI</a>
+      <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+      <a href="/blog">Insights</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/company/future-synch/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
+      </a>
+      <a href="https://t.me/futuresynch" class="social-link" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11l7 2.5M21.5 4.5L14 19l-4.5-5.5M21.5 4.5L9.5 13.5m0 0V19l3-3"/></svg>
+      </a>
+      <a href="https://x.com/FutureSynch" class="social-link" target="_blank" rel="noopener" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17

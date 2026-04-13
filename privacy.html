@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Future Synch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0e0d0b; --ink-muted: #5a5850; --ink-faint: #a09e96;
+  --surface: #faf9f6; --surface-card: #ffffff; --surface-alt: #f3f1ec;
+  --border: rgba(14,13,11,0.1); --border-strong: rgba(14,13,11,0.22);
+  --accent: #1a3a2a; --accent-mid: #2e6648; --accent-light: #d4ede0; --accent-text: #0d2218;
+  --font: 'Montserrat', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--surface); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+nav { position: sticky; top: 0; z-index: 100; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nav-logo { font-size: 0.9375rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links li { list-style: none; }
+.nav-links a { font-size: 0.8125rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { font-size: 0.8125rem; font-weight: 600; background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--accent-mid); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+.mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--surface); border-bottom: 0.5px solid var(--border); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 1rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 0.9375rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mobile-cta { color: var(--accent); font-weight: 700; }
+.content { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+.content h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
+.content .updated { font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 3rem; }
+.content h2 { font-size: 1.125rem; font-weight: 700; color: var(--ink); margin: 2.5rem 0 0.75rem; }
+.content p { font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 1rem; }
+.content ul { margin: 0.75rem 0 1rem 1.5rem; }
+.content ul li { font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 0.4rem; }
+.content a { color: var(--accent-mid); text-decoration: underline; }
+.content .company-box { background: var(--surface-alt); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2.5rem; font-size: 0.875rem; color: var(--ink-muted); line-height: 1.75; }
+.content .company-box strong { color: var(--ink); font-weight: 600; }
+footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
+.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
+.footer-brand { font-size: 0.875rem; font-weight: 700; color: var(--ink); }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; font-weight: 500; }
+.footer-links a:hover { color: var(--ink); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-socials { display: flex; align-items: center; gap: 0.875rem; }
+.social-link { color: var(--ink-muted); transition: color 0.2s; }
+.social-link:hover { color: var(--ink); }
+@media (max-width: 720px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Future Synch</a>
+  <ul class="nav-links">
+    <li><a href="/my-team-ai">My Team AI</a></li>
+    <li><a href="/apply-for-strategic-growth-review">Strategic Growth Review</a></li>
+    <li><a href="/blog">Insights</a></li>
+  </ul>
+  <a href="/apply-for-strategic-growth-review" class="nav-cta">Apply for review</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/my-team-ai">My Team AI</a>
+  <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+  <a href="/blog">Insights</a>
+  <a href="/apply-for-strategic-growth-review" class="mobile-cta">Apply for review →</a>
+</div>
+
+<div class="content">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: April 2026</p>
+
+  <div class="company-box">
+    <strong>Data Controller:</strong> Olesya Kovalskaya Ltd<br>
+    trading as Future Synch and My Team AI<br>
+    United Kingdom<br>
+    Contact: <a href="/cdn-cgi/l/email-protection#b8d4c8f8decdcccdcaddcbc1d6dbd096dbd7d5"><span class="__cf_email__" data-cfemail="f79b87b7918283828592848e99949fd994989a">[email&#160;protected]</span></a>
+  </div>
+
+  <h2>1. Who We Are</h2>
+  <p>Olesya Kovalskaya Ltd ("we", "us", "our") operates the websites futuresynch.com and my-team-ai.com. We are committed to protecting your personal data and complying with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+
+  <h2>2. What Data We Collect</h2>
+  <p>We collect personal data that you provide directly to us, including:</p>
+  <ul>
+    <li>Name and email address (via application and contact forms)</li>
+    <li>Company name and website</li>
+    <li>Business information provided in growth review applications</li>
+    <li>Investment enquiry information (via investor memo requests)</li>
+    <li>Payment information (processed by Stripe — we do not store card details)</li>
+  </ul>
+  <p>We also collect limited technical data automatically when you visit our websites, including IP address, browser type, pages visited, and time of visit, for the purpose of maintaining site security and understanding usage.</p>
+
+  <h2>3. How We Use Your Data</h2>
+  <p>We use your personal data for the following purposes:</p>
+  <ul>
+    <li>To respond to your application or enquiry</li>
+    <li>To deliver services you have purchased or applied for</li>
+    <li>To send you communications you have consented to receive</li>
+    <li>To process payments via our payment processor (Stripe)</li>
+    <li>To comply with our legal obligations</li>
+  </ul>
+
+  <h2>4. Legal Basis for Processing</h2>
+  <p>We process your personal data on the following legal bases:</p>
+  <ul>
+    <li><strong>Contract:</strong> where processing is necessary to fulfil a service or purchase you have made</li>
+    <li><strong>Legitimate interests:</strong> where we have a genuine business reason to process your data and it does not override your rights</li>
+    <li><strong>Consent:</strong> where you have explicitly agreed to receive marketing communications</li>
+    <li><strong>Legal obligation:</strong> where we are required to process data by law</li>
+  </ul>
+
+  <h2>5. Data Retention</h2>
+  <p>We retain your personal data only for as long as necessary:</p>
+  <ul>
+    <li>Application data: retained for 12 months from submission, then deleted unless an engagement begins</li>
+    <li>Client data: retained for the duration of the engagement plus 3 years for legal compliance</li>
+    <li>Marketing contacts: retained while consent is active; deleted within 30 days of unsubscribe request</li>
+    <li>Payment records: retained for 7 years in line with HMRC requirements</li>
+  </ul>
+
+  <h2>6. Third Parties</h2>
+  <p>We share your data with the following third parties only where necessary:</p>
+  <ul>
+    <li><strong>Formspree</strong> — form submission processing (forms.formspree.io)</li>
+    <li><strong>Stripe</strong> — payment processing (stripe.com)</li>
+    <li><strong>Vercel</strong> — website hosting (vercel.com)</li>
+  </ul>
+  <p>We do not sell your personal data to any third party.</p>
+
+  <h2>7. Your Rights</h2>
+  <p>Under UK GDPR, you have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request correction of inaccurate data</li>
+    <li>Request deletion of your data ("right to be forgotten")</li>
+    <li>Object to or restrict processing of your data</li>
+    <li>Data portability — receive your data in a structured format</li>
+    <li>Withdraw consent at any time where consent is the legal basis</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="/cdn-cgi/l/email-protection#c0acb080a6b5b4b5b2a5b3b9aea3a8eea3afad"><span class="__cf_email__" data-cfemail="274b5767415253525542545e49444f0944484a">[email&#160;protected]</span></a>. We will respond within one calendar month.</p>
+
+  <h2>8. Cookies</h2>
+  <p>Our websites use minimal cookies necessary for site functionality. We do not use advertising or tracking cookies. No cookie consent banner is required as we use only strictly necessary cookies.</p>
+
+  <h2>9. Data Security</h2>
+  <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss, or disclosure. Our websites are hosted on Vercel with HTTPS encryption enforced on all pages.</p>
+
+  <h2>10. Complaints</h2>
+  <p>If you are unhappy with how we have handled your personal data, you have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or by calling 0303 123 1113.</p>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. The date at the top of this page reflects when it was last revised. Continued use of our websites following any update constitutes acceptance of the revised policy.</p>
+
+  <h2>12. Contact</h2>
+  <p>For any questions about this Privacy Policy or how we handle your data, contact us at <a href="/cdn-cgi/l/email-protection#781408381e0d0c0d0a1d0b01161b10561b1715"><span class="__cf_email__" data-cfemail="cba7bb8badbebfbeb9aeb8b2a5a8a3e5a8a4a6">[email&#160;protected]</span></a>.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Future Synch</span>
+    <nav class="footer-links">
+      <a href="/my-team-ai">My Team AI</a>
+      <a href="/apply-for-strategic-growth-review">Strategic Growth Review</a>
+      <a href="/blog">Insights</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/company/future-synch/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
+      </a>
+      <a href="https://t.me/futuresynch" class="social-link" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5L2.5 11l7 2.5M21.5 4.5L14 19l-4.5-5.5M21.5 4.5L9.5 13.5m0 0V19l3-3"/></svg>
+      </a>
+      <a href="https://x.com/FutureSynch" class="social-link" target="_blank" rel="noopener" aria-label="X">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17
