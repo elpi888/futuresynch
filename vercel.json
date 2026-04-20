@@ -3,6 +3,7 @@
     { "source": "/", "destination": "/futuresynch-index.html" },
     { "source": "/apply-for-strategic-growth-review", "destination": "/futuresynch-apply.html" },
     { "source": "/my-team-ai", "destination": "/myteamai.html" },
+    { "source": "/myteamai", "destination": "/myteamai.html" },
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/blog/uk-startup-growth-2026", "destination": "/blog-uk-startup-growth-2026.html" },
     { "source": "/blog/uk-startup-growth-observations-2026", "destination": "/blog-uk-startup-growth-2026.html" },
