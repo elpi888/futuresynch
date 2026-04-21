@@ -4,6 +4,8 @@
     { "source": "/apply-for-strategic-growth-review", "destination": "/futuresynch-apply.html" },
     { "source": "/my-team-ai", "destination": "/myteamai.html" },
     { "source": "/myteamai", "destination": "/myteamai.html" },
+    { "source": "/my-team-ai/curtis-sloane", "destination": "/myteamai_workspace_v5.html" },
+    { "source": "/my-team-ai/curtis-sloane/", "destination": "/myteamai_workspace_v5.html" },
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/blog/uk-startup-growth-2026", "destination": "/blog-uk-startup-growth-2026.html" },
     { "source": "/blog/uk-startup-growth-observations-2026", "destination": "/blog-uk-startup-growth-2026.html" },
