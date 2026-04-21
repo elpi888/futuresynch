@@ -221,6 +221,70 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .fpill{padding:3px 10px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid #D3D1C7;background:#fff;color:#5F5E5A}
 .fpill.active{background:#1a1a18;border-color:#1a1a18;color:#fff}
 .fpill:hover:not(.active){background:#F1EFE8}
+
+/* ══ MOBILE STYLES ══ */
+.mob-nav-bar{display:none;align-items:center;justify-content:space-between;padding:0 12px;height:48px;background:#fff;border-bottom:1px solid #D3D1C7;position:sticky;top:0;z-index:200}
+.mob-logo{font-size:13px;font-weight:600;color:#1a1a18;letter-spacing:-.3px}
+.mob-ws-pill{font-size:10px;padding:2px 7px;background:#F1EFE8;border:1px solid #D3D1C7;border-radius:5px;color:#5F5E5A}
+.mob-avatar{width:26px;height:26px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE}
+.mob-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #D3D1C7;z-index:200;padding:6px 0 env(safe-area-inset-bottom,6px)}
+.mob-bottom-nav-inner{display:flex;justify-content:space-around;align-items:center}
+.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 8px;cursor:pointer;border-radius:8px;min-width:52px}
+.mob-nav-label{font-size:9px;color:#888780;font-weight:500;text-transform:uppercase;letter-spacing:.3px}
+.mob-nav-item.active .mob-nav-label{color:#1D9E75}
+.mob-nav-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;background:#F1EFE8;transition:background .15s}
+.mob-nav-item.active .mob-nav-icon{background:#1D9E75}
+.mob-badge-dot{position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:#E24B4A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#fff}
+.mob-icon-wrap{position:relative;display:inline-flex}
+
+@media (max-width: 768px) {
+  body{padding:0;padding-bottom:72px}
+  .shell{display:none!important}
+  .mob-nav-bar{display:flex}
+  .mob-bottom-nav{display:block}
+  .mob-pages{display:block;background:#F5F4F0;min-height:calc(100vh - 48px - 72px)}
+  .mob-page{display:none;padding:12px;flex-direction:column;gap:10px}
+  .mob-page.active{display:flex}
+  .mob-card{background:#fff;border:1px solid #D3D1C7;border-radius:10px;padding:12px 14px}
+  .mob-slbl{font-size:9px;font-weight:600;color:#888780;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px}
+  .mob-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mob-mc{background:#fff;border:1px solid #D3D1C7;border-radius:8px;padding:11px 13px}
+  .mob-ml{font-size:10px;color:#888780;margin-bottom:3px}
+  .mob-mv{font-size:20px;font-weight:500;color:#1a1a18}
+  .mob-ms{font-size:10px;color:#B4B2A9;margin-top:2px}
+  .mob-alert{display:flex;align-items:flex-start;gap:8px;padding:9px 0;border-bottom:1px solid #F1EFE8}
+  .mob-alert:last-child{border-bottom:none}
+  .mob-alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+  .mob-alert-title{font-size:12px;font-weight:500;line-height:1.3}
+  .mob-alert-sub{font-size:10px;color:#888780;margin-top:2px}
+  .mob-flow{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #F1EFE8}
+  .mob-flow:last-child{border-bottom:none}
+  .mob-flow-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .mob-flow-name{font-size:12px;font-weight:500;color:#1a1a18;flex:1}
+  .mob-flow-meta{font-size:10px;color:#888780}
+  .mob-pcard{background:#F5F4F0;border:1px solid #D3D1C7;border-radius:7px;padding:8px 10px;margin-bottom:6px}
+  .mob-pname{font-size:12px;font-weight:500;color:#1a1a18}
+  .mob-pmeta{font-size:10px;color:#888780;margin-top:2px}
+  .mob-pprice{font-size:11px;color:#0F6E56;font-weight:500;margin-top:3px}
+  .mob-chat{display:flex;flex-direction:column;gap:8px}
+  .mob-msg-u{align-self:flex-end;max-width:80%;background:#F1EFE8;border-radius:12px 12px 2px 12px;padding:8px 11px;font-size:13px;color:#1a1a18}
+  .mob-msg-b{align-self:flex-start;max-width:90%}
+  .mob-msg-card{background:#fff;border:1px solid #D3D1C7;border-radius:2px 10px 10px 10px;padding:9px 11px;font-size:12px;color:#1a1a18;line-height:1.6}
+  .mob-chat-input{display:flex;gap:8px;padding:10px 12px;background:#fff;border:1px solid #D3D1C7;border-radius:10px;margin-top:4px}
+  .mob-chat-input input{flex:1;font-size:14px;padding:6px 10px;border:1px solid #D3D1C7;border-radius:8px;background:#F5F4F0;color:#1a1a18;font-family:inherit;outline:none}
+  .mob-chat-send{padding:6px 14px;background:#1D9E75;border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit}
+  .mob-kb-item{background:#fff;border:1px solid #D3D1C7;border-radius:9px;padding:11px 13px;margin-bottom:8px}
+  .mob-kb-title{font-size:13px;font-weight:500;color:#1a1a18;margin-bottom:4px}
+  .mob-kb-meta{font-size:10px;color:#888780}
+  .mob-team-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F1EFE8}
+  .mob-team-item:last-child{border-bottom:none}
+  .mob-team-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+  .mob-team-name{font-size:13px;font-weight:500;color:#1a1a18}
+  .mob-team-role{font-size:11px;color:#888780;margin-top:1px}
+  .mob-status{width:8px;height:8px;border-radius:50%;margin-left:auto;flex-shrink:0}
+  .mob-sbadge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+}
+
 </style>
 </head>
 <body>
@@ -763,6 +827,172 @@ function filterKB(cat){
 
 selectFlow('welcome');
 selectKB('kb-match-w11');
+</script>
+
+<!-- ══ MOBILE NAV BAR ══ -->
+<div class="mob-nav-bar">
+  <div class="mob-logo">My Team AI</div>
+  <div class="mob-ws-pill">Curtis Sloane</div>
+  <div class="mob-avatar">CS</div>
+</div>
+
+<!-- ══ MOBILE PAGES ══ -->
+<div class="mob-pages">
+
+  <!-- Command Centre -->
+  <div class="mob-page active" id="mob-cc">
+    <div class="mob-slbl">Red Signals</div>
+    <div class="mob-card">
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#E24B4A"></div>
+        <div><div class="mob-alert-title" style="color:#A32D2D">KYC overdue — Mrs Patterson</div><div class="mob-alert-sub">Proof of funds — 6 days overdue</div></div>
+      </div>
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#E24B4A"></div>
+        <div><div class="mob-alert-title" style="color:#A32D2D">94 Portland Rd calls overdue</div></div>
+      </div>
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#BA7517"></div>
+        <div><div class="mob-alert-title" style="color:#633806">7 social posts await approval</div></div>
+      </div>
+    </div>
+
+    <div class="mob-slbl">Today's Metrics</div>
+    <div class="mob-metrics">
+      <div class="mob-mc"><div class="mob-ml">Active applicants</div><div class="mob-mv" style="color:#0F6E56">47</div><div class="mob-ms">+3 this week</div></div>
+      <div class="mob-mc"><div class="mob-ml">Active listings</div><div class="mob-mv">12</div><div class="mob-ms">3 under offer</div></div>
+      <div class="mob-mc"><div class="mob-ml">Calls due today</div><div class="mob-mv" style="color:#854F0B">8</div><div class="mob-ms">2 overdue</div></div>
+      <div class="mob-mc"><div class="mob-ml">Pipeline value</div><div class="mob-mv">£4.2M</div><div class="mob-ms">W11 active</div></div>
+    </div>
+
+    <div class="mob-slbl">Active Pipeline</div>
+    <div class="mob-card">
+      <div style="font-size:9px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px">Under Offer</div>
+      <div class="mob-pcard"><div class="mob-pname">14 Ladbroke Rd, W11</div><div class="mob-pmeta">The Hendersons · offer accepted</div><div class="mob-pprice">£2,850,000</div></div>
+      <div class="mob-pcard"><div class="mob-pname">7 Pembridge Villas, W11</div><div class="mob-pmeta">Chen family · solicitors instructed</div><div class="mob-pprice">£1,650,000</div></div>
+      <div style="font-size:9px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin:10px 0 8px">Active Matching</div>
+      <div class="mob-pcard"><div class="mob-pname">22 Abbotsbury Rd, W14</div><div class="mob-pmeta">Valuation complete · 4 applicants matched</div><div class="mob-pprice">£1,975,000</div></div>
+    </div>
+
+    <div class="mob-slbl">Active Flows</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#7F77DD"></div><div style="flex:1"><div class="mob-flow-name">fn_register_applicant</div><div class="mob-flow-meta">S. Chen · running</div></div><span class="mob-sbadge" style="background:#EEEDFE;color:#3C3489">Live</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#1D9E75"></div><div style="flex:1"><div class="mob-flow-name">fn_match_applicants</div><div class="mob-flow-meta">14 Ladbroke Rd · 4m ago</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Done</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#E24B4A"></div><div style="flex:1"><div class="mob-flow-name">fn_kyc_status</div><div class="mob-flow-meta">Mrs Patterson · blocked</div></div><span class="mob-sbadge" style="background:#FCEBEB;color:#A32D2D">Blocked</span></div>
+    </div>
+  </div>
+
+  <!-- Action Flows -->
+  <div class="mob-page" id="mob-af">
+    <div class="mob-slbl">Action Flows</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#7F77DD"></div><div style="flex:1"><div class="mob-flow-name">fn_register_applicant</div><div class="mob-flow-meta">KYC → profile → matching</div></div><span class="mob-sbadge" style="background:#EEEDFE;color:#3C3489">Live</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#1D9E75"></div><div style="flex:1"><div class="mob-flow-name">fn_match_applicants</div><div class="mob-flow-meta">14 Ladbroke Rd · completed</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Done</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#E24B4A"></div><div style="flex:1"><div class="mob-flow-name">fn_kyc_status</div><div class="mob-flow-meta">Mrs Patterson · awaiting docs</div></div><span class="mob-sbadge" style="background:#FCEBEB;color:#A32D2D">Blocked</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#BA7517"></div><div style="flex:1"><div class="mob-flow-name">fn_social_approval</div><div class="mob-flow-meta">7 posts pending review</div></div><span class="mob-sbadge" style="background:#FAEEDA;color:#633806">Pending</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#B4B2A9"></div><div style="flex:1"><div class="mob-flow-name">fn_valuation_brief</div><div class="mob-flow-meta">22 Abbotsbury · draft ready</div></div><span class="mob-sbadge" style="background:#F1EFE8;color:#444441">Draft</span></div>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div class="mob-page" id="mob-kb">
+    <div class="mob-slbl">Chat with AI</div>
+    <div class="mob-card">
+      <div class="mob-chat">
+        <div class="mob-msg-u">Match applicants to 14 Ladbroke Rd</div>
+        <div class="mob-msg-b">
+          <div style="font-size:9px;color:#B4B2A9;margin-bottom:2px;padding-left:2px">Claude Sonnet · W11 KB</div>
+          <div class="mob-msg-card">Matched 4 applicants to 14 Ladbroke Rd W11 at £2,850,000.<br><br><strong>High match:</strong> Henderson family — budget £3M, freehold preference, Kensington schools ✓<br><strong>High match:</strong> Chen family — budget £2.9M, garden required ✓<br><strong>Possible:</strong> Dr Okafor — budget £2.6M, price negotiable</div>
+        </div>
+        <div class="mob-msg-u">Send viewing invitations to top 2</div>
+        <div class="mob-msg-b">
+          <div style="font-size:9px;color:#B4B2A9;margin-bottom:2px;padding-left:2px">Claude Sonnet</div>
+          <div class="mob-msg-card">Viewing invitations sent to Henderson family and Chen family for Saturday 10am and 12pm. Calendar updated. Confirmation emails dispatched.</div>
+        </div>
+      </div>
+      <div class="mob-chat-input">
+        <input type="text" placeholder="Ask anything about this workspace…" />
+        <button class="mob-chat-send">→</button>
+      </div>
+    </div>
+
+    <div class="mob-slbl">Knowledge Base</div>
+    <div class="mob-kb-item"><div class="mob-kb-title">W11 matching criteria playbook</div><div class="mob-kb-meta">Saved from chat · Updated today</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">Valuation method — W11 2026</div><div class="mob-kb-meta">Saved from chat · Yesterday</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">KYC escalation workflow</div><div class="mob-kb-meta">Saved from flow · 3 days ago</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">Applicant registration SOP</div><div class="mob-kb-meta">Uploaded · Standard doc</div></div>
+  </div>
+
+  <!-- Social -->
+  <div class="mob-page" id="mob-sm">
+    <div class="mob-slbl">Social — Pending Approval</div>
+    <div class="mob-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;font-weight:500;color:#1a1a18">Wisteria season in W11</span><span class="mob-sbadge" style="background:#FBEAF0;color:#72243E">Instagram</span></div>
+      <div style="font-size:12px;color:#5F5E5A;line-height:1.6;margin-bottom:10px">Wisteria season is here — and there's nowhere quite like W11. If you're thinking of making a move this spring, we'd love to show you around. 🌸</div>
+      <div style="display:flex;gap:8px"><button class="btn-g" style="flex:1;font-size:12px;padding:7px">Edit</button><button class="btn-p" style="flex:1;font-size:12px;padding:7px;justify-content:center">Approve</button></div>
+    </div>
+    <div class="mob-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;font-weight:500;color:#1a1a18">Q1 market update</span><span class="mob-sbadge" style="background:#F0F4FF;color:#185FA5">LinkedIn</span></div>
+      <div style="font-size:12px;color:#5F5E5A;line-height:1.6;margin-bottom:10px">W11 asking prices held firm in Q1 2026 — £1.8M average for a family house. Demand from relocating professionals continues to outpace supply.</div>
+      <div style="display:flex;gap:8px"><button class="btn-g" style="flex:1;font-size:12px;padding:7px">Edit</button><button class="btn-p" style="flex:1;font-size:12px;padding:7px;justify-content:center">Approve</button></div>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <div class="mob-page" id="mob-ah">
+    <div class="mob-slbl">Team</div>
+    <div class="mob-card">
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#E1F5EE;color:#085041">CS</div><div><div class="mob-team-name">Curtis Sloane</div><div class="mob-team-role">Principal</div></div><div class="mob-status" style="background:#1D9E75"></div></div>
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#EEEDFE;color:#3C3489">M</div><div><div class="mob-team-name">Marta</div><div class="mob-team-role">Applicant Manager</div></div><div class="mob-status" style="background:#1D9E75"></div></div>
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#FAEEDA;color:#633806">S</div><div><div class="mob-team-name">Sebastian</div><div class="mob-team-role">Property Negotiator</div></div><div class="mob-status" style="background:#B4B2A9"></div></div>
+    </div>
+
+    <div class="mob-slbl">Connected Apps</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div style="font-size:18px">📧</div><div style="flex:1"><div class="mob-flow-name">Gmail</div><div class="mob-flow-meta">Connected · CS & Marta</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">📅</div><div style="flex:1"><div class="mob-flow-name">Google Calendar</div><div class="mob-flow-meta">Viewings sync enabled</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">💼</div><div style="flex:1"><div class="mob-flow-name">HubSpot CRM</div><div class="mob-flow-meta">Contacts & pipeline synced</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">📸</div><div style="flex:1"><div class="mob-flow-name">Instagram Business</div><div class="mob-flow-meta">Approval workflow active</div></div><span class="mob-sbadge" style="background:#FAEEDA;color:#633806">Pending</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ MOBILE BOTTOM NAV ══ -->
+<div class="mob-bottom-nav">
+  <div class="mob-bottom-nav-inner">
+    <div class="mob-nav-item active" onclick="showMobPage('cc')" id="mnav-cc">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">⚡</div><div class="mob-badge-dot">3</div></div>
+      <div class="mob-nav-label">Centre</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('af')" id="mnav-af">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">⚙️</div></div>
+      <div class="mob-nav-label">Flows</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('kb')" id="mnav-kb">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">💬</div></div>
+      <div class="mob-nav-label">Chat</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('sm')" id="mnav-sm">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">📣</div></div>
+      <div class="mob-nav-label">Social</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('ah')" id="mnav-ah">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">👥</div></div>
+      <div class="mob-nav-label">Team</div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function showMobPage(id) {
+  document.querySelectorAll('.mob-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.mob-nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('mob-' + id).classList.add('active');
+  document.getElementById('mnav-' + id).classList.add('active');
+}
+
 </script>
 </body>
 </html>
