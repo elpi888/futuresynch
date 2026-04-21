@@ -1,168 +1,1261 @@
-{
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/futuresynch-index.html"
-    },
-    {
-      "source": "/apply-for-strategic-growth-review",
-      "destination": "/futuresynch-apply.html"
-    },
-    {
-      "source": "/my-team-ai",
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/myteamai",
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/my-team-ai/curtis-sloane",
-      "destination": "/myteamai_workspace_v5.html"
-    },
-    {
-      "source": "/my-team-ai/curtis-sloane/",
-      "destination": "/myteamai_workspace_v5.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog.html"
-    },
-    {
-      "source": "/blog/uk-startup-growth-2026",
-      "destination": "/blog-uk-startup-growth-2026.html"
-    },
-    {
-      "source": "/blog/uk-startup-growth-observations-2026",
-      "destination": "/blog-uk-startup-growth-2026.html"
-    },
-    {
-      "source": "/blog/lottie-care-marketplace-growth-review-2026",
-      "destination": "/blog-lottie-growth-review-2026.html"
-    },
-    {
-      "source": "/blog/hoxton-farms-cultivated-fat-growth-review-2026",
-      "destination": "/blog-hoxton-farms-growth-review-2026.html"
-    },
-    {
-      "source": "/blog/wayve-autonomous-ai-infrastructure-growth-review-2026",
-      "destination": "/blog-wayve-growth-review-2026.html"
-    },
-    {
-      "source": "/blog/gtm-framework-seed-stage",
-      "destination": "/gtm-framework-seed-stage.html"
-    },
-    {
-      "source": "/blog/revenue-based-capital-pre-seed",
-      "destination": "/revenue-based-capital-pre-seed.html"
-    },
-    {
-      "source": "/blog/robin-ai-legal-infrastructure-growth-review",
-      "destination": "/robin-ai-legal-infrastructure-growth-review.html"
-    },
-    {
-      "source": "/blog/strategic-growth-review-what-we-deliver",
-      "destination": "/strategic-growth-review-what-we-deliver.html"
-    },
-    {
-      "source": "/blog/structural-shift-before-ai-adoption",
-      "destination": "/structural-shift-before-ai-adoption.html"
-    },
-    {
-      "source": "/blog/tines-security-automation-growth-review",
-      "destination": "/tines-security-automation-growth-review.html"
-    },
-    {
-      "source": "/blog/veed-io-ai-video-growth-review",
-      "destination": "/veed-io-ai-video-growth-review.html"
-    },
-    {
-      "source": "/blog/why-ai-tools-fail-without-operational-system",
-      "destination": "/why-ai-tools-fail-without-operational-system.html"
-    },
-    {
-      "source": "/investor-memo",
-      "destination": "/investor-memo.html"
-    },
-    {
-      "source": "/property-playbook",
-      "destination": "/property-playbook.html"
-    },
-    {
-      "source": "/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/terms",
-      "destination": "/terms.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.co.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.info"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    }
-  ]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Team AI — Curtis Sloane Workspace</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F4F0;color:#1a1a18;min-height:100vh;padding:20px}
+.shell{display:grid;grid-template-columns:252px 1fr;grid-template-rows:48px 1fr;height:960px;border:1px solid #D3D1C7;border-radius:12px;overflow:hidden;max-width:1200px;margin:0 auto}
+
+/* Topbar */
+.topbar{grid-column:1/-1;display:flex;align-items:center;padding:0 16px;gap:10px;background:#fff;border-bottom:1px solid #D3D1C7}
+.logo{font-size:13px;font-weight:600;color:#1a1a18;letter-spacing:-.3px;flex-shrink:0}
+.ws-pill{font-size:11px;padding:3px 8px;background:#F1EFE8;border:1px solid #D3D1C7;border-radius:6px;color:#5F5E5A;flex-shrink:0}
+.topbar-nav{display:flex;gap:1px;margin-left:12px}
+.tn{padding:5px 10px;font-size:11px;color:#5F5E5A;cursor:pointer;border-radius:6px;white-space:nowrap;transition:background .1s}
+.tn:hover{background:#F1EFE8}
+.tn.active{background:#F1EFE8;color:#1a1a18;font-weight:500}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.model-switcher{display:flex;align-items:center;gap:5px;padding:3px 9px;border:1px solid #D3D1C7;border-radius:6px;background:#F5F4F0;cursor:pointer;font-size:11px;color:#5F5E5A}
+.model-switcher:hover{border-color:#888780}
+.model-dot{width:6px;height:6px;border-radius:50%;background:#1D9E75}
+.status-dot{width:7px;height:7px;border-radius:50%;background:#1D9E75}
+.avatar{width:26px;height:26px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE}
+
+/* Sidebar */
+.sidebar{background:#fff;border-right:1px solid #D3D1C7;display:flex;flex-direction:column;overflow:hidden}
+.sb-sec{padding:7px 0;border-bottom:1px solid #F1EFE8;flex-shrink:0}
+.sb-sec.grow{border-bottom:none;flex:1;overflow-y:auto;min-height:0}
+.sec-hdr{padding:3px 12px 5px;font-size:9px;font-weight:600;color:#B4B2A9;letter-spacing:.6px;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between}
+.sec-add{font-size:13px;color:#B4B2A9;cursor:pointer;line-height:1;transition:color .1s}
+.sec-add:hover{color:#5F5E5A}
+.si{display:flex;align-items:center;gap:7px;padding:4px 12px;font-size:12px;color:#5F5E5A;cursor:pointer;transition:background .1s}
+.si:hover{background:#F1EFE8;color:#1a1a18}
+.si.active{background:#F1EFE8;color:#1a1a18;font-weight:500}
+.sd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dg{background:#1D9E75}.dp{background:#7F77DD}.da{background:#BA7517}.dx{background:#B4B2A9}.dr{background:#E24B4A}.dpk{background:#D4537E}
+.sig-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.sdr{background:#E24B4A}.sda{background:#BA7517}
+.team-av{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;flex-shrink:0}
+.sbadge{font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;margin-left:auto;flex-shrink:0}
+.sbr{background:#FCEBEB;color:#A32D2D}.sba{background:#FAEEDA;color:#633806}.sbg{background:#E1F5EE;color:#085041}.sbp{background:#EEEDFE;color:#3C3489}.sbx{background:#F1EFE8;color:#444441}.sbpk{background:#FBEAF0;color:#72243E}
+
+/* KB items in sidebar */
+.kb-si{display:flex;align-items:center;gap:7px;padding:4px 12px;font-size:11px;color:#5F5E5A;cursor:pointer;transition:background .1s}
+.kb-si:hover{background:#F1EFE8;color:#1a1a18}
+.kb-si.active{background:#F1EFE8;color:#1a1a18;font-weight:500}
+.kb-src{font-size:9px;color:#B4B2A9;margin-left:auto;flex-shrink:0;white-space:nowrap}
+.kb-icon-sm{width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px}
+
+/* Pages */
+.page{display:none;flex-direction:column;gap:14px;padding:18px;overflow-y:auto;height:100%;background:#F5F4F0}
+.page.active{display:flex}
+
+/* Shared */
+.slbl{font-size:9px;font-weight:600;color:#888780;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px}
+.card{background:#fff;border:1px solid #D3D1C7;border-radius:10px;padding:13px 15px}
+.badge{font-size:9px;font-weight:600;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.bg{background:#E1F5EE;color:#085041}.bp{background:#EEEDFE;color:#3C3489}.ba{background:#FAEEDA;color:#633806}.bx{background:#F1EFE8;color:#444441}.br{background:#FCEBEB;color:#A32D2D}.bpk{background:#FBEAF0;color:#72243E}
+.btn-p{padding:7px 13px;background:#1D9E75;border:none;border-radius:7px;color:#E1F5EE;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px}
+.btn-p:hover{background:#0F6E56}
+.btn-g{padding:5px 10px;background:transparent;border:1px solid #D3D1C7;border-radius:6px;color:#5F5E5A;font-size:11px;cursor:pointer;font-family:inherit}
+.btn-g:hover{background:#F1EFE8}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+/* Metrics */
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mc{background:#fff;border:1px solid #D3D1C7;border-radius:8px;padding:11px 13px}
+.ml{font-size:10px;color:#888780;margin-bottom:3px}
+.mv{font-size:21px;font-weight:500;color:#1a1a18}
+.ms{font-size:10px;color:#B4B2A9;margin-top:2px}
+.mok{color:#0F6E56}.mw{color:#854F0B}
+
+/* Pipeline */
+.pc-title{font-size:9px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin-bottom:7px;display:flex;align-items:center;gap:4px}
+.pcount{background:#F1EFE8;border:1px solid #D3D1C7;border-radius:7px;padding:1px 5px;font-size:9px;color:#5F5E5A}
+.pcard{background:#F5F4F0;border:1px solid #D3D1C7;border-radius:7px;padding:6px 9px;margin-bottom:5px}
+.pname{font-size:11px;font-weight:500;color:#1a1a18}
+.pmeta{font-size:10px;color:#888780;margin-top:2px}
+.pprice{font-size:10px;color:#0F6E56;font-weight:500}
+
+/* Calendar */
+.cal-strip{display:flex;gap:5px}
+.cal-day{flex:1;background:#fff;border:1px solid #D3D1C7;border-radius:7px;padding:7px 5px;text-align:center;cursor:pointer}
+.cal-day.today{border:2px solid #1D9E75;background:#F9FFFB}
+.cal-wd{font-size:9px;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.cal-dt{font-size:13px;font-weight:500;color:#1a1a18;margin-bottom:3px}
+.cal-ev{font-size:9px;padding:2px 3px;border-radius:3px;margin-bottom:2px;text-align:left;line-height:1.3}
+.ce-g{background:#E1F5EE;color:#085041}.ce-p{background:#EEEDFE;color:#3C3489}.ce-a{background:#FAEEDA;color:#633806}.ce-x{background:#F1EFE8;color:#444441}.ce-pk{background:#FBEAF0;color:#72243E}
+
+/* Chat with KB capture */
+.chat-panel{display:flex;flex-direction:column;border:1px solid #D3D1C7;border-radius:10px;overflow:hidden;background:#fff}
+.chat-hdr{padding:8px 12px;border-bottom:1px solid #F1EFE8;font-size:11px;font-weight:500;color:#5F5E5A;display:flex;align-items:center;gap:6px;justify-content:space-between}
+.chat-model-tag{font-size:9px;padding:2px 6px;border-radius:4px;background:#F1EFE8;color:#5F5E5A;font-weight:500}
+.chat-body{padding:11px;display:flex;flex-direction:column;gap:8px}
+.msg-u{align-self:flex-end;max-width:72%;background:#F1EFE8;border-radius:12px 12px 2px 12px;padding:7px 10px;font-size:12px}
+.msg-b{align-self:flex-start;max-width:92%}
+.msg-fn{font-size:9px;color:#B4B2A9;margin-bottom:2px;padding-left:2px}
+.msg-card{background:#fff;border:1px solid #D3D1C7;border-radius:2px 10px 10px 10px;padding:8px 10px}
+.msg-t{font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:5px}
+.mr{display:flex;align-items:center;gap:7px;padding:3px 0;border-bottom:1px solid #F5F4F0;font-size:11px}
+.mr:last-of-type{border-bottom:none;margin-bottom:4px}
+.ma{flex:1;color:#1a1a18}
+.sh{background:#E1F5EE;color:#085041;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px}
+.sm{background:#FAEEDA;color:#633806;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px}
+.mky{font-size:10px}.kyo{color:#0F6E56}.kyw{color:#854F0B}
+/* KB capture bar — appears under bot response */
+.kb-capture-bar{display:flex;align-items:center;gap:6px;padding:5px 9px;background:#F5F4F0;border-top:1px solid #F1EFE8;border-radius:0 0 8px 8px}
+.kb-capture-bar span{font-size:10px;color:#888780;flex:1}
+.kb-save-btn{font-size:10px;padding:3px 9px;background:#EEEDFE;border:1px solid #AFA9EC;border-radius:5px;color:#3C3489;cursor:pointer;font-family:inherit;font-weight:500;white-space:nowrap}
+.kb-save-btn:hover{background:#CECBF6}
+.kb-save-btn.saved{background:#E1F5EE;border-color:#5DCAA5;color:#085041}
+.chat-acts{display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}
+.cab{font-size:10px;padding:3px 8px;background:transparent;border:1px solid #D3D1C7;border-radius:5px;color:#5F5E5A;cursor:pointer;font-family:inherit}
+.cab:hover{background:#F1EFE8}
+.chat-ir{padding:8px 11px;border-top:1px solid #D3D1C7;display:flex;gap:6px}
+.chat-ir input{flex:1;font-size:12px;padding:5px 9px;border:1px solid #D3D1C7;border-radius:7px;background:#F5F4F0;color:#1a1a18;font-family:inherit;outline:none}
+.chat-ir input:focus{border-color:#888780}
+.chat-send{font-size:12px;padding:5px 11px;background:#1D9E75;border:none;border-radius:7px;color:#E1F5EE;cursor:pointer;font-weight:500;font-family:inherit}
+
+/* ══ KNOWLEDGE BASE PAGE ══ */
+.kb-layout{display:grid;grid-template-columns:280px 1fr;gap:14px;height:100%}
+.kb-list-panel{display:flex;flex-direction:column;gap:10px}
+.kb-filters{display:flex;gap:5px;flex-wrap:wrap}
+.kb-filter{padding:3px 9px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid #D3D1C7;background:#fff;color:#5F5E5A}
+.kb-filter.active{background:#1a1a18;border-color:#1a1a18;color:#fff}
+.kb-filter:hover:not(.active){background:#F1EFE8}
+.kb-item{background:#fff;border:1px solid #D3D1C7;border-radius:9px;padding:11px 13px;cursor:pointer;transition:border-color .12s;margin-bottom:6px}
+.kb-item:hover{border-color:#888780}
+.kb-item.sel{border:2px solid #7F77DD;background:#FDFCFF}
+.kb-item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:5px}
+.kb-item-title{font-size:12px;font-weight:500;color:#1a1a18;line-height:1.35}
+.kb-item-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:4px}
+.kb-type{font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px}
+.kt-playbook{background:#EEEDFE;color:#3C3489}
+.kt-workflow{background:#E1F5EE;color:#085041}
+.kt-sop{background:#FAEEDA;color:#633806}
+.kt-capture{background:#FBEAF0;color:#72243E}
+.kt-doc{background:#F1EFE8;color:#444441}
+.kb-provenance{font-size:9px;color:#B4B2A9}
+.kb-models{display:flex;gap:3px;margin-left:auto}
+.model-tag-sm{font-size:8px;padding:1px 5px;border-radius:3px;font-weight:500}
+.mt-sonnet{background:#EEEDFE;color:#3C3489}
+.mt-opus{background:#FAEEDA;color:#633806}
+.mt-haiku{background:#E1F5EE;color:#085041}
+.mt-gpt{background:#F0F4FF;color:#185FA5}
+.mt-human{background:#F1EFE8;color:#444441}
+
+/* KB detail panel */
+.kb-detail{background:#fff;border:1px solid #D3D1C7;border-radius:10px;overflow:hidden;height:fit-content}
+.kb-detail-hdr{padding:13px 16px;border-bottom:1px solid #F1EFE8;display:flex;align-items:flex-start;gap:10px}
+.kb-detail-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.kb-detail-body{padding:16px}
+.kb-detail-section{margin-bottom:14px}
+.kb-detail-section:last-child{margin-bottom:0}
+.kb-detail-label{font-size:9px;font-weight:600;color:#888780;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px}
+.kb-detail-text{font-size:12px;color:#1a1a18;line-height:1.6}
+.kb-step{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #F5F4F0}
+.kb-step:last-child{border-bottom:none}
+.kb-step-n{width:20px;height:20px;border-radius:50%;background:#EEEDFE;border:1px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#3C3489;flex-shrink:0;margin-top:1px}
+.kb-step-text{font-size:11px;color:#1a1a18;line-height:1.45;flex:1}
+.kb-step-note{font-size:10px;color:#5F5E5A;margin-top:2px}
+/* Provenance trail */
+.prov-trail{display:flex;flex-direction:column;gap:5px}
+.prov-item{display:flex;align-items:center;gap:7px;padding:5px 8px;background:#F5F4F0;border-radius:6px;font-size:10px}
+.prov-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.prov-label{color:#1a1a18;font-weight:500;flex:1}
+.prov-meta{color:#888780}
+/* Context availability */
+.ctx-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #F5F4F0;font-size:11px}
+.ctx-row:last-child{border-bottom:none}
+.ctx-model{flex:1;color:#1a1a18}
+.ctx-avail{font-size:10px;font-weight:500}
+.ctx-yes{color:#0F6E56}
+.ctx-auto{color:#633806}
+
+/* KB stats bar */
+.kb-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:2px}
+.kb-stat{background:#fff;border:1px solid #D3D1C7;border-radius:8px;padding:9px 12px;text-align:center}
+.kb-stat-val{font-size:18px;font-weight:500;color:#1a1a18}
+.kb-stat-label{font-size:9px;color:#888780;margin-top:2px}
+
+/* Action flows (abbreviated) */
+.flows-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fc{background:#fff;border:1px solid #D3D1C7;border-radius:10px;padding:12px;cursor:pointer;transition:border-color .12s}
+.fc:hover{border-color:#888780}
+.fc.sel{border:2px solid #1D9E75}
+.fc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:7px;margin-bottom:7px}
+.fi{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fn{font-size:12px;font-weight:500;color:#1a1a18;line-height:1.3}
+.ff{font-size:10px;color:#888780;font-family:'Courier New',monospace;margin-top:1px}
+.fdesc{font-size:10px;color:#5F5E5A;line-height:1.5;margin-bottom:7px}
+.fc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:7px;border-top:1px solid #F1EFE8}
+.fmodel{font-size:10px;color:#B4B2A9}
+.detail-panel{background:#fff;border:1px solid #D3D1C7;border-radius:10px;overflow:hidden}
+.dh{padding:11px 14px;border-bottom:1px solid #F1EFE8;display:flex;align-items:center;gap:10px}
+.dt{font-size:13px;font-weight:500;color:#1a1a18}
+.ds{font-size:10px;color:#888780;font-family:'Courier New',monospace}
+.db{padding:12px 14px;display:flex;gap:14px}
+.dl{flex:1;display:flex;flex-direction:column;gap:11px}
+.dr-col{width:230px;flex-shrink:0;display:flex;flex-direction:column;gap:9px}
+.steps-list{display:flex;flex-direction:column}
+.step-it{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #F5F4F0}
+.step-it:last-child{border-bottom:none}
+.sn{width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;flex-shrink:0;margin-top:1px}
+.sng{background:#E1F5EE;color:#085041;border:1px solid #5DCAA5}.snp{background:#EEEDFE;color:#3C3489;border:1px solid #AFA9EC}.sna{background:#FAEEDA;color:#633806;border:1px solid #EF9F27}.snpk{background:#FBEAF0;color:#72243E;border:1px solid #ED93B1}
+.sname{font-size:11px;font-weight:500;color:#1a1a18}
+.sdetail{font-size:10px;color:#5F5E5A;margin-top:1px;line-height:1.4}
+.schema-box{background:#F5F4F0;border:1px solid #D3D1C7;border-radius:7px;padding:8px 10px}
+.stitle{font-size:9px;font-weight:600;color:#5F5E5A;margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px}
+.srow{display:flex;align-items:baseline;gap:5px;padding:2px 0;border-bottom:1px solid #ECEAE3;font-size:10px}
+.srow:last-child{border-bottom:none}
+.sf{color:#1a1a18;font-family:'Courier New',monospace;flex:1}.st{color:#7F77DD;font-family:'Courier New',monospace}.sreq{color:#D85A30;font-size:9px}.sopt{color:#B4B2A9;font-size:9px}
+.val-box{background:#FFF8F0;border:1px solid #EF9F27;border-radius:7px;padding:8px 10px}
+.vrow{display:flex;gap:5px;padding:2px 0;font-size:10px}
+.vf{color:#633806;font-family:'Courier New',monospace;min-width:80px}.vr{color:#5F5E5A;flex:1}
+.kyc-gate{display:flex;align-items:center;gap:6px;padding:7px 9px;background:#E1F5EE;border:1px solid #5DCAA5;border-radius:7px;font-size:10px;color:#085041}
+.run-btn{width:100%;padding:8px;background:#1D9E75;border:none;border-radius:7px;color:#E1F5EE;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit}
+.fpill{padding:3px 10px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid #D3D1C7;background:#fff;color:#5F5E5A}
+.fpill.active{background:#1a1a18;border-color:#1a1a18;color:#fff}
+.fpill:hover:not(.active){background:#F1EFE8}
+
+/* Agent command window */
+.agent-chip{padding:4px 11px;border-radius:20px;font-size:10px;font-weight:500;cursor:pointer;border:1px solid #D3D1C7;background:#fff;color:#5F5E5A;font-family:inherit;transition:all .12s}
+.agent-chip:hover{background:#1a1a18;border-color:#1a1a18;color:#fff}
+.agent-flow-tag{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:600;padding:2px 7px;border-radius:4px;background:#EEEDFE;color:#3C3489}
+.agent-task-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:#F9FFFB;border:1px solid #5DCAA5;border-radius:7px;font-size:11px;color:#085041}
+
+/* ══ MOBILE STYLES ══ */
+.mob-nav-bar{display:none;align-items:center;justify-content:space-between;padding:0 12px;height:48px;background:#fff;border-bottom:1px solid #D3D1C7;position:sticky;top:0;z-index:200}
+.mob-logo{font-size:13px;font-weight:600;color:#1a1a18;letter-spacing:-.3px}
+.mob-ws-pill{font-size:10px;padding:2px 7px;background:#F1EFE8;border:1px solid #D3D1C7;border-radius:5px;color:#5F5E5A}
+.mob-avatar{width:26px;height:26px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE}
+.mob-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #D3D1C7;z-index:200;padding:6px 0 env(safe-area-inset-bottom,6px)}
+.mob-bottom-nav-inner{display:flex;justify-content:space-around;align-items:center}
+.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 8px;cursor:pointer;border-radius:8px;min-width:52px}
+.mob-nav-label{font-size:9px;color:#888780;font-weight:500;text-transform:uppercase;letter-spacing:.3px}
+.mob-nav-item.active .mob-nav-label{color:#1D9E75}
+.mob-nav-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;background:#F1EFE8;transition:background .15s}
+.mob-nav-item.active .mob-nav-icon{background:#1D9E75}
+.mob-badge-dot{position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:#E24B4A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#fff}
+.mob-icon-wrap{position:relative;display:inline-flex}
+
+@media (max-width: 768px) {
+  body{padding:0;padding-bottom:72px}
+  .shell{display:none!important}
+  .mob-nav-bar{display:flex}
+  .mob-bottom-nav{display:block}
+  .mob-pages{display:block;background:#F5F4F0;min-height:calc(100vh - 48px - 72px)}
+  .mob-page{display:none;padding:12px;flex-direction:column;gap:10px}
+  .mob-page.active{display:flex}
+  .mob-card{background:#fff;border:1px solid #D3D1C7;border-radius:10px;padding:12px 14px}
+  .mob-slbl{font-size:9px;font-weight:600;color:#888780;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px}
+  .mob-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mob-mc{background:#fff;border:1px solid #D3D1C7;border-radius:8px;padding:11px 13px}
+  .mob-ml{font-size:10px;color:#888780;margin-bottom:3px}
+  .mob-mv{font-size:20px;font-weight:500;color:#1a1a18}
+  .mob-ms{font-size:10px;color:#B4B2A9;margin-top:2px}
+  .mob-alert{display:flex;align-items:flex-start;gap:8px;padding:9px 0;border-bottom:1px solid #F1EFE8}
+  .mob-alert:last-child{border-bottom:none}
+  .mob-alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+  .mob-alert-title{font-size:12px;font-weight:500;line-height:1.3}
+  .mob-alert-sub{font-size:10px;color:#888780;margin-top:2px}
+  .mob-flow{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #F1EFE8}
+  .mob-flow:last-child{border-bottom:none}
+  .mob-flow-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .mob-flow-name{font-size:12px;font-weight:500;color:#1a1a18;flex:1}
+  .mob-flow-meta{font-size:10px;color:#888780}
+  .mob-pcard{background:#F5F4F0;border:1px solid #D3D1C7;border-radius:7px;padding:8px 10px;margin-bottom:6px}
+  .mob-pname{font-size:12px;font-weight:500;color:#1a1a18}
+  .mob-pmeta{font-size:10px;color:#888780;margin-top:2px}
+  .mob-pprice{font-size:11px;color:#0F6E56;font-weight:500;margin-top:3px}
+  .mob-chat{display:flex;flex-direction:column;gap:8px}
+  .mob-msg-u{align-self:flex-end;max-width:80%;background:#F1EFE8;border-radius:12px 12px 2px 12px;padding:8px 11px;font-size:13px;color:#1a1a18}
+  .mob-msg-b{align-self:flex-start;max-width:90%}
+  .mob-msg-fn{font-size:9px;color:#B4B2A9;margin-bottom:2px;padding-left:2px}
+  .mob-msg-card{background:#fff;border:1px solid #D3D1C7;border-radius:2px 10px 10px 10px;padding:9px 11px;font-size:12px;color:#1a1a18;line-height:1.6}
+  .mob-chat-input{display:flex;gap:8px;padding:10px 12px;background:#fff;border:1px solid #D3D1C7;border-radius:10px;margin-top:4px}
+  .mob-chat-input input{flex:1;font-size:14px;padding:6px 10px;border:1px solid #D3D1C7;border-radius:8px;background:#F5F4F0;color:#1a1a18;font-family:inherit;outline:none}
+  .mob-chat-send{padding:6px 14px;background:#1D9E75;border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit}
+  .mob-kb-item{background:#fff;border:1px solid #D3D1C7;border-radius:9px;padding:11px 13px;margin-bottom:8px}
+  .mob-kb-title{font-size:13px;font-weight:500;color:#1a1a18;margin-bottom:4px}
+  .mob-kb-meta{font-size:10px;color:#888780}
+  .mob-team-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F1EFE8}
+  .mob-team-item:last-child{border-bottom:none}
+  .mob-team-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+  .mob-team-name{font-size:13px;font-weight:500;color:#1a1a18}
+  .mob-team-role{font-size:11px;color:#888780;margin-top:1px}
+  .mob-status{width:8px;height:8px;border-radius:50%;margin-left:auto;flex-shrink:0}
+  .mob-sbadge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px}
+  .mob-agent-input{display:flex;gap:8px;padding:10px 12px;background:#fff;border:1px solid #D3D1C7;border-radius:10px;margin-top:4px}
+  .mob-agent-input textarea{flex:1;font-size:13px;padding:6px 10px;border:1px solid #D3D1C7;border-radius:8px;background:#F5F4F0;color:#1a1a18;font-family:inherit;outline:none;resize:none}
+  .mob-agent-send{padding:6px 14px;background:#1D9E75;border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;align-self:flex-end}
+  .mob-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+  .mob-chip{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid #D3D1C7;background:#fff;color:#5F5E5A;font-family:inherit}
+  .mob-chip:hover{background:#1a1a18;border-color:#1a1a18;color:#fff}
 }
+
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="logo">My Team AI</div>
+  <div class="ws-pill">Curtis Sloane · W11</div>
+  <div class="topbar-nav">
+    <div class="tn active" id="tn-cc" onclick="showPage('cc')">Command centre</div>
+    <div class="tn" id="tn-af" onclick="showPage('af')">Action flows</div>
+    <div class="tn" id="tn-kb" onclick="showPage('kb')">Knowledge base</div>
+    <div class="tn" id="tn-sm" onclick="showPage('sm')">Social</div>
+    <div class="tn" id="tn-ah" onclick="showPage('ah')">Apps hub</div>
+  </div>
+  <div class="topbar-right">
+    <div class="model-switcher" title="Click to switch AI model — context carries across">
+      <div class="model-dot"></div>
+      Claude Sonnet
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 3L4 5.5L6.5 3" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/></svg>
+    </div>
+    <div class="status-dot"></div>
+    <div class="avatar">OK</div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sb-sec">
+    <div class="sec-hdr"><span>Red signals</span><span style="font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;background:#FCEBEB;color:#A32D2D">3</span></div>
+    <div class="si" onclick="showPage('cc')"><div class="sig-dot sdr"></div><div style="flex:1"><div style="font-size:11px;font-weight:500;color:#A32D2D">KYC overdue — Mrs Patterson</div><div style="font-size:10px;color:#888780">Proof of funds — 6 days</div></div></div>
+    <div class="si" onclick="showPage('cc')"><div class="sig-dot sdr"></div><div style="font-size:11px;font-weight:500;color:#A32D2D;flex:1">94 Portland Rd calls overdue</div></div>
+    <div class="si" onclick="showPage('sm')"><div class="sig-dot sda"></div><div style="font-size:11px;font-weight:500;color:#633806;flex:1">7 social posts await approval</div></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sec-hdr"><span>Active flows</span><span class="sec-add" onclick="showPage('af')">+</span></div>
+    <div class="si" onclick="showPage('af')"><div class="sd dp"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;color:#1a1a18;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">fn_register_applicant</div><div style="font-size:10px;color:#888780">S. Chen · running</div></div><span class="sbadge sbp">Live</span></div>
+    <div class="si" onclick="showPage('af')"><div class="sd dg"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;color:#1a1a18;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">fn_match_applicants</div><div style="font-size:10px;color:#888780">14 Ladbroke Rd · 4m ago</div></div><span class="sbadge sbg">Done</span></div>
+    <div class="si" onclick="showPage('af')"><div class="sd dr"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;color:#1a1a18;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">fn_kyc_status</div><div style="font-size:10px;color:#888780">Mrs Patterson · blocked</div></div><span class="sbadge sbr">Blocked</span></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sec-hdr"><span>Recent chats</span><span class="sec-add">+</span></div>
+    <div class="si active"><div class="sd dg"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Match — 14 Ladbroke Rd</div><div style="font-size:10px;color:#888780">Today · saved to KB</div></div></div>
+    <div class="si"><div class="sd dpk"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Draft social — wisteria</div><div style="font-size:10px;color:#888780">Today</div></div></div>
+    <div class="si"><div class="sd dp"></div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Valuation brief — 22 Abbotsbury</div><div style="font-size:10px;color:#888780">Yesterday · saved to KB</div></div></div>
+  </div>
+
+  <div class="sb-sec">
+    <div class="sec-hdr"><span>Team</span></div>
+    <div class="si"><div class="team-av" style="background:#E1F5EE;color:#085041">CS</div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500">Curtis Sloane</div><div style="font-size:10px;color:#888780">Principal</div></div><div class="sd dg"></div></div>
+    <div class="si"><div class="team-av" style="background:#EEEDFE;color:#3C3489">M</div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500">Marta</div><div style="font-size:10px;color:#888780">Applicant Manager</div></div><div class="sd dg"></div></div>
+    <div class="si"><div class="team-av" style="background:#FAEEDA;color:#633806">S</div><div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500">Sebastian</div><div style="font-size:10px;color:#888780">Property Negotiator</div></div><div class="sd dx"></div></div>
+  </div>
+
+  <!-- KB in sidebar — compact library -->
+  <div class="sb-sec grow">
+    <div class="sec-hdr"><span>Knowledge base</span><span class="sec-add" onclick="showPage('kb')">→</span></div>
+
+    <div style="padding:2px 12px 3px;font-size:9px;font-weight:600;color:#D4537E;letter-spacing:.4px;text-transform:uppercase">From chats</div>
+    <div class="kb-si" onclick="showPage('kb');selectKB('kb-match-w11')">
+      <div class="kb-icon-sm" style="background:#E1F5EE">🏠</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">W11 matching criteria playbook</div></div>
+      <span class="kb-src" style="color:#D4537E">chat</span>
+    </div>
+    <div class="kb-si" onclick="showPage('kb');selectKB('kb-val-method')">
+      <div class="kb-icon-sm" style="background:#FAEEDA">📊</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">Valuation method — W11 2026</div></div>
+      <span class="kb-src" style="color:#D4537E">chat</span>
+    </div>
+    <div class="kb-si" onclick="showPage('kb');selectKB('kb-kyc-flow')">
+      <div class="kb-icon-sm" style="background:#FCEBEB">⚖️</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">KYC escalation workflow</div></div>
+      <span class="kb-src" style="color:#D4537E">flow</span>
+    </div>
+    <div class="kb-si" onclick="showPage('kb');selectKB('kb-social-voice')">
+      <div class="kb-icon-sm" style="background:#FBEAF0">🎨</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">Social caption rules — CS voice</div></div>
+      <span class="kb-src" style="color:#D4537E">chat</span>
+    </div>
+
+    <div style="padding:6px 12px 3px;font-size:9px;font-weight:600;color:#888780;letter-spacing:.4px;text-transform:uppercase">Source documents</div>
+    <div class="kb-si" onclick="showPage('kb')">
+      <div class="kb-icon-sm" style="background:#F1EFE8">📋</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">New contact process</div></div>
+      <span class="kb-src">Notion</span>
+    </div>
+    <div class="kb-si" onclick="showPage('kb')">
+      <div class="kb-icon-sm" style="background:#F1EFE8">🎨</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">Brand voice guide</div></div>
+      <span class="kb-src">Notion</span>
+    </div>
+    <div class="kb-si" onclick="showPage('kb')">
+      <div class="kb-icon-sm" style="background:#F1EFE8">🏠</div>
+      <div style="flex:1;min-width:0"><div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;color:#1a1a18">Active pipeline guide</div></div>
+      <span class="kb-src">Notion</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ COMMAND CENTRE ══════════════════════ -->
+<div class="page active" id="page-cc">
+  <div style="background:#FCEBEB;border:1px solid #F09595;border-radius:9px;padding:9px 13px;display:flex;align-items:center;gap:9px">
+    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><circle cx="8" cy="8" r="7" stroke="#A32D2D" stroke-width="1.3"/><path d="M8 5v4M8 11v.5" stroke="#A32D2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div style="flex:1;font-size:11px;color:#791F1F"><span style="font-weight:500">3 items need attention:</span> Mrs Patterson KYC overdue · 94 Portland Rd calls not started · 7 social posts awaiting approval</div>
+    <button class="btn-g" style="font-size:10px;border-color:#F09595;color:#A32D2D">Dismiss</button>
+  </div>
+
+  <div><div class="slbl">This week</div>
+    <div class="metrics-row">
+      <div class="mc"><div class="ml">Active buyers</div><div class="mv">18</div><div class="ms mok">Target 15 ✓</div></div>
+      <div class="mc"><div class="ml">Active clients</div><div class="mv">7</div><div class="ms">of 35 capacity</div></div>
+      <div class="mc"><div class="ml">KB entries</div><div class="mv">24</div><div class="ms mok">4 from chats this week</div></div>
+      <div class="mc"><div class="ml">Context coverage</div><div class="mv">91%</div><div class="ms mok">Across all models</div></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div style="display:flex;flex-direction:column;gap:11px">
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:9px"><div class="slbl" style="margin-bottom:0">This week — Google Calendar</div><span style="font-size:10px;color:#888780">Apr 20–26</span></div>
+        <div class="cal-strip">
+          <div class="cal-day"><div class="cal-wd">Mon</div><div class="cal-dt">21</div><div class="cal-ev ce-p">Pipeline calls</div><div class="cal-ev ce-a">KYC: D. Morley</div></div>
+          <div class="cal-day today"><div class="cal-wd">Tue</div><div class="cal-dt">22</div><div class="cal-ev ce-g">Team standup 9am</div><div class="cal-ev ce-pk">Social: CS-04</div><div class="cal-ev ce-a">94 Portland calls!</div></div>
+          <div class="cal-day"><div class="cal-wd">Wed</div><div class="cal-dt">23</div><div class="cal-ev ce-pk">Social: CS-05</div><div class="cal-ev ce-g">Newsletter review</div></div>
+          <div class="cal-day"><div class="cal-wd">Thu</div><div class="cal-dt">24</div><div class="cal-ev ce-p">Valuation — Blackwood</div></div>
+          <div class="cal-day"><div class="cal-wd">Fri</div><div class="cal-dt">25</div><div class="cal-ev ce-pk">Social: CS-06</div><div class="cal-ev ce-x">T. Baker qual. call</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="slbl">Client pipeline</div>
+        <div class="three-col">
+          <div><div class="pc-title">KYC <span class="pcount">3</span></div><div class="pcard" style="border-color:#F09595"><div class="pname" style="color:#A32D2D">Mrs Patterson</div><div class="pmeta">Proof of funds — 6d overdue</div></div><div class="pcard"><div class="pname">D. Morley</div><div class="pmeta">ID document sent</div></div></div>
+          <div><div class="pc-title">Active <span class="pcount">4</span></div><div class="pcard"><div class="pname">R. Blackwood</div><div class="pmeta">Valuation Thu 24 Apr</div></div><div class="pcard"><div class="pname">Chen family</div><div class="pmeta">Assets commissioning</div></div></div>
+          <div><div class="pc-title">On market <span class="pcount">2</span></div><div class="pcard"><div class="pname">22 Abbotsbury Rd</div><div class="pprice">£3.85M</div><div class="pmeta">Day 12</div></div><div class="pcard"><div class="pname">8 Portland Road</div><div class="pprice">£2.4M</div><div class="pmeta">Day 4</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ AGENT COMMAND WINDOW ══ -->
+    <div style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid #D3D1C7;border-radius:10px;overflow:hidden;height:100%;min-height:480px">
+
+      <!-- Header -->
+      <div style="padding:10px 14px;border-bottom:1px solid #F1EFE8;display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <div style="width:7px;height:7px;border-radius:50%;background:#1D9E75"></div>
+        <span style="font-size:12px;font-weight:500;color:#1a1a18">Agent</span>
+        <span style="font-size:10px;padding:2px 6px;border-radius:4px;background:#F1EFE8;color:#5F5E5A">Claude Sonnet · KB loaded</span>
+        <div style="margin-left:auto;display:flex;gap:5px">
+          <button class="cab" onclick="clearAgent()" title="Clear">Clear</button>
+        </div>
+      </div>
+
+      <!-- Quick command chips -->
+      <div style="padding:8px 12px;border-bottom:1px solid #F1EFE8;display:flex;gap:5px;flex-wrap:wrap;flex-shrink:0;background:#F9F9F7">
+        <button class="agent-chip" onclick="runChip('match 14 Ladbroke Road — 4 bed £3.5M')">Match applicants</button>
+        <button class="agent-chip" onclick="runChip('register new applicant')">Register applicant</button>
+        <button class="agent-chip" onclick="runChip('valuation brief 22 Abbotsbury Road W11')">Valuation brief</button>
+        <button class="agent-chip" onclick="runChip('check KYC status Mrs Patterson')">KYC status</button>
+        <button class="agent-chip" onclick="runChip('draft outreach for 30-year residents W11')">Draft outreach</button>
+        <button class="agent-chip" onclick="runChip('draft social post — wisteria season Abundance pillar')">Social draft</button>
+      </div>
+
+      <!-- Conversation thread -->
+      <div style="flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px" id="agent-body">
+
+        <!-- System greeting -->
+        <div style="display:flex;align-items:flex-start;gap:8px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+          <div style="background:#F5F4F0;border-radius:2px 10px 10px 10px;padding:9px 12px;font-size:12px;color:#1a1a18;line-height:1.55;max-width:90%">
+            Good morning, Olesya. 3 items need attention today.<br>
+            <span style="color:#A32D2D">·</span> Mrs Patterson — KYC proof of funds, day 6<br>
+            <span style="color:#A32D2D">·</span> 94 Portland Rd — calls not started<br>
+            <span style="color:#BA7517">·</span> 7 social posts awaiting your approval<br><br>
+            Type a command or use the chips above to run a flow. I can match applicants, register contacts, draft outreach, run valuations, check KYC, or set tasks.
+          </div>
+        </div>
+
+        <!-- Example: previous agent exchange -->
+        <div style="display:flex;justify-content:flex-end">
+          <div style="background:#F1EFE8;border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:12px;color:#1a1a18;max-width:80%">
+            Match applicants for 14 Ladbroke Road — 4 bed £3.5M
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:8px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+          <div style="max-width:92%">
+            <div style="font-size:9px;color:#B4B2A9;margin-bottom:3px;padding-left:2px">fn_match_applicants · Buyers: Active · 18 searched · 1.4s · W11 criteria from KB</div>
+            <div style="background:#fff;border:1px solid #D3D1C7;border-radius:2px 10px 10px 10px;padding:10px 12px">
+              <div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Top matches — 14 Ladbroke Road W11</div>
+              <div class="mr"><span class="ma">Sarah Chen · £3.8M · cash</span><span class="sh">0.94</span><span class="mky kyo">KYC ✓</span></div>
+              <div class="mr"><span class="ma">James Hyde · £3.2M · AIP</span><span class="sh">0.81</span><span class="mky kyo">KYC ✓</span></div>
+              <div class="mr" style="margin-bottom:8px"><span class="ma">Tom Baker · £2.9M · AIP pend.</span><span class="sm">0.72</span><span class="mky kyw">KYC blocked</span></div>
+              <!-- Task / action row -->
+              <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8">
+                <button class="cab" onclick="agentAction('draft-intros')">Draft intros</button>
+                <button class="cab" onclick="agentAction('hubspot')">Log to HubSpot</button>
+                <button class="cab" onclick="agentAction('set-task')">Set viewing task</button>
+                <button class="cab" style="border-color:#AFA9EC;color:#3C3489" onclick="agentAction('save-kb')">Save to KB</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task confirmation (shown after Set viewing task) -->
+        <div id="task-confirm" style="display:none;align-items:flex-start;gap:8px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+          <div style="background:#E1F5EE;border:1px solid #5DCAA5;border-radius:2px 10px 10px 10px;padding:9px 12px;font-size:12px;color:#085041;max-width:90%">
+            ✓ Task set — <strong>Viewing: Sarah Chen · 14 Ladbroke Road</strong><br>
+            <span style="font-size:10px;color:#0F6E56">Assigned to Marta · Thu 24 Apr · HubSpot task created · calendar invite queued</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Command input -->
+      <div style="border-top:1px solid #D3D1C7;flex-shrink:0">
+        <div style="padding:6px 12px 0;font-size:9px;color:#B4B2A9;letter-spacing:.3px">Command — type naturally or use a flow name</div>
+        <div style="display:flex;gap:0">
+          <textarea id="agent-input" rows="2" placeholder="e.g. "Register James Hyde, £3.2M budget, 4 bed, AIP held" or "Draft welcome for Sarah Chen, referral from Millers"" style="flex:1;font-size:12px;padding:9px 12px;border:none;background:transparent;color:#1a1a18;font-family:inherit;outline:none;resize:none;line-height:1.5" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAgent()}"></textarea>
+          <div style="display:flex;flex-direction:column;justify-content:center;padding:8px 10px;gap:5px;border-left:1px solid #F1EFE8">
+            <button onclick="sendAgent()" style="padding:6px 14px;background:#1D9E75;border:none;border-radius:7px;color:#E1F5EE;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;white-space:nowrap">Run ↵</button>
+            <button onclick="showPage('af')" style="padding:4px 10px;background:transparent;border:1px solid #D3D1C7;border-radius:6px;color:#5F5E5A;font-size:10px;cursor:pointer;font-family:inherit;white-space:nowrap">Browse flows</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ ACTION FLOWS ══════════════════════ -->
+<div class="page" id="page-af">
+  <div style="display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:15px;font-weight:500">Action flows</div><div style="font-size:11px;color:#888780;margin-top:2px">7 functions · outputs automatically available in KB</div></div><button class="btn-p"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#E1F5EE" stroke-width="1.5" stroke-linecap="round"/></svg>Run a flow</button></div>
+  <div style="display:flex;gap:6px;flex-wrap:wrap">
+    <div class="fpill active" id="fa-all" onclick="filterFlows('all')">All</div>
+    <div class="fpill" id="fa-client" onclick="filterFlows('client')">Client &amp; applicant</div>
+    <div class="fpill" id="fa-match" onclick="filterFlows('match')">Matching &amp; outreach</div>
+    <div class="fpill" id="fa-val" onclick="filterFlows('val')">Valuation</div>
+    <div class="fpill" id="fa-social" onclick="filterFlows('social')">Social</div>
+    <div class="fpill" id="fa-comp" onclick="filterFlows('comp')">Compliance</div>
+  </div>
+  <div class="flows-grid">
+    <div class="fc sel" id="fc-welcome" data-cat="client" onclick="selectFlow('welcome')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z" stroke="#085041" stroke-width="1.3"/><path d="M2 4l6 4 6-4" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">Generate welcome</div><div class="ff">fn_generate_welcome()</div></div></div><span class="badge bg">Active</span></div><div class="fdesc">Same-day welcome. HubSpot record. Output saved to KB on completion.</div><div class="fc-foot"><span class="fmodel">Claude Sonnet</span><span class="badge bx">New enquiry</span></div></div>
+    <div class="fc" id="fc-applicant" data-cat="client" onclick="selectFlow('applicant')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#EEEDFE"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="#3C3489" stroke-width="1.3"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">Register applicant</div><div class="ff">fn_register_applicant()</div></div></div><span class="badge bp">Running</span></div><div class="fdesc">Full intake. Applicant profile + first match saved to KB as playbook.</div><div class="fc-foot"><span class="fmodel">Claude Sonnet · 9 inputs</span><span class="badge bx">First contact</span></div></div>
+    <div class="fc" id="fc-match" data-cat="match" onclick="selectFlow('match')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="8" r="3" stroke="#085041" stroke-width="1.3"/><circle cx="11" cy="8" r="3" stroke="#085041" stroke-width="1.3"/><path d="M8 5v6" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">Match applicants</div><div class="ff">fn_match_applicants()</div></div></div><span class="badge bg">Active</span></div><div class="fdesc">Buyers: Active. Python filter + Claude scoring. Match rationale stored in KB.</div><div class="fc-foot"><span class="fmodel">Claude Sonnet</span><span class="badge bx">New property</span></div></div>
+    <div class="fc" id="fc-val" data-cat="val" onclick="selectFlow('val')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#FAEEDA"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 13L6 8l3 3 5-7" stroke="#633806" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2v11h12" stroke="#633806" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">Valuation briefing</div><div class="ff">fn_valuation_brief()</div></div></div><span class="badge ba">3 this month</span></div><div class="fdesc">Land Registry + portal comparables. Each valuation brief auto-saved to KB as methodology record.</div><div class="fc-foot"><span class="fmodel">Claude Opus</span><span class="badge bx">Valuation booked</span></div></div>
+    <div class="fc" id="fc-social" data-cat="social" onclick="selectFlow('social')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#FBEAF0"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><path d="M11.5 9v6M9 11.5h6" stroke="#72243E" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">Social content draft</div><div class="ff">fn_social_draft()</div></div></div><span class="badge bpk">New</span></div><div class="fdesc">Brand-voice captions, hashtags, photo briefs. Approved posts saved to KB as content playbook.</div><div class="fc-foot"><span class="fmodel">Claude Sonnet</span><span class="badge bx">Content calendar</span></div></div>
+    <div class="fc" id="fc-outreach" data-cat="match" onclick="selectFlow('outreach')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#EEEDFE"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v1L8 9 2 5V4z" stroke="#3C3489" stroke-width="1.3"/><path d="M2 5v7a1 1 0 001 1h10a1 1 0 001-1V5" stroke="#3C3489" stroke-width="1.3"/></svg></div><div><div class="fn">Draft outreach</div><div class="ff">fn_draft_outreach()</div></div></div><span class="badge bp">Daily</span></div><div class="fdesc">Database outreach drafts. Successful patterns saved to KB for future cadence optimisation.</div><div class="fc-foot"><span class="fmodel">GPT-4o mini</span><span class="badge bx">Daily cadence</span></div></div>
+    <div class="fc" id="fc-kyc" data-cat="comp" onclick="selectFlow('kyc')"><div class="fc-top"><div style="display:flex;align-items:flex-start;gap:7px"><div class="fi" style="background:#F1EFE8"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="12" rx="2" stroke="#444441" stroke-width="1.3"/><path d="M6 6h4M6 8.5h4M6 11h2" stroke="#444441" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="fn">KYC / AML status</div><div class="ff">fn_kyc_status()</div></div></div><span class="badge bx">Compliance</span></div><div class="fdesc">Reads HubSpot KYC fields. Blocked escalations auto-saved to KB compliance log.</div><div class="fc-foot"><span class="fmodel">Claude Haiku</span><span class="badge bx">Any progression</span></div></div>
+  </div>
+  <div class="detail-panel">
+    <div class="dh"><div id="d-icon" style="width:28px;height:28px;border-radius:7px;background:#E1F5EE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z" stroke="#085041" stroke-width="1.3"/><path d="M2 4l6 4 6-4" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg></div><div><div class="dt" id="d-title">fn_generate_welcome()</div><div class="ds" id="d-sub">POST /api/bot/welcome · Claude Sonnet · outputs saved to KB on completion</div></div><div style="margin-left:auto;display:flex;gap:7px;align-items:center"><span class="badge bg" id="d-badge">Active</span><button class="run-btn" style="width:auto;padding:6px 14px">Run flow</button></div></div>
+    <div class="db"><div class="dl"><div><div class="slbl">Steps</div><div class="steps-list" id="d-steps"></div></div><div><div class="slbl">Input schema</div><div class="schema-box" id="d-input"></div></div></div><div class="dr-col"><div><div class="slbl">Output schema</div><div class="schema-box" id="d-output"></div></div><div><div class="slbl">Validation</div><div class="val-box" id="d-val"></div></div><div class="kyc-gate" id="d-kyc" style="display:none"><svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 4v4c0 3 2.5 4.7 5 5.5 2.5-.8 5-2.5 5-5.5V4L7 1z" stroke="#085041" stroke-width="1.3"/><path d="M5 7l1.5 1.5L9 6" stroke="#085041" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>KYC complete required before progression</div></div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ KNOWLEDGE BASE ══════════════════════ -->
+<div class="page" id="page-kb">
+
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-size:15px;font-weight:500">Knowledge base</div>
+      <div style="font-size:11px;color:#888780;margin-top:2px">Chat captures · flow outputs · source documents · context available to all models</div>
+    </div>
+    <div style="display:flex;gap:7px">
+      <button class="btn-g">Import from Notion</button>
+      <button class="btn-p"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#E1F5EE" stroke-width="1.5" stroke-linecap="round"/></svg>Add entry</button>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="kb-stats">
+    <div class="kb-stat"><div class="kb-stat-val">24</div><div class="kb-stat-label">Total entries</div></div>
+    <div class="kb-stat"><div class="kb-stat-val" style="color:#D4537E">8</div><div class="kb-stat-label">From chats</div></div>
+    <div class="kb-stat"><div class="kb-stat-val" style="color:#3C3489">6</div><div class="kb-stat-label">From flow runs</div></div>
+    <div class="kb-stat"><div class="kb-stat-val">10</div><div class="kb-stat-label">Source docs</div></div>
+    <div class="kb-stat"><div class="kb-stat-val" style="color:#0F6E56">91%</div><div class="kb-stat-label">Context coverage</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:14px;flex:1;min-height:0">
+
+    <!-- List -->
+    <div style="display:flex;flex-direction:column;gap:8px;overflow-y:auto">
+      <div style="display:flex;gap:5px;flex-wrap:wrap">
+        <div class="kb-filter active" id="kf-all" onclick="filterKB('all')">All</div>
+        <div class="kb-filter" id="kf-chat" onclick="filterKB('chat')" style="border-color:#D4537E;color:#72243E">From chats</div>
+        <div class="kb-filter" id="kf-flow" onclick="filterKB('flow')">From flows</div>
+        <div class="kb-filter" id="kf-doc" onclick="filterKB('doc')">Source docs</div>
+      </div>
+
+      <!-- Chat captures -->
+      <div style="font-size:9px;font-weight:600;color:#D4537E;letter-spacing:.5px;text-transform:uppercase;padding:2px 0">From chats &amp; flow runs</div>
+
+      <div class="kb-item sel" id="kbi-kb-match-w11" data-cat="chat" onclick="selectKB('kb-match-w11')">
+        <div class="kb-item-top"><div class="kb-item-title">W11 applicant matching criteria playbook</div><span class="kb-type kt-playbook">Playbook</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">chat capture</span><span class="kb-provenance">Saved by Olesya · 4 min ago</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-opus">Opus</span><span class="model-tag-sm mt-haiku">Haiku</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <div class="kb-item" id="kbi-kb-val-method" data-cat="flow" onclick="selectKB('kb-val-method')">
+        <div class="kb-item-top"><div class="kb-item-title">Valuation methodology — W11 spring 2026</div><span class="kb-type kt-playbook">Playbook</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">flow output</span><span class="kb-provenance">fn_valuation_brief · 22 Abbotsbury · 2d ago</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-opus">Opus</span><span class="model-tag-sm mt-haiku">Haiku</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <div class="kb-item" id="kbi-kb-kyc-flow" data-cat="flow" onclick="selectKB('kb-kyc-flow')">
+        <div class="kb-item-top"><div class="kb-item-title">KYC escalation workflow — overdue contacts</div><span class="kb-type kt-workflow">Workflow</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">flow output</span><span class="kb-provenance">fn_kyc_status · Mrs Patterson · yesterday</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-opus">Opus</span><span class="model-tag-sm mt-haiku">Haiku</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <div class="kb-item" id="kbi-kb-social-voice" data-cat="chat" onclick="selectKB('kb-social-voice')">
+        <div class="kb-item-top"><div class="kb-item-title">Social caption rules — Curtis Sloane voice</div><span class="kb-type kt-playbook">Playbook</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">chat capture</span><span class="kb-provenance">Saved by Olesya · Mon 14 Apr</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-opus">Opus</span><span class="model-tag-sm mt-haiku">Haiku</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <div class="kb-item" data-cat="chat" onclick="selectKB('kb-outreach-pattern')">
+        <div class="kb-item-top"><div class="kb-item-title">Database outreach — high-response patterns</div><span class="kb-type kt-playbook">Playbook</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">chat capture</span><span class="kb-provenance">Saved by Marta · Mon 14 Apr</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <div class="kb-item" data-cat="flow" onclick="void 0">
+        <div class="kb-item-top"><div class="kb-item-title">Applicant registration SOP — S. Chen session</div><span class="kb-type kt-sop">SOP</span></div>
+        <div class="kb-item-meta"><span class="kb-type kt-capture" style="font-size:9px">flow output</span><span class="kb-provenance">fn_register_applicant · Today · auto-generated</span></div>
+        <div class="kb-item-meta" style="margin-top:4px"><span style="font-size:9px;color:#888780">Available in:</span><div class="kb-models"><span class="model-tag-sm mt-sonnet">Sonnet</span><span class="model-tag-sm mt-opus">Opus</span><span class="model-tag-sm mt-haiku">Haiku</span><span class="model-tag-sm mt-gpt">GPT-4o</span></div></div>
+      </div>
+
+      <!-- Source docs -->
+      <div style="font-size:9px;font-weight:600;color:#888780;letter-spacing:.5px;text-transform:uppercase;padding:6px 0 2px">Source documents</div>
+
+      <div class="kb-item" data-cat="doc" onclick="void 0">
+        <div class="kb-item-top"><div class="kb-item-title">New contact process guide</div><span class="kb-type kt-doc">Doc</span></div>
+        <div class="kb-item-meta"><span class="kb-provenance">Notion · Updated today</span><div class="kb-models" style="margin-left:4px"><span class="model-tag-sm mt-human">Human</span></div></div>
+      </div>
+      <div class="kb-item" data-cat="doc" onclick="void 0">
+        <div class="kb-item-top"><div class="kb-item-title">Brand voice &amp; execution plan</div><span class="kb-type kt-doc">Doc</span></div>
+        <div class="kb-item-meta"><span class="kb-provenance">Notion · Apr 2025</span><div class="kb-models" style="margin-left:4px"><span class="model-tag-sm mt-human">Human</span></div></div>
+      </div>
+      <div class="kb-item" data-cat="doc" onclick="void 0">
+        <div class="kb-item-top"><div class="kb-item-title">Active pipeline guide — Tier 1/2/3</div><span class="kb-type kt-doc">Doc</span></div>
+        <div class="kb-item-meta"><span class="kb-provenance">Notion · Apr 10</span><div class="kb-models" style="margin-left:4px"><span class="model-tag-sm mt-human">Human</span></div></div>
+      </div>
+    </div>
+
+    <!-- Detail -->
+    <div class="kb-detail">
+      <div class="kb-detail-hdr">
+        <div class="kb-detail-icon" style="background:#E1F5EE" id="kd-icon">🏠</div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:500;color:#1a1a18;margin-bottom:2px" id="kd-title">W11 applicant matching criteria playbook</div>
+          <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap">
+            <span class="kb-type kt-playbook" id="kd-type">Playbook</span>
+            <span style="font-size:10px;color:#888780" id="kd-provenance">Captured from chat · Claude Sonnet · Saved by Olesya · 4 min ago</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end">
+          <button class="btn-p" style="font-size:11px;padding:5px 12px">Use in chat</button>
+          <button class="btn-g" style="font-size:10px">Edit entry</button>
+        </div>
+      </div>
+
+      <div class="kb-detail-body">
+
+        <!-- Content -->
+        <div class="kb-detail-section" id="kd-steps-section">
+          <div class="kb-detail-label">Playbook steps</div>
+          <div id="kd-steps"></div>
+        </div>
+
+        <!-- Notes -->
+        <div class="kb-detail-section">
+          <div class="kb-detail-label">Context note</div>
+          <div class="kb-detail-text" id="kd-note" style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:7px;padding:9px 11px;font-size:11px;line-height:1.6;color:#5F5E5A"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <!-- Provenance trail -->
+          <div class="kb-detail-section" style="margin-bottom:0">
+            <div class="kb-detail-label">Provenance trail</div>
+            <div class="prov-trail" id="kd-prov"></div>
+          </div>
+
+          <!-- Context availability -->
+          <div class="kb-detail-section" style="margin-bottom:0">
+            <div class="kb-detail-label">Available to models</div>
+            <div id="kd-models">
+              <div class="ctx-row"><span class="ctx-model">Claude Sonnet</span><span class="ctx-avail ctx-yes">✓ Loaded automatically</span></div>
+              <div class="ctx-row"><span class="ctx-model">Claude Opus</span><span class="ctx-avail ctx-yes">✓ Loaded automatically</span></div>
+              <div class="ctx-row"><span class="ctx-model">Claude Haiku</span><span class="ctx-avail ctx-yes">✓ Loaded automatically</span></div>
+              <div class="ctx-row"><span class="ctx-model">GPT-4o / GPT-4o mini</span><span class="ctx-avail ctx-yes">✓ Loaded automatically</span></div>
+              <div class="ctx-row" style="padding-top:8px;border-top:1px solid #F5F4F0;margin-top:4px"><span style="font-size:10px;color:#888780">Any model switching within this workspace automatically receives this entry as system context. No re-upload required.</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ SOCIAL (abbreviated) ══════════════════════ -->
+<div class="page" id="page-sm">
+  <div style="display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:15px;font-weight:500">Social management</div><div style="font-size:11px;color:#888780;margin-top:2px">fn_social_draft() · Make.com · Instagram + LinkedIn · Mon/Wed/Fri</div></div><button class="btn-p">Draft new post</button></div>
+  <div style="background:#FAEEDA;border:1px solid #EF9F27;border-radius:9px;padding:9px 13px;display:flex;align-items:center;gap:9px"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#633806" stroke-width="1.3"/><path d="M8 5v4M8 11v.5" stroke="#633806" stroke-width="1.5" stroke-linecap="round"/></svg><div style="flex:1;font-size:11px;color:#633806"><span style="font-weight:500">7 posts awaiting director approval</span> — CS-02 through CS-09 are in draft. Approved posts fire automatically to Make.com. Approved captions are saved to KB as content playbook.</div><button class="btn-g" style="font-size:10px;border-color:#EF9F27;color:#633806" onclick="showPage('kb')">View in KB →</button></div>
+  <div class="two-col">
+    <div class="card"><div class="slbl">April content schedule</div><div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #F5F4F0"><span style="font-size:10px;font-family:'Courier New',monospace;color:#888780;min-width:45px">CS-01</span><div style="flex:1"><div style="font-size:11px;font-weight:500">Hero relaunch — Belonging</div><div style="font-size:10px;color:#888780">7 Apr · Carousel 6 · IG + LI</div></div><span class="badge bg">Live</span><span style="font-size:9px;padding:1px 5px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">KB ✓</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #F5F4F0"><span style="font-size:10px;font-family:'Courier New',monospace;color:#888780;min-width:45px">CS-02</span><div style="flex:1"><div style="font-size:11px;font-weight:500">Abbotsbury Rd morning — Abundance</div><div style="font-size:10px;color:#888780">9 Apr · Reel 30–45s · IG</div></div><span style="font-size:9px;padding:2px 7px;border-radius:10px;background:#F1EFE8;color:#888780">Draft</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #F5F4F0"><span style="font-size:10px;font-family:'Courier New',monospace;color:#888780;min-width:45px">CS-03</span><div style="flex:1"><div style="font-size:11px;font-weight:500">40 years of buyers — Local authority</div><div style="font-size:10px;color:#888780">11 Apr · Single · LI</div></div><span style="font-size:9px;padding:2px 7px;border-radius:10px;background:#F1EFE8;color:#888780">Draft</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #F5F4F0"><span style="font-size:10px;font-family:'Courier New',monospace;color:#888780;min-width:45px">CS-04</span><div style="flex:1"><div style="font-size:11px;font-weight:500">Wisteria season — Abundance</div><div style="font-size:10px;color:#888780">14 Apr · Carousel 5 · IG</div></div><span style="font-size:9px;padding:2px 7px;border-radius:10px;background:#FAEEDA;color:#633806">Due today</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:6px 0"><span style="font-size:10px;font-family:'Courier New',monospace;color:#888780;min-width:45px">CS-05–09</span><div style="flex:1"><div style="font-size:11px;color:#888780">Discovery · Belonging · Local authority posts</div></div><span style="font-size:9px;padding:2px 7px;border-radius:10px;background:#F1EFE8;color:#888780">Draft</span></div>
+    </div></div>
+    <div class="card"><div class="slbl">KB — from social flow outputs</div><div style="font-size:11px;color:#5F5E5A;line-height:1.6;margin-bottom:10px">Approved posts and their captions are automatically saved to the knowledge base as content playbook entries. Every future fn_social_draft() call loads previous approved captions as style reference — so voice consistency improves over time without re-prompting.</div><div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:8px;padding:6px;background:#F5F4F0;border-radius:7px"><span style="font-size:12px">🎨</span><div style="flex:1"><div style="font-size:11px;font-weight:500;color:#1a1a18">Social caption rules — CS voice</div><div style="font-size:10px;color:#888780">15 rules · all models · updated Mon 14 Apr</div></div><button class="btn-g" style="font-size:10px" onclick="showPage('kb');selectKB('kb-social-voice')">View</button></div><div style="display:flex;align-items:center;gap:8px;padding:6px;background:#F5F4F0;border-radius:7px"><span style="font-size:12px">📅</span><div style="flex:1"><div style="font-size:11px;font-weight:500;color:#1a1a18">CS-01 approved — caption archived</div><div style="font-size:10px;color:#888780">Belonging pillar · 7 Apr · Claude Sonnet</div></div><button class="btn-g" style="font-size:10px" onclick="showPage('kb')">View</button></div></div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════ APPS HUB (abbreviated) ══════════════════════ -->
+<div class="page" id="page-ah">
+  <div style="display:flex;align-items:center;justify-content:space-between"><div><div style="font-size:15px;font-weight:500">Apps hub</div><div style="font-size:11px;color:#888780;margin-top:2px">Connected integrations · data flows to KB automatic</div></div><button class="btn-p">Add integration</button></div>
+  <div class="card"><div class="slbl" style="margin-bottom:10px">Connected apps</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#FFF1E6;display:flex;align-items:center;justify-content:center;font-size:16px">🟠</div><div><div style="font-size:12px;font-weight:500">HubSpot CRM</div><div style="font-size:10px;color:#888780">1,298 contacts</div></div></div><div style="font-size:10px;color:#5F5E5A">Contact records, KYC fields, pipeline stages, activity log. Flow outputs create HubSpot notes automatically.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#F0F0F0;display:flex;align-items:center;justify-content:center;font-size:14px">N</div><div><div style="font-size:12px;font-weight:500">Notion</div><div style="font-size:10px;color:#888780">Knowledge base source</div></div></div><div style="font-size:10px;color:#5F5E5A">Source docs sync to KB automatically. Brand voice doc injected into social flow system context on every call.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected · 6 docs</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#E8F8F0;display:flex;align-items:center;justify-content:center;font-size:14px">⚡</div><div><div style="font-size:12px;font-weight:500">Make.com</div><div style="font-size:10px;color:#888780">Social automation</div></div></div><div style="font-size:10px;color:#5F5E5A">Webhook receiver for approved social posts. Canva → Instagram → LinkedIn → HubSpot note → Drive archive.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#E8F8F0;display:flex;align-items:center;justify-content:center;font-size:16px">✓</div><div><div style="font-size:12px;font-weight:500">Claude API</div><div style="font-size:10px;color:#888780">Sonnet · Opus · Haiku</div></div></div><div style="font-size:10px;color:#5F5E5A">Multi-model routing. KB context injected automatically per request. Model switch = same context, different capability.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected · 94 calls today</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#F0F4FF;display:flex;align-items:center;justify-content:center;font-size:14px">G</div><div><div style="font-size:12px;font-weight:500">OpenAI</div><div style="font-size:10px;color:#888780">GPT-4o · GPT-4o mini</div></div></div><div style="font-size:10px;color:#5F5E5A">Outreach drafting (GPT-4o mini). KB context injected same as Claude — workspace context is model-agnostic.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected · 47 drafts</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+      <div style="background:#F5F4F0;border:1px solid #D3D1C7;border-radius:9px;padding:11px;display:flex;flex-direction:column;gap:7px"><div style="display:flex;align-items:center;gap:8px"><div style="width:30px;height:30px;border-radius:7px;background:#E8F0FE;display:flex;align-items:center;justify-content:center;font-size:14px">G</div><div><div style="font-size:12px;font-weight:500">Google Workspace</div><div style="font-size:10px;color:#888780">Gmail · Calendar · Drive</div></div></div><div style="font-size:10px;color:#5F5E5A">Calendar events shown in Command Centre. Gmail dispatch for welcome messages. Drive archive for social assets.</div><div style="display:flex;align-items:center;gap:5px"><div style="width:5px;height:5px;border-radius:50%;background:#1D9E75"></div><span style="font-size:10px;color:#085041;font-weight:500">Connected</span><button class="btn-g" style="font-size:9px;margin-left:auto">Manage</button></div></div>
+    </div>
+  </div>
+  <div class="card"><div class="slbl" style="margin-bottom:8px">How KB context reaches every model</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+    <div style="background:#F5F4F0;border-radius:7px;padding:9px;text-align:center"><div style="font-size:18px;margin-bottom:5px">💬</div><div style="font-size:11px;font-weight:500;margin-bottom:3px">Chat or flow runs</div><div style="font-size:10px;color:#5F5E5A">Agent works. KB entry created automatically or saved manually.</div></div>
+    <div style="background:#F5F4F0;border-radius:7px;padding:9px;text-align:center"><div style="font-size:18px;margin-bottom:5px">📚</div><div style="font-size:11px;font-weight:500;margin-bottom:3px">Stored in KB</div><div style="font-size:10px;color:#5F5E5A">Entry tagged with type, provenance, and workspace. Indexed for retrieval.</div></div>
+    <div style="background:#F5F4F0;border-radius:7px;padding:9px;text-align:center"><div style="font-size:18px;margin-bottom:5px">🔀</div><div style="font-size:11px;font-weight:500;margin-bottom:3px">Model switches</div><div style="font-size:10px;color:#5F5E5A">Team member opens new session or changes model. Relevant KB entries injected as system context.</div></div>
+    <div style="background:#F5F4F0;border-radius:7px;padding:9px;text-align:center"><div style="font-size:18px;margin-bottom:5px">⚡</div><div style="font-size:11px;font-weight:500;margin-bottom:3px">Context available</div><div style="font-size:10px;color:#5F5E5A">New model has full operational memory. No re-briefing. No lost context. Work continues.</div></div>
+  </div></div>
+</div>
+
+</div><!-- shell -->
+
+<script>
+const PAGES=['cc','af','kb','sm','ah'];
+function showPage(id){
+  PAGES.forEach(p=>{document.getElementById('page-'+p).classList.remove('active');document.getElementById('tn-'+p).classList.remove('active')});
+  document.getElementById('page-'+id).classList.add('active');
+  document.getElementById('tn-'+id).classList.add('active');
+}
+
+// KB data
+const KB_DATA={
+  'kb-match-w11':{icon:'🏠',iconBg:'#E1F5EE',title:'W11 applicant matching criteria playbook',type:'Playbook',typeCls:'kt-playbook',prov:'Captured from chat session · Claude Sonnet · Saved by Olesya · 4 min ago',
+    steps:[{n:'1',text:'Hard filter first — Python only',note:'Budget must be ≥ property price × 0.95. Bedrooms must be within stated min/max range. Applied before any AI call.'},
+           {n:'2',text:'Must-have features are non-negotiable',note:'If applicant listed garden, parking, or quiet as must-have, properties without these are excluded regardless of score.'},
+           {n:'3',text:'Financing strength weights the score',note:'Cash buyer always scores higher than AIP. AIP held scores higher than mortgage required. AIP pending = flagged.'},
+           {n:'4',text:'KYC status is separate from match score',note:'KYC-incomplete applicants are returned in results but flagged as can_progress: false. They cannot proceed to offer.'},
+           {n:'5',text:'Top 3–5 results with rationale',note:'Each result includes a plain-English match reason. Rationale stored here for reference across sessions.'}],
+    note:'Derived from the fn_match_applicants session on 14 Ladbroke Road W11 (Apr 22). The 2-stage logic — Python hard filter then Claude scoring — was confirmed as the preferred approach after the earlier valuation session showed that AI-only filtering produced too many near-misses on budget. This playbook is loaded automatically whenever fn_match_applicants is called.',
+    provItems:[{color:'#D4537E',label:'Chat session — 14 Ladbroke Road matching',meta:'Today 09:41 · Claude Sonnet'},{color:'#7F77DD',label:'Saved to KB by Olesya',meta:'Today 09:45'},{color:'#1D9E75',label:'Available to all models in workspace',meta:'Automatic · no action needed'}]},
+
+  'kb-val-method':{icon:'📊',iconBg:'#FAEEDA',title:'Valuation methodology — W11 spring 2026',type:'Playbook',typeCls:'kt-playbook',prov:'Flow output · fn_valuation_brief() · 22 Abbotsbury Road · 2 days ago · Claude Opus',
+    steps:[{n:'1',text:'Recency weighting is critical in spring 2026',note:'Land Registry data from Q4 2025 and Q1 2026 should be weighted more heavily. Summer 2025 sales are underpriced relative to current market.'},
+           {n:'2',text:'Abbotsbury / Ladbroke Road comparable bracket',note:'Properties on these streets trade in a consistent price-per-sqft range. Use as anchor comparables for nearby instructions.'},
+           {n:'3',text:'Garden aspect adds 8–12% in W11',note:'South-facing gardens on W11 properties consistently command a premium vs. north-facing equivalents. Flag in valuation briefing.'},
+           {n:'4',text:'Off-market discount is typically 3–5%',note:'Properties introduced off-market and sold without portal listing transact at a modest discount vs. portal-listed equivalents. Honest to note this to clients.'}],
+    note:'Generated from the fn_valuation_brief() run for 22 Abbotsbury Road on Apr 20. Claude Opus analysis surfaced four W11-specific pricing patterns that are not in the standard comparable methodology. Saved here so future valuation sessions load these as context — avoiding repeated discovery.',
+    provItems:[{color:'#BA7517',label:'fn_valuation_brief() run — 22 Abbotsbury Rd',meta:'Apr 20 · Claude Opus'},{color:'#7F77DD',label:'Auto-saved to KB on flow completion',meta:'Apr 20 14:22'},{color:'#1D9E75',label:'Available to all models in workspace',meta:'Automatic'}]},
+
+  'kb-kyc-flow':{icon:'⚖️',iconBg:'#FCEBEB',title:'KYC escalation workflow — overdue contacts',type:'Workflow',typeCls:'kt-workflow',prov:'Flow output · fn_kyc_status() · Mrs Patterson · yesterday · Claude Haiku',
+    steps:[{n:'1',text:'Day 1–3 overdue: send document reminder email',note:'Standard reminder via HubSpot sequence. Log the send in activity. Set follow-up task for day 4.'},
+           {n:'2',text:'Day 4–6 overdue: personal call from agent',note:'Agent calls directly. Log outcome. If voicemail: leave message referencing specific missing document. Update Lead Status.'},
+           {n:'3',text:'Day 7+ overdue: escalate to manager',note:'Flag in HubSpot. Pipeline stage does not advance. Manager reviews whether to extend deadline or mark as stalled.'},
+           {n:'4',text:'No property introductions or offer stage without KYC clear',note:'This is a hard gate in fn_kyc_status(). can_progress: false until all three items are received and logged.'}],
+    note:'Triggered by Mrs Patterson KYC case (6 days overdue as of Apr 22). The escalation path was determined in a chat session and saved here. This workflow is now loaded as context whenever fn_kyc_status() returns a blocked status — so any team member or model can follow the same escalation path.',
+    provItems:[{color:'#E24B4A',label:'fn_kyc_status() blocked — Mrs Patterson',meta:'Yesterday · Claude Haiku'},{color:'#D4537E',label:'Escalation steps captured in chat',meta:'Yesterday 16:30 · Claude Sonnet'},{color:'#7F77DD',label:'Saved to KB by Marta',meta:'Yesterday 16:45'},{color:'#1D9E75',label:'Available to all models',meta:'Automatic'}]},
+
+  'kb-social-voice':{icon:'🎨',iconBg:'#FBEAF0',title:'Social caption rules — Curtis Sloane voice',type:'Playbook',typeCls:'kt-playbook',prov:'Chat capture · Olesya · Mon 14 Apr · Claude Sonnet',
+    steps:[{n:'1',text:'Never use: luxury, prestigious, stunning, opportunity',note:'These are estate agent clichés that have lost all meaning. Flag any AI output containing these words for regeneration.'},
+           {n:'2',text:'Instagram: 100–150 words, no exclamation marks',note:'Storytelling first, property last. Caption should feel like a letter to the neighbourhood, not an advertisement.'},
+           {n:'3',text:'LinkedIn: 100–200 words, one clear idea',note:'Personal observation → insight → neighbourhood connection. Start with a real observation, not a statistic.'},
+           {n:'4',text:'Hashtags: 3–5 maximum',note:'Always include #HollandPark #W11 #CurtisSloane. One seasonal or topical tag. No generic property hashtags.'},
+           {n:'5',text:'Rotate through: Abundance · Belonging · Discovery · Local Authority',note:'Each post belongs to one pillar. Balance across the month. Never two consecutive posts in the same pillar.'}],
+    note:'Distilled from the brand voice document and the first fn_social_draft() session. These 15 rules are injected into the system context of every fn_social_draft() call. Approved captions are also stored here as style references — so voice consistency improves over time.',
+    provItems:[{color:'#D4537E',label:'Brand voice doc ingested from Notion',meta:'Apr 14 · system'},{color:'#D4537E',label:'Rules distilled in chat session',meta:'Apr 14 · Claude Sonnet'},{color:'#7F77DD',label:'Saved to KB by Olesya',meta:'Apr 14 17:02'},{color:'#1D9E75',label:'Injected into fn_social_draft() system context',meta:'Automatic on every call'}]}
+};
+
+function selectKB(id){
+  document.querySelectorAll('.kb-item').forEach(i=>i.classList.remove('sel'));
+  document.querySelectorAll('.kb-si').forEach(i=>i.classList.remove('active'));
+  const item=document.getElementById('kbi-'+id);
+  if(item)item.classList.add('sel');
+  const d=KB_DATA[id];
+  if(!d)return;
+  document.getElementById('kd-icon').textContent=d.icon;
+  document.getElementById('kd-icon').style.background=d.iconBg;
+  document.getElementById('kd-title').textContent=d.title;
+  document.getElementById('kd-type').textContent=d.type;
+  document.getElementById('kd-type').className='kb-type '+d.typeCls;
+  document.getElementById('kd-provenance').textContent=d.prov;
+  document.getElementById('kd-steps').innerHTML=d.steps.map(s=>`<div class="kb-step"><div class="kb-step-n">${s.n}</div><div><div class="kb-step-text">${s.text}</div><div class="kb-step-note">${s.note}</div></div></div>`).join('');
+  document.getElementById('kd-note').textContent=d.note;
+  document.getElementById('kd-prov').innerHTML=d.provItems.map(p=>`<div class="prov-item"><div class="prov-dot" style="background:${p.color}"></div><span class="prov-label">${p.label}</span><span class="prov-meta">${p.meta}</span></div>`).join('');
+}
+
+// Action flows
+const FD={
+  welcome:{ib:'#E1F5EE',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z" stroke="#085041" stroke-width="1.3"/><path d="M2 4l6 4 6-4" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_generate_welcome()',s:'POST /api/bot/welcome · Claude Sonnet · output → KB on completion',b:'Active',bc:'bg',
+    st:[{c:'sng',n:'1',nm:'Intent classified',d:'WELCOME_CLIENT detected. Required fields validated.'},{c:'sng',n:'2',nm:'HubSpot create',d:'Contact created. Lifecycle Stage → Welcome Sent. Source tagged.'},{c:'snp',n:'3',nm:'Claude drafts message',d:'Sonnet produces welcome. Max 1,000 tokens. Brand voice context loaded from KB.'},{c:'sng',n:'4',nm:'Dispatch or return + KB save',d:'dispatch: true → HubSpot email. Completed output auto-saved to KB with provenance.'}],
+    inp:[{f:'client_name',t:'string',r:1},{f:'source',t:'enum',r:1},{f:'agent_name',t:'string',r:1},{f:'dispatch',t:'boolean',r:1},{f:'budget_gbp',t:'integer',r:0}],
+    out:[{f:'status',t:'"ok"|"error"'},{f:'message_draft',t:'string'},{f:'hubspot_contact_id',t:'string|null'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'client_name',r:'min 2 chars'},{f:'source',r:'Rightmove|Zoopla|Referral|Direct|Other'},{f:'dispatch',r:'boolean required'}],kyc:0},
+  applicant:{ib:'#EEEDFE',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="#3C3489" stroke-width="1.3"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_register_applicant()',s:'POST /api/bot/register-applicant · Claude Sonnet',b:'Running',bc:'bp',
+    st:[{c:'sng',n:'1',nm:'Profile intake',d:'Name, email, budget, bedrooms, types, financing, channel, must-haves.'},{c:'sng',n:'2',nm:'HubSpot record',d:'Contact. Lifecycle Stage → Registered & Profiled. Applicant Profile group populated.'},{c:'sng',n:'3',nm:'KYC init',d:'pof_received, id_received, address_received all false.'},{c:'snp',n:'4',nm:'Python hard filter',d:'Budget and bedrooms filter on Buyers: Active.'},{c:'snp',n:'5',nm:'Claude scoring',d:'0.0–1.0: must-haves, financing, timeline. KB context: W11 matching criteria loaded.'},{c:'sna',n:'6',nm:'Output + KB save',d:'Welcome draft + top 3 matches returned. Session auto-saved to KB as SOP.'}],
+    inp:[{f:'full_name',t:'string',r:1},{f:'email',t:'string',r:1},{f:'budget_gbp',t:'integer',r:1},{f:'bedrooms_min',t:'integer',r:1},{f:'financing',t:'enum',r:1},{f:'preferred_channel',t:'enum',r:1},{f:'property_types',t:'[string]',r:1},{f:'must_have',t:'[string]',r:0}],
+    out:[{f:'applicant_id',t:'string'},{f:'kyc_checklist',t:'object'},{f:'first_matches',t:'[PropertyMatch]'},{f:'welcome_draft',t:'string'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'email',r:'valid format'},{f:'budget_gbp',r:'min 100,000'},{f:'financing',r:'cash|mortgage_aip|mortgage_no_aip|unknown'}],kyc:1},
+  match:{ib:'#E1F5EE',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="8" r="3" stroke="#085041" stroke-width="1.3"/><circle cx="11" cy="8" r="3" stroke="#085041" stroke-width="1.3"/><path d="M8 5v6" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_match_applicants()',s:'POST /api/bot/match-applicants · Claude Sonnet',b:'Active',bc:'bg',
+    st:[{c:'sng',n:'1',nm:'KB context loaded',d:'W11 matching criteria playbook injected as system context. Applies to scoring and rationale.'},{c:'sng',n:'2',nm:'Python hard filter',d:'Buyers: Active. Budget and bedrooms filter. No AI call.'},{c:'snp',n:'3',nm:'Claude scoring',d:'0.0–1.0 with KB-informed rationale. Plain-English match reason per applicant.'},{c:'sng',n:'4',nm:'Results + KB update',d:'Top N returned. Match rationale appended to KB playbook for future reference.'}],
+    inp:[{f:'property_ref',t:'string',r:1},{f:'price_gbp',t:'integer',r:0},{f:'bedrooms',t:'integer',r:0},{f:'features',t:'[string]',r:0},{f:'max_results',t:'integer',r:0}],
+    out:[{f:'property',t:'object'},{f:'matches',t:'[ApplicantMatch]'},{f:'total_searched',t:'integer'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'property_ref',r:'required'},{f:'max_results',r:'max 20'},{f:'can_progress',r:'false blocks offer if KYC incomplete'}],kyc:1},
+  val:{ib:'#FAEEDA',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 13L6 8l3 3 5-7" stroke="#633806" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2v11h12" stroke="#633806" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_valuation_brief()',s:'POST /api/bot/valuation-brief · Claude Opus',b:'3 this month',bc:'ba',
+    st:[{c:'sng',n:'1',nm:'KB context loaded',d:'Previous W11 valuation methodology playbook injected. Recency weights and micro-market patterns applied.'},{c:'sng',n:'2',nm:'Land Registry + portal pull',d:'Sold prices, active listings. Recency weighted. 5 comparables max.'},{c:'snp',n:'3',nm:'Claude Opus analysis',d:'Price range, price-per-sqft, market commentary. New patterns flagged for KB update.'},{c:'sna',n:'4',nm:'Brief + KB save',d:'Full brief returned. Any new W11 pricing patterns discovered are appended to KB methodology playbook.'}],
+    inp:[{f:'property_address',t:'string',r:1},{f:'postcode',t:'string',r:1},{f:'property_type',t:'enum',r:1},{f:'bedrooms',t:'integer',r:1},{f:'sqft',t:'integer',r:0},{f:'condition',t:'enum',r:0}],
+    out:[{f:'sold_comparables',t:'[Comparable]'},{f:'price_range_low',t:'integer'},{f:'price_per_sqft',t:'float|null'},{f:'ai_commentary',t:'string'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'postcode',r:'valid UK format'},{f:'property_type',r:'house|flat|maisonette'}],kyc:0},
+  social:{ib:'#FBEAF0',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1.5" stroke="#72243E" stroke-width="1.3"/><path d="M11.5 9v6M9 11.5h6" stroke="#72243E" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_social_draft()',s:'POST /api/bot/social-draft · Claude Sonnet',b:'New',bc:'bpk',
+    st:[{c:'snpk',n:'1',nm:'KB context loaded',d:'Social caption rules playbook + all previously approved captions loaded. Voice consistency improves with every approved post.'},{c:'snp',n:'2',nm:'Claude drafts captions',d:'IG caption (100–150w) and LI caption (100–200w). Rules enforced: no luxury/prestigious/stunning. Pillar-aware.'},{c:'snpk',n:'3',nm:'Photo direction + webhook payload',d:'Photo brief generated. Make.com payload assembled.'},{c:'sna',n:'4',nm:'Approval gate + KB save',d:'Status: draft until approved. On approval → webhook fires + approved caption saved to KB as style reference.'}],
+    inp:[{f:'pillar',t:'enum',r:1},{f:'platform',t:'enum',r:1},{f:'post_type',t:'enum',r:1},{f:'theme',t:'string',r:1},{f:'scheduled_date',t:'date',r:1},{f:'canva_design_id',t:'string',r:0}],
+    out:[{f:'ig_caption',t:'string'},{f:'li_caption',t:'string'},{f:'ig_hashtags',t:'string'},{f:'photo_direction',t:'string'},{f:'webhook_payload',t:'object'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'pillar',r:'Belonging|Abundance|Discovery|Local Authority'},{f:'voice',r:'no: luxury, prestigious, stunning, opportunity'},{f:'ig_caption',r:'100–150w, no exclamation marks'}],kyc:0},
+  outreach:{ib:'#EEEDFE',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4a1 1 0 011-1h10a1 1 0 011 1v1L8 9 2 5V4z" stroke="#3C3489" stroke-width="1.3"/><path d="M2 5v7a1 1 0 001 1h10a1 1 0 001-1V5" stroke="#3C3489" stroke-width="1.3"/></svg>`,t:'fn_draft_outreach()',s:'POST /api/bot/draft-outreach · GPT-4o mini',b:'Daily',bc:'bp',
+    st:[{c:'sng',n:'1',nm:'KB context loaded',d:'High-response outreach patterns playbook injected. GPT-4o mini receives same KB context as Claude models.'},{c:'snp',n:'2',nm:'Draft generated',d:'Personalised by recipient_type. ≤120 words for handwritten note. No placeholder text.'},{c:'sng',n:'3',nm:'Returned + pattern update',d:'Human reviews and delivers. High-response patterns flagged for KB update after agent review.'}],
+    inp:[{f:'recipient_name',t:'string',r:1},{f:'recipient_type',t:'enum',r:1},{f:'channel',t:'enum',r:1},{f:'agent_name',t:'string',r:1},{f:'context',t:'string',r:0}],
+    out:[{f:'draft',t:'string'},{f:'word_count',t:'integer'},{f:'tone_notes',t:'string'}],
+    val:[{f:'recipient_type',r:'long_term_resident|recent_enquirer|warm_lead|lapsed'},{f:'channel',r:'email|handwritten_note|letter'}],kyc:0},
+  kyc:{ib:'#F1EFE8',is:`<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="12" rx="2" stroke="#444441" stroke-width="1.3"/><path d="M6 6h4M6 8.5h4M6 11h2" stroke="#444441" stroke-width="1.3" stroke-linecap="round"/></svg>`,t:'fn_kyc_status()',s:'GET /api/bot/kyc-status · Claude Haiku',b:'Compliance',bc:'bx',
+    st:[{c:'sng',n:'1',nm:'KB context loaded',d:'KYC escalation workflow injected. If blocked status returned, escalation steps are immediately available in context.'},{c:'sna',n:'2',nm:'Gate evaluated + KB log',d:'can_progress: false if any item missing. Blocked cases auto-logged to KB compliance record with timestamp.'}],
+    inp:[{f:'name_or_id',t:'string',r:1},{f:'type',t:'enum',r:1}],
+    out:[{f:'kyc_status',t:'"complete"|"in_progress"|"not_started"'},{f:'checklist',t:'object'},{f:'outstanding',t:'[string]'},{f:'can_progress',t:'boolean'},{f:'kb_entry_id',t:'string'}],
+    val:[{f:'type',r:'client|applicant'},{f:'can_progress',r:'false if any item false'}],kyc:1}
+};
+
+function selectFlow(id){
+  document.querySelectorAll('.fc').forEach(c=>c.classList.remove('sel'));
+  const card=document.getElementById('fc-'+id);if(card)card.classList.add('sel');
+  const f=FD[id];if(!f)return;
+  document.getElementById('d-icon').style.background=f.ib;
+  document.getElementById('d-icon').innerHTML=f.is;
+  document.getElementById('d-title').textContent=f.t;
+  document.getElementById('d-sub').textContent=f.s;
+  document.getElementById('d-badge').textContent=f.b;
+  document.getElementById('d-badge').className='badge '+f.bc;
+  document.getElementById('d-steps').innerHTML=f.st.map(s=>`<div class="step-it"><div class="sn ${s.c}">${s.n}</div><div><div class="sname">${s.nm}</div><div class="sdetail">${s.d}</div></div></div>`).join('');
+  document.getElementById('d-input').innerHTML='<div class="stitle">Input fields</div>'+f.inp.map(i=>`<div class="srow"><span class="sf">${i.f}</span><span class="st">${i.t}</span><span class="${i.r?'sreq':'sopt'}">${i.r?'req':'opt'}</span></div>`).join('');
+  document.getElementById('d-output').innerHTML='<div class="stitle">Output fields</div>'+f.out.map(o=>`<div class="srow"><span class="sf">${o.f}</span><span class="st">${o.t}</span></div>`).join('');
+  document.getElementById('d-val').innerHTML=f.val.map(v=>`<div class="vrow"><span class="vf">${v.f}</span><span class="vr">${v.r}</span></div>`).join('');
+  document.getElementById('d-kyc').style.display=f.kyc?'flex':'none';
+}
+
+function filterFlows(cat){
+  document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));
+  document.getElementById('fa-'+cat).classList.add('active');
+  document.querySelectorAll('.fc').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none'});
+}
+
+function filterKB(cat){
+  document.querySelectorAll('.kb-filter').forEach(f=>f.classList.remove('active'));
+  document.getElementById('kf-'+cat).classList.add('active');
+  document.querySelectorAll('.kb-item').forEach(i=>{i.style.display=(cat==='all'||i.dataset.cat===cat)?'':'none'});
+}
+
+selectFlow('welcome');
+selectKB('kb-match-w11');
+
+// ── AGENT COMMAND WINDOW ──────────────────────────────────────
+const AGENT_RESPONSES = {
+  match: {
+    fn: 'fn_match_applicants · Buyers: Active · 18 searched · 1.4s · W11 criteria from KB',
+    html: `<div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Top matches — 14 Ladbroke Road W11</div>
+      <div class="mr"><span class="ma">Sarah Chen · £3.8M · cash</span><span class="sh">0.94</span><span class="mky kyo">KYC ✓</span></div>
+      <div class="mr"><span class="ma">James Hyde · £3.2M · AIP</span><span class="sh">0.81</span><span class="mky kyo">KYC ✓</span></div>
+      <div class="mr" style="margin-bottom:8px"><span class="ma">Tom Baker · £2.9M · AIP pend.</span><span class="sm">0.72</span><span class="mky kyw">KYC blocked</span></div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8">
+        <button class="cab" onclick="agentAction('draft-intros')">Draft intros</button>
+        <button class="cab" onclick="agentAction('hubspot')">Log to HubSpot</button>
+        <button class="cab" onclick="agentAction('set-task')">Set viewing task</button>
+        <button class="cab" style="border-color:#AFA9EC;color:#3C3489" onclick="agentAction('save-kb')">Save to KB</button>
+      </div>`
+  },
+  register: {
+    fn: 'fn_register_applicant · HubSpot · KYC initiated · 2.1s',
+    html: `<div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Applicant registered — James Hyde</div>
+      <div style="font-size:11px;color:#5F5E5A;line-height:1.6">£3.2M · 4 bed · AIP held · Email preferred<br>HubSpot record created · Lifecycle Stage: Registered & Profiled<br>KYC checklist initiated · pof_received: false · id_received: false</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8;margin-top:8px">
+        <button class="cab" onclick="agentAction('send-welcome')">Send welcome email</button>
+        <button class="cab" onclick="agentAction('first-match')">Run first match</button>
+        <button class="cab" onclick="agentAction('kyc-chase')">Set KYC task</button>
+      </div>`
+  },
+  valuation: {
+    fn: 'fn_valuation_brief · Land Registry + Zoopla · Claude Opus · 3.8s · KB: W11 methodology loaded',
+    html: `<div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Valuation brief — 22 Abbotsbury Road W11</div>
+      <div style="font-size:11px;color:#5F5E5A;line-height:1.7">Guide price range: <strong style="color:#1a1a18">£3.6M – £3.9M</strong><br>Price per sq ft: <strong style="color:#1a1a18">£1,420 – £1,540</strong><br>5 comparables · recency weighted · spring 2026<br>South-facing garden premium applied (+9%)</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8;margin-top:8px">
+        <button class="cab" onclick="agentAction('save-kb')">Save to KB</button>
+        <button class="cab" onclick="agentAction('send-brief')">Send to client</button>
+      </div>`
+  },
+  kyc: {
+    fn: 'fn_kyc_status · HubSpot · Claude Haiku · 0.6s',
+    html: `<div style="font-size:11px;font-weight:500;color:#A32D2D;margin-bottom:7px">KYC blocked — Mrs Patterson</div>
+      <div style="font-size:11px;color:#5F5E5A;line-height:1.7">pof_received: <strong style="color:#A32D2D">false</strong> · Day 6 overdue<br>id_received: ✓ &nbsp; address_received: ✓<br>can_progress: <strong style="color:#A32D2D">false</strong> — no property introductions until clear</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8;margin-top:8px">
+        <button class="cab" onclick="agentAction('whatsapp-chase')">Draft WhatsApp chase</button>
+        <button class="cab" onclick="agentAction('escalate')">Escalate to manager</button>
+        <button class="cab" onclick="agentAction('set-task')">Set follow-up task</button>
+      </div>`
+  },
+  outreach: {
+    fn: 'fn_draft_outreach · GPT-4o mini · 30-year residents · W11 · 1.1s',
+    html: `<div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Outreach draft — 30-year W11 residents</div>
+      <div style="font-size:11px;color:#5F5E5A;font-style:italic;line-height:1.7;background:#F9F9F7;padding:8px 10px;border-radius:6px;margin-bottom:8px">"Dear [Name], Spring on Portland Road is always a good moment to pause and think about what's next. If you've ever wondered what your home might achieve in today's market, I'd love to walk you through it — no pressure, just a conversation. Curtis."</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8">
+        <button class="cab" onclick="agentAction('approve-send')">Approve &amp; send</button>
+        <button class="cab" onclick="agentAction('save-kb')">Save pattern to KB</button>
+        <button class="cab" onclick="agentAction('regenerate')">Regenerate</button>
+      </div>`
+  },
+  social: {
+    fn: 'fn_social_draft · Claude Sonnet · Abundance pillar · brand voice from KB · 1.8s',
+    html: `<div style="font-size:11px;font-weight:500;color:#1a1a18;margin-bottom:7px">Social draft — CS-04 · Wisteria season</div>
+      <div style="font-size:11px;color:#5F5E5A;font-style:italic;line-height:1.7;background:#F9F9F7;padding:8px 10px;border-radius:6px;margin-bottom:8px"><strong style="font-style:normal;font-size:10px;color:#888780">Instagram · 127 words</strong><br>"The wisteria on Addison Road has come back. It does this every year — quietly, extravagantly — and every year it stops people on the pavement. This is what we mean when we say Holland Park is not just a postcode. It is a place that gives something back."<br><span style="font-size:10px;color:#888780">#HollandPark #W11 #CurtisSloane</span></div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;padding-top:8px;border-top:1px solid #F1EFE8">
+        <button class="cab" onclick="agentAction('approve-post')" style="background:#1D9E75;border-color:#1D9E75;color:#E1F5EE">Approve &amp; schedule</button>
+        <button class="cab" onclick="agentAction('save-kb')">Save to KB</button>
+        <button class="cab" onclick="agentAction('regenerate')">Regenerate</button>
+      </div>`
+  },
+  default: {
+    fn: 'Claude Sonnet · KB context loaded',
+    html: `<div style="font-size:11px;color:#5F5E5A;line-height:1.65">I can run these flows from a natural language command:<br><br>
+      <span style="font-weight:500;color:#1a1a18">Match applicants</span> — "match for [address]"<br>
+      <span style="font-weight:500;color:#1a1a18">Register applicant</span> — "register [name], [budget], [beds]"<br>
+      <span style="font-weight:500;color:#1a1a18">Valuation brief</span> — "valuation brief [address]"<br>
+      <span style="font-weight:500;color:#1a1a18">KYC check</span> — "KYC status [name]"<br>
+      <span style="font-weight:500;color:#1a1a18">Draft outreach</span> — "draft outreach for [segment]"<br>
+      <span style="font-weight:500;color:#1a1a18">Social draft</span> — "draft social [pillar/theme]"<br>
+      <span style="font-weight:500;color:#1a1a18">Set task</span> — "set task [description] for [person]"<br><br>
+      Or use the chips above to start any flow instantly.</div>`
+  }
+};
+
+function detectIntent(text) {
+  const t = text.toLowerCase();
+  if (t.includes('match') || t.includes('ladbroke') || t.includes('abbotsbury') || t.includes('portland')) return 'match';
+  if (t.includes('register') || t.includes('applicant') || t.includes('sign up')) return 'register';
+  if (t.includes('valuation') || t.includes('brief') || t.includes('comparable') || t.includes('price')) return 'valuation';
+  if (t.includes('kyc') || t.includes('patterson') || t.includes('compliance') || t.includes('aml')) return 'kyc';
+  if (t.includes('outreach') || t.includes('resident') || t.includes('database') || t.includes('letter') || t.includes('handwritten')) return 'outreach';
+  if (t.includes('social') || t.includes('instagram') || t.includes('linkedin') || t.includes('post') || t.includes('wisteria') || t.includes('caption')) return 'social';
+  return 'default';
+}
+
+function appendUserMsg(text) {
+  const body = document.getElementById('agent-body');
+  const el = document.createElement('div');
+  el.style.cssText = 'display:flex;justify-content:flex-end';
+  el.innerHTML = `<div style="background:#F1EFE8;border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:12px;color:#1a1a18;max-width:80%">${text}</div>`;
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+}
+
+function appendTyping() {
+  const body = document.getElementById('agent-body');
+  const el = document.createElement('div');
+  el.id = 'agent-typing';
+  el.style.cssText = 'display:flex;align-items:flex-start;gap:8px';
+  el.innerHTML = `<div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+    <div style="background:#F5F4F0;border-radius:2px 10px 10px 10px;padding:9px 12px;font-size:12px;color:#888780">Running flow<span id="dots">.</span></div>`;
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+  let d = 0;
+  return setInterval(() => { const dots = document.getElementById('dots'); if(dots) dots.textContent = ['.','..',`...`][d++ % 3]; }, 400);
+}
+
+function appendAgentMsg(intent) {
+  const body = document.getElementById('agent-body');
+  const typing = document.getElementById('agent-typing');
+  if (typing) typing.remove();
+  const r = AGENT_RESPONSES[intent] || AGENT_RESPONSES.default;
+  const el = document.createElement('div');
+  el.style.cssText = 'display:flex;align-items:flex-start;gap:8px';
+  el.innerHTML = `<div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+    <div style="max-width:92%">
+      <div style="font-size:9px;color:#B4B2A9;margin-bottom:3px;padding-left:2px">${r.fn}</div>
+      <div style="background:#fff;border:1px solid #D3D1C7;border-radius:2px 10px 10px 10px;padding:10px 12px">${r.html}</div>
+    </div>`;
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+}
+
+function sendAgent() {
+  const input = document.getElementById('agent-input');
+  const text = input.value.trim();
+  if (!text) return;
+  appendUserMsg(text);
+  input.value = '';
+  const intent = detectIntent(text);
+  const timer = appendTyping();
+  setTimeout(() => { clearInterval(timer); appendAgentMsg(intent); }, 900 + Math.random() * 600);
+}
+
+function runChip(text) {
+  appendUserMsg(text);
+  const intent = detectIntent(text);
+  const timer = appendTyping();
+  setTimeout(() => { clearInterval(timer); appendAgentMsg(intent); }, 900 + Math.random() * 600);
+}
+
+function agentAction(action) {
+  const body = document.getElementById('agent-body');
+  const msgs = {
+    'draft-intros': '✓ Introduction drafts ready for Sarah Chen and James Hyde — open Messenger to review and approve.',
+    'hubspot': '✓ Match logged to HubSpot — 14 Ladbroke Road activity note added to all 3 contact records.',
+    'set-task': '✓ Task set — Viewing: Sarah Chen · 14 Ladbroke Road · Thu 24 Apr · assigned to Marta · HubSpot task created.',
+    'save-kb': '✓ Saved to Knowledge Base as playbook — available to Claude Sonnet, Opus, Haiku, and GPT-4o automatically.',
+    'send-welcome': '✓ Welcome email sent via Gmail — HubSpot Lifecycle Stage updated to Welcome Sent.',
+    'first-match': '✓ Running first match for James Hyde — results in a moment.',
+    'kyc-chase': '✓ KYC follow-up task set — Marta notified · due today.',
+    'whatsapp-chase': '✓ WhatsApp draft ready for Mrs Patterson in Messenger — KYC day 6 escalation tone.',
+    'escalate': '✓ Escalated — Curtis notified. Pipeline stage held. KYC log updated.',
+    'send-brief': '✓ Valuation brief sent to client — Google Drive copy archived.',
+    'approve-send': '✓ Approved and sent — HubSpot activity logged. Next follow-up task set for 7 days.',
+    'approve-post': '✓ CS-04 approved — Make.com webhook fired. Instagram and LinkedIn scheduled for 14 Apr 09:00.',
+    'regenerate': '↺ Regenerating — new draft in a moment.',
+    'kyc-chase': '✓ KYC task created — Marta assigned · due today.'
+  };
+  const text = msgs[action] || '✓ Done.';
+  const el = document.createElement('div');
+  el.style.cssText = 'display:flex;align-items:flex-start;gap:8px';
+  el.innerHTML = `<div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+    <div style="background:#E1F5EE;border:1px solid #5DCAA5;border-radius:2px 10px 10px 10px;padding:8px 12px;font-size:11px;color:#085041;max-width:90%">${text}</div>`;
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+}
+
+
+function showMobPage(id) {
+  document.querySelectorAll('.mob-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.mob-nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('mob-' + id).classList.add('active');
+  document.getElementById('mnav-' + id).classList.add('active');
+}
+
+function mobAppendMsg(who, html) {
+  const body = document.getElementById('mob-agent-body');
+  const el = document.createElement('div');
+  el.style.cssText = 'display:flex;align-items:flex-start;gap:8px' + (who === 'user' ? ';justify-content:flex-end' : '');
+  if (who === 'user') {
+    el.innerHTML = `<div class="mob-msg-u">${html}</div>`;
+  } else {
+    el.innerHTML = `<div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div><div class="mob-msg-card" style="max-width:88%">${html}</div>`;
+  }
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+}
+
+function mobRunChip(text) {
+  mobAppendMsg('user', text);
+  const intent = detectIntent(text);
+  setTimeout(() => {
+    const r = AGENT_RESPONSES[intent] || AGENT_RESPONSES.default;
+    mobAppendMsg('ai', r.html);
+  }, 800 + Math.random() * 400);
+}
+
+function mobSendAgent() {
+  const input = document.getElementById('mob-agent-input');
+  const text = input.value.trim();
+  if (!text) return;
+  mobAppendMsg('user', text);
+  input.value = '';
+  const intent = detectIntent(text);
+  setTimeout(() => {
+    const r = AGENT_RESPONSES[intent] || AGENT_RESPONSES.default;
+    mobAppendMsg('ai', r.html);
+  }, 800 + Math.random() * 400);
+}
+
+function clearAgent() {
+  const body = document.getElementById('agent-body');
+  body.innerHTML = `<div style="display:flex;align-items:flex-start;gap:8px">
+    <div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+    <div style="background:#F5F4F0;border-radius:2px 10px 10px 10px;padding:9px 12px;font-size:12px;color:#1a1a18;line-height:1.55;max-width:90%">Ready. Type a command or use the chips above to run a flow.</div>
+  </div>`;
+}
+</script>
+
+<!-- ══ MOBILE NAV BAR ══ -->
+<div class="mob-nav-bar">
+  <div class="mob-logo">My Team AI</div>
+  <div class="mob-ws-pill">Curtis Sloane · W11</div>
+  <div class="mob-avatar">CS</div>
+</div>
+
+<!-- ══ MOBILE PAGES ══ -->
+<div class="mob-pages">
+
+  <!-- COMMAND CENTRE -->
+  <div class="mob-page active" id="mob-cc">
+    <div class="mob-slbl">Red Signals</div>
+    <div class="mob-card">
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#E24B4A"></div>
+        <div><div class="mob-alert-title" style="color:#A32D2D">KYC overdue — Mrs Patterson</div><div class="mob-alert-sub">Proof of funds — 6 days overdue</div></div>
+      </div>
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#E24B4A"></div>
+        <div><div class="mob-alert-title" style="color:#A32D2D">94 Portland Rd calls overdue</div></div>
+      </div>
+      <div class="mob-alert">
+        <div class="mob-alert-dot" style="background:#BA7517"></div>
+        <div><div class="mob-alert-title" style="color:#633806">7 social posts await approval</div></div>
+      </div>
+    </div>
+
+    <div class="mob-slbl">This week</div>
+    <div class="mob-metrics">
+      <div class="mob-mc"><div class="mob-ml">Active applicants</div><div class="mob-mv" style="color:#0F6E56">47</div><div class="mob-ms">+3 this week</div></div>
+      <div class="mob-mc"><div class="mob-ml">Active listings</div><div class="mob-mv">12</div><div class="mob-ms">3 under offer</div></div>
+      <div class="mob-mc"><div class="mob-ml">KYC complete</div><div class="mob-mv" style="color:#0F6E56">94%</div><div class="mob-ms">17 of 18</div></div>
+      <div class="mob-mc"><div class="mob-ml">Re-permission</div><div class="mob-mv" style="color:#854F0B">270</div><div class="mob-ms">Action needed</div></div>
+    </div>
+
+    <div class="mob-slbl">AI Command</div>
+    <div class="mob-card">
+      <div class="mob-chips">
+        <button class="mob-chip" onclick="mobRunChip('match for 14 Ladbroke Road')">Match applicants</button>
+        <button class="mob-chip" onclick="mobRunChip('valuation brief 22 Abbotsbury')">Valuation brief</button>
+        <button class="mob-chip" onclick="mobRunChip('KYC status Mrs Patterson')">KYC check</button>
+        <button class="mob-chip" onclick="mobRunChip('draft social wisteria season')">Social draft</button>
+      </div>
+      <div class="mob-chat" id="mob-agent-body">
+        <div style="display:flex;align-items:flex-start;gap:8px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#E1F5EE;flex-shrink:0">AI</div>
+          <div class="mob-msg-card">Ready. Type a command or tap a chip above to run a flow.</div>
+        </div>
+      </div>
+      <div class="mob-agent-input">
+        <textarea id="mob-agent-input" rows="2" placeholder="e.g. match for 14 Ladbroke Road…"></textarea>
+        <button class="mob-agent-send" onclick="mobSendAgent()">→</button>
+      </div>
+    </div>
+
+    <div class="mob-slbl">Active Pipeline</div>
+    <div class="mob-card">
+      <div style="font-size:9px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px">KYC In Progress</div>
+      <div class="mob-pcard"><div class="mob-pname">Mrs Patterson</div><div class="mob-pmeta">Proof of funds pending</div></div>
+      <div class="mob-pcard"><div class="mob-pname">D. Morley</div><div class="mob-pmeta">ID document requested</div></div>
+      <div style="font-size:9px;font-weight:600;color:#888780;text-transform:uppercase;letter-spacing:.4px;margin:10px 0 8px">On Market</div>
+      <div class="mob-pcard"><div class="mob-pname">22 Abbotsbury Rd</div><div class="mob-pprice">£3.85M</div><div class="mob-pmeta">Day 12</div></div>
+      <div class="mob-pcard"><div class="mob-pname">8 Portland Road</div><div class="mob-pprice">£2.4M</div><div class="mob-pmeta">Day 4 · off-market first</div></div>
+    </div>
+
+    <div class="mob-slbl">Active Flows</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#7F77DD"></div><div style="flex:1"><div class="mob-flow-name">fn_register_applicant</div><div class="mob-flow-meta">S. Chen · running</div></div><span class="mob-sbadge" style="background:#EEEDFE;color:#3C3489">Live</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#1D9E75"></div><div style="flex:1"><div class="mob-flow-name">fn_match_applicants</div><div class="mob-flow-meta">14 Ladbroke Rd · 4m ago</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Done</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#E24B4A"></div><div style="flex:1"><div class="mob-flow-name">fn_kyc_status</div><div class="mob-flow-meta">Mrs Patterson · blocked</div></div><span class="mob-sbadge" style="background:#FCEBEB;color:#A32D2D">Blocked</span></div>
+    </div>
+  </div>
+
+  <!-- ACTION FLOWS -->
+  <div class="mob-page" id="mob-af">
+    <div class="mob-slbl">Action Flows</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#1D9E75"></div><div style="flex:1"><div class="mob-flow-name">fn_generate_welcome</div><div class="mob-flow-meta">Claude Sonnet · New enquiry</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#7F77DD"></div><div style="flex:1"><div class="mob-flow-name">fn_register_applicant</div><div class="mob-flow-meta">Claude Sonnet · First contact</div></div><span class="mob-sbadge" style="background:#EEEDFE;color:#3C3489">Running</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#1D9E75"></div><div style="flex:1"><div class="mob-flow-name">fn_match_applicants</div><div class="mob-flow-meta">Claude Sonnet · New property</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#BA7517"></div><div style="flex:1"><div class="mob-flow-name">fn_valuation_brief</div><div class="mob-flow-meta">Claude Opus · Valuation booked</div></div><span class="mob-sbadge" style="background:#FAEEDA;color:#633806">3 this month</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#D4537E"></div><div style="flex:1"><div class="mob-flow-name">fn_social_draft</div><div class="mob-flow-meta">Claude Sonnet · Content calendar</div></div><span class="mob-sbadge" style="background:#FBEAF0;color:#72243E">New</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#7F77DD"></div><div style="flex:1"><div class="mob-flow-name">fn_draft_outreach</div><div class="mob-flow-meta">GPT-4o mini · Daily cadence</div></div><span class="mob-sbadge" style="background:#EEEDFE;color:#3C3489">Daily</span></div>
+      <div class="mob-flow"><div class="mob-flow-dot" style="background:#B4B2A9"></div><div style="flex:1"><div class="mob-flow-name">fn_kyc_status</div><div class="mob-flow-meta">Claude Haiku · Any progression</div></div><span class="mob-sbadge" style="background:#F1EFE8;color:#444441">Compliance</span></div>
+    </div>
+  </div>
+
+  <!-- CHAT / KB -->
+  <div class="mob-page" id="mob-kb">
+    <div class="mob-slbl">Knowledge Base</div>
+    <div class="mob-kb-item"><div class="mob-kb-title">W11 matching criteria playbook</div><div class="mob-kb-meta">Saved from chat · Updated today</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">Valuation method — W11 2026</div><div class="mob-kb-meta">Saved from chat · Yesterday</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">KYC escalation workflow</div><div class="mob-kb-meta">Saved from flow · 3 days ago</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">Applicant registration SOP</div><div class="mob-kb-meta">Uploaded · Standard doc</div></div>
+    <div class="mob-kb-item"><div class="mob-kb-title">Social brand voice guide</div><div class="mob-kb-meta">Saved from flow · Approved content</div></div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="mob-page" id="mob-sm">
+    <div class="mob-slbl">Pending Approval — 7 posts</div>
+    <div class="mob-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;font-weight:500;color:#1a1a18">Wisteria season in W11</span><span class="mob-sbadge" style="background:#FBEAF0;color:#72243E">Instagram</span></div>
+      <div style="font-size:12px;color:#5F5E5A;line-height:1.6;font-style:italic;margin-bottom:10px">"The wisteria on Addison Road has come back. It does this every year — quietly, extravagantly — and every year it stops people on the pavement."</div>
+      <div style="display:flex;gap:8px"><button class="btn-g" style="flex:1;font-size:12px;padding:7px">Edit</button><button class="btn-p" style="flex:1;font-size:12px;padding:7px;justify-content:center">Approve</button></div>
+    </div>
+    <div class="mob-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;font-weight:500;color:#1a1a18">Q1 market update</span><span class="mob-sbadge" style="background:#F0F4FF;color:#185FA5">LinkedIn</span></div>
+      <div style="font-size:12px;color:#5F5E5A;line-height:1.6;font-style:italic;margin-bottom:10px">"W11 asking prices held firm in Q1 2026 — £1.8M average for a family house. Demand from relocating professionals continues to outpace supply."</div>
+      <div style="display:flex;gap:8px"><button class="btn-g" style="flex:1;font-size:12px;padding:7px">Edit</button><button class="btn-p" style="flex:1;font-size:12px;padding:7px;justify-content:center">Approve</button></div>
+    </div>
+  </div>
+
+  <!-- APPS HUB / TEAM -->
+  <div class="mob-page" id="mob-ah">
+    <div class="mob-slbl">Team</div>
+    <div class="mob-card">
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#E1F5EE;color:#085041">CS</div><div><div class="mob-team-name">Curtis Sloane</div><div class="mob-team-role">Principal</div></div><div class="mob-status" style="background:#1D9E75"></div></div>
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#EEEDFE;color:#3C3489">M</div><div><div class="mob-team-name">Marta</div><div class="mob-team-role">Applicant Manager</div></div><div class="mob-status" style="background:#1D9E75"></div></div>
+      <div class="mob-team-item"><div class="mob-team-av" style="background:#FAEEDA;color:#633806">S</div><div><div class="mob-team-name">Sebastian</div><div class="mob-team-role">Property Negotiator</div></div><div class="mob-status" style="background:#B4B2A9"></div></div>
+    </div>
+    <div class="mob-slbl">Connected Apps</div>
+    <div class="mob-card">
+      <div class="mob-flow"><div style="font-size:18px">📧</div><div style="flex:1"><div class="mob-flow-name">Gmail</div><div class="mob-flow-meta">Connected · CS & Marta</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">📅</div><div style="flex:1"><div class="mob-flow-name">Google Calendar</div><div class="mob-flow-meta">Viewings sync enabled</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">💼</div><div style="flex:1"><div class="mob-flow-name">HubSpot CRM</div><div class="mob-flow-meta">Contacts & pipeline synced</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
+      <div class="mob-flow"><div style="font-size:18px">📸</div><div style="flex:1"><div class="mob-flow-name">Instagram Business</div><div class="mob-flow-meta">Approval workflow active</div></div><span class="mob-sbadge" style="background:#FAEEDA;color:#633806">Pending</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ MOBILE BOTTOM NAV ══ -->
+<div class="mob-bottom-nav">
+  <div class="mob-bottom-nav-inner">
+    <div class="mob-nav-item active" onclick="showMobPage('cc')" id="mnav-cc">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">⚡</div><div class="mob-badge-dot">3</div></div>
+      <div class="mob-nav-label">Centre</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('af')" id="mnav-af">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">⚙️</div></div>
+      <div class="mob-nav-label">Flows</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('kb')" id="mnav-kb">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">🧠</div></div>
+      <div class="mob-nav-label">KB</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('sm')" id="mnav-sm">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">📣</div></div>
+      <div class="mob-nav-label">Social</div>
+    </div>
+    <div class="mob-nav-item" onclick="showMobPage('ah')" id="mnav-ah">
+      <div class="mob-icon-wrap"><div class="mob-nav-icon">👥</div></div>
+      <div class="mob-nav-label">Team</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
