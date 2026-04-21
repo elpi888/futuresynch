@@ -25,6 +25,14 @@
       "destination": "/myteamai_workspace_v5.html"
     },
     {
+      "source": "/my-team-ai/kitsoft-pipeline",
+      "destination": "/kitsoft-pipeline.html"
+    },
+    {
+      "source": "/my-team-ai/kitsoft-pipeline/",
+      "destination": "/kitsoft-pipeline.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog.html"
     },

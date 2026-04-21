@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitsoft / Liquio — UK Pipeline · Future Synch</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:       #1A3A2A;
+    --green-mid:   #2D6A4F;
+    --green-lite:  #52B788;
+    --green-pale:  #D8F3DC;
+    --gold:        #C9A84C;
+    --gold-pale:   #FFF8E7;
+    --amber:       #E9A825;
+    --red:         #C1440E;
+    --grey:        #F4F6F4;
+    --white:       #FAFCFA;
+    --ink:         #0D1F17;
+    --ink-soft:    #3D5248;
+    --border:      #C8D8C8;
+    --shadow:      rgba(26,58,42,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ──────────────────────────────────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--green);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 56px;
+    border-bottom: 2px solid var(--green-mid);
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--gold); }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-meta {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────────────────── */
+  .hero {
+    background: var(--green);
+    padding: 3.5rem 2.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(82,183,136,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-lite);
+    margin-bottom: 0.75rem;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.65;
+    margin-top: 0.75rem;
+  }
+  .hero-stats {
+    display: flex; gap: 1.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    min-width: 100px;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  /* ── STRATEGY STRIP ──────────────────────────────────────────────── */
+  .strategy-strip {
+    background: var(--gold);
+    padding: 0.6rem 2.5rem;
+  }
+  .strategy-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .strategy-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .strategy-text {
+    font-size: 0.82rem;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* ── MAIN LAYOUT ─────────────────────────────────────────────────── */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem;
+  }
+
+  /* ── SECTION HEADERS ──────────────────────────────────────────────── */
+  .section-header {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--green);
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--green-lite);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--green);
+  }
+
+  /* ── ENTRY POINTS ────────────────────────────────────────────────── */
+  .entry-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .entry-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--green);
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+  .entry-card:nth-child(2) { border-top-color: var(--green-mid); }
+  .entry-card:nth-child(3) { border-top-color: var(--green-lite); }
+  .entry-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green-lite);
+    margin-bottom: 0.4rem;
+  }
+  .entry-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+  .entry-desc {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .entry-contacts {
+    margin-top: 0.75rem;
+    display: flex; flex-wrap: wrap; gap: 0.35rem;
+  }
+  .entry-pill {
+    background: var(--green-pale);
+    color: var(--green);
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── PIPELINE TABS ───────────────────────────────────────────────── */
+  .pipeline-tabs {
+    display: flex; gap: 0; margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .tab-btn {
+    padding: 0.65rem 1.25rem;
+    background: none; border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .tab-btn.active {
+    color: var(--green);
+    border-bottom-color: var(--green);
+  }
+  .tab-btn:hover:not(.active) { color: var(--green); }
+  .tab-count {
+    background: var(--green);
+    color: white;
+    font-size: 0.62rem;
+    font-family: 'DM Mono', monospace;
+    padding: 0.1rem 0.45rem;
+    border-radius: 10px;
+  }
+  .tab-count.amber { background: var(--amber); }
+  .tab-count.grey { background: #999; }
+
+  /* ── CONTACT CARDS ───────────────────────────────────────────────── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1rem;
+  }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeUp 0.4s ease both;
+  }
+  .contact-card:hover {
+    box-shadow: 0 8px 24px var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(16px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .card-header {
+    padding: 1rem 1.1rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .card-header-left { flex: 1; min-width: 0; }
+  .card-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-role {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .card-org {
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    font-weight: 500;
+    margin-top: 0.1rem;
+  }
+  .card-links {
+    display: flex; gap: 0.4rem; flex-shrink: 0;
+  }
+  .icon-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: all 0.15s;
+    background: var(--white);
+  }
+  .icon-btn:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+  }
+  .icon-btn svg { width:13px; height:13px; fill:currentColor; }
+
+  .card-body { padding: 0.9rem 1.1rem; }
+  .card-angle {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+  .card-action-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--green-lite);
+    margin-bottom: 0.3rem;
+  }
+  .card-action {
+    font-size: 0.75rem;
+    color: var(--green);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .card-footer {
+    padding: 0.65rem 1.1rem;
+    background: var(--grey);
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Stage badge */
+  .stage {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-size: 0.66rem; font-weight: 500;
+    padding: 0.22rem 0.6rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .stage::before {
+    content: ''; width: 5px; height: 5px;
+    border-radius: 50%; background: currentColor;
+    opacity: 0.7;
+  }
+  .stage-aware     { background: #EEF2EE; color: #2D6A4F; }
+  .stage-engaged   { background: #D8F3DC; color: #1A5C2E; }
+  .stage-proposed  { background: #FFF3CD; color: #8A5C00; }
+  .stage-discussed { background: #CCE5FF; color: #004080; }
+  .stage-closed    { background: #D4EDDA; color: #155724; }
+
+  /* Tier badge */
+  .tier {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    padding: 0.22rem 0.55rem;
+    border-radius: 4px;
+  }
+  .tier-1 { background: var(--green); color: white; }
+  .tier-2 { background: var(--gold); color: var(--green); }
+  .tier-3 { background: #DDD; color: #555; }
+
+  .follow-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink-soft);
+  }
+  .follow-date.urgent { color: var(--red); font-weight: 500; }
+
+  /* Market tag */
+  .market-tag {
+    font-size: 0.64rem;
+    font-family: 'DM Mono', monospace;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+  }
+
+  /* ── FLOW SECTION ────────────────────────────────────────────────── */
+  .flow-grid {
+    display: grid; grid-template-columns: repeat(6,1fr); gap: 0;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+  .flow-step {
+    padding: 1.1rem 0.9rem;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    background: var(--green);
+    position: relative;
+  }
+  .flow-step:last-child { border-right: none; }
+  .flow-step:nth-child(even) { background: var(--green-mid); }
+  .flow-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .flow-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.82rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .flow-desc {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.55;
+  }
+  .flow-timing {
+    margin-top: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── CADENCE TABLE ───────────────────────────────────────────────── */
+  .cadence-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+    font-size: 0.78rem;
+  }
+  .cadence-table th {
+    background: var(--green);
+    color: white;
+    padding: 0.65rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .cadence-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .cadence-table tr:hover td { background: var(--grey); }
+  .cadence-freq {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .cadence-signal {
+    font-size: 0.72rem;
+    color: var(--green-mid);
+    font-weight: 500;
+  }
+
+  /* ── PREP CHECKLIST ──────────────────────────────────────────────── */
+  .prep-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+    gap: 1rem; margin-bottom: 3rem;
+  }
+  .prep-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.1rem;
+    background: var(--white);
+  }
+  .prep-title {
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .prep-title::before {
+    content: ''; display: inline-block;
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--green-lite); flex-shrink: 0;
+  }
+  .prep-deadline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+  .prep-desc {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────────── */
+  footer {
+    background: var(--green);
+    color: rgba(255,255,255,0.5);
+    padding: 1.5rem 2.5rem;
+    margin-top: 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.9rem;
+    color: var(--white);
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.25);
+    width: 100%;
+  }
+
+  /* ── HIDDEN TABS ─────────────────────────────────────────────────── */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── SCROLLBAR ───────────────────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--grey); }
+  ::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 3px; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; }
+    .entry-grid { grid-template-columns: 1fr; }
+    .flow-grid { grid-template-columns: repeat(2,1fr); }
+    .nav-links { display: none; }
+    .main { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://futuresynch.com" class="nav-brand">Future<span>Synch</span></a>
+  <ul class="nav-links">
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#flows">Action Flows</a></li>
+    <li><a href="#cadence">Cadence</a></li>
+    <li><a href="#prep">Preparation</a></li>
+    <li><a href="https://liquio.tech" target="_blank">Liquio ↗</a></li>
+    <li><a href="https://kitsoft.eu" target="_blank">Kitsoft ↗</a></li>
+  </ul>
+  <span class="nav-meta">my-team-ai / kitsoft · 2026</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">My Team AI · Business Development · UK Market</div>
+      <h1 class="hero-title">Kitsoft / Liquio<br><em>UK Pipeline</em></h1>
+      <p class="hero-sub">GovTech Summit 2026 contact strategy. 15 warm contacts. Three entry points. One operating cadence. Powered by the Future Synch Growth Operating System.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-num">15</span>
+        <span class="stat-label">Contacts</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Tier 1</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">48h</span>
+        <span class="stat-label">Window</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">1%</span>
+        <span class="stat-label">Daily</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY STRIP -->
+<div class="strategy-strip">
+  <div class="strategy-inner">
+    <span class="strategy-label">1% Daily Integration</span>
+    <span class="strategy-text">One contact · One touchpoint · One step forward · Every working day · No relationship goes cold</span>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ENTRY POINTS -->
+  <section style="margin-bottom:3rem;" id="pipeline">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Three UK Entry Points</h2>
+    </div>
+    <div class="entry-grid">
+      <div class="entry-card">
+        <div class="entry-label">Entry 1 · Immediate</div>
+        <div class="entry-name">Central Government</div>
+        <div class="entry-desc">DSIT contacts with direct digital government mandates. Liquio's Ukraine deployment (Diia) is a live reference point for UK bilateral partnerships.</div>
+        <div class="entry-contacts">
+          <span class="entry-pill">Bailey Reid</span>
+          <span class="entry-pill">Alexander De Ville</span>
+        </div>
+      </div>
+      <div class="entry-card">
+        <div class="entry-label">Entry 2 · Strategic</div>
+        <div class="entry-name">Local Authority</div>
+        <div class="entry-desc">Directors of Digital and Transformation at London and district councils. Real procurement authority. 1.5-month deployment model solves their core problem.</div>
+        <div class="entry-contacts">
+          <span class="entry-pill">Kit Collingwood</span>
+          <span class="entry-pill">Ingrid Archer</span>
+          <span class="entry-pill">Rosanna Wilson</span>
+        </div>
+      </div>
+      <div class="entry-card">
+        <div class="entry-label">Entry 3 · Ecosystem</div>
+        <div class="entry-name">Data & Governance</div>
+        <div class="entry-desc">Heads of data and AI governance who shape the policy environment. Being in their conversations builds the credibility that unlocks entries 1 and 2.</div>
+        <div class="entry-contacts">
+          <span class="entry-pill">Martine Wauben</span>
+          <span class="entry-pill">Fabian Chessell</span>
+          <span class="entry-pill">Paul Maltby</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE TABS + CONTACTS -->
+  <section style="margin-bottom:3rem;">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Contact Pipeline</h2>
+    </div>
+
+    <div class="pipeline-tabs">
+      <button class="tab-btn active" onclick="showTab('all', this)">All <span class="tab-count">15</span></button>
+      <button class="tab-btn" onclick="showTab('tier1', this)">Tier 1 <span class="tab-count">3</span></button>
+      <button class="tab-btn" onclick="showTab('tier2', this)">Tier 2 <span class="tab-count">5</span></button>
+      <button class="tab-btn" onclick="showTab('tier3', this)">Tier 3 <span class="tab-count grey">7</span></button>
+    </div>
+
+    <!-- ALL CONTACTS -->
+    <div id="tab-all" class="tab-panel active">
+      <div class="contact-grid">
+
+        <!-- 01 Bailey Reid -->
+        <div class="contact-card" data-tier="1">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Bailey Reid</div>
+              <div class="card-role">Head of International</div>
+              <div class="card-org">DSIT / UK Government Digital Service</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Bailey+Reid+DSIT" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology" target="_blank" class="icon-btn" title="DSIT">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Manages UK bilateral and multilateral digital government partnerships. Liquio's Diia deployment in Ukraine is a direct reference for his mandate — deploying digital innovations into the UK and supporting international partners.</div>
+            <div class="card-action-label">Immediate Action</div>
+            <div class="card-action">Connect on LinkedIn → Reference summit + DSIT international work → Book 30-min call → Present Liquio UK entry via international digital partnerships lens</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-1">Tier 1</span>
+            <span class="stage stage-engaged">Engaged</span>
+            <span class="market-tag">UK · Central Gov</span>
+            <span class="follow-date urgent">23 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 02 Alexander De Ville -->
+        <div class="contact-card" data-tier="1">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Alexander De Ville</div>
+              <div class="card-role">Head of AI Innovation</div>
+              <div class="card-org">DSIT / i.AI — Incubator for Artificial Intelligence</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Alexander+De+Ville+DSIT+AI" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.gov.uk/government/organisations/incubator-for-artificial-intelligence" target="_blank" class="icon-btn" title="i.AI">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">No10 Innovation Fellow. Leads AI Opportunity Scan. Spoke at summit on 'Agentic AI for Government'. Liquio's AI Agent — first in Europe to enable real government service execution via AI — is the most direct response to his mandate.</div>
+            <div class="card-action-label">Immediate Action</div>
+            <div class="card-action">Reference his summit session → Lead with Diia AI Agent as agentic gov proof point → Propose live demo of Liquio AI Agent at national scale</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-1">Tier 1</span>
+            <span class="stage stage-engaged">Engaged</span>
+            <span class="market-tag">UK · Central Gov · AI</span>
+            <span class="follow-date urgent">23 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 03 Martine Wauben -->
+        <div class="contact-card" data-tier="1">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Martine Wauben</div>
+              <div class="card-role">Head of Data</div>
+              <div class="card-org">Greater London Authority</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Martine+Wauben+GLA" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.london.gov.uk" target="_blank" class="icon-btn" title="GLA">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Realising Mayor of London's vision for open data sharing across the city. Previously No10, DHSC, Ministry of Justice. International experience in Rwanda and Nepal — bridges the Africa expansion conversation.</div>
+            <div class="card-action-label">Immediate Action</div>
+            <div class="card-action">City-level data angle → Send Kyiv Digital case study (2M users, Smart City Award) → Propose GLA data + Liquio Digital Registries conversation → Rwanda bridge to Africa pipeline</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-1">Tier 1</span>
+            <span class="stage stage-engaged">Engaged</span>
+            <span class="market-tag">UK · Africa</span>
+            <span class="follow-date urgent">23 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 04 Fabian Chessell -->
+        <div class="contact-card" data-tier="2">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Fabian Chessell</div>
+              <div class="card-role">Central Government Lead</div>
+              <div class="card-org">Policy in Practice</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Fabian+Chessell+Policy+in+Practice" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://policyinpractice.co.uk" target="_blank" class="icon-btn" title="Policy in Practice">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Founder of DATA Alliance. Former delivery advisor to the Deputy Prime Minister. McKinsey background. Understands exactly how UK government buys — and why it fails. Lead with the problem, not the product.</div>
+            <div class="card-action-label">Action by 30 Apr</div>
+            <div class="card-action">Frame around government IT failure → Explore DATA Alliance as a Liquio UK channel → Invite to roundtable on digital government infrastructure</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-2">Tier 2</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Central Gov</span>
+            <span class="follow-date">30 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 05 Kit Collingwood -->
+        <div class="contact-card" data-tier="2">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Kit Collingwood</div>
+              <div class="card-role">Director of Digital</div>
+              <div class="card-org">Royal Borough of Greenwich</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Kit+Collingwood+Greenwich" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.royalgreenwich.gov.uk" target="_blank" class="icon-btn" title="Greenwich">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Strategic digital change for a London borough. Real procurement authority. Liquio's 1.5-month deployment model is a direct answer to council digital service timelines. Target Greenwich as a Liquio UK pilot authority.</div>
+            <div class="card-action-label">Action by 30 Apr</div>
+            <div class="card-action">Local authority case study → Propose Greenwich as UK pilot site → One service, proof of concept, 6 weeks → Planning permit or citizen registration</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-2">Tier 2</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Local Authority</span>
+            <span class="follow-date">30 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 06 Ingrid Archer -->
+        <div class="contact-card" data-tier="2">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Ingrid Archer</div>
+              <div class="card-role">Head of Transformation</div>
+              <div class="card-org">New Forest District Council</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Ingrid+Archer+New+Forest+Council" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.newforest.gov.uk" target="_blank" class="icon-btn" title="New Forest DC">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Enterprise-wide digital transformation across a district council. PMO maturity and future operating models. Fighting the legacy stack and the procurement cycle simultaneously — exactly what Liquio removes.</div>
+            <div class="card-action-label">Action by 30 Apr</div>
+            <div class="card-action">Transformation angle → Low-code internal team empowerment → Open source digital sovereignty → Propose 30-min call → Workshop invitation</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-2">Tier 2</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Local Authority</span>
+            <span class="follow-date">30 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 07 Rosanna Wilson -->
+        <div class="contact-card" data-tier="2">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Rosanna Wilson</div>
+              <div class="card-role">Senior Procurement Manager</div>
+              <div class="card-org">Teignbridge District Council</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Rosanna+Wilson+Teignbridge+procurement" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.teignbridge.gov.uk" target="_blank" class="icon-btn" title="Teignbridge DC">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">12+ years UK public procurement. Spoke on the Procurement Act. She knows exactly how GovTech gets bought — and blocked. Ask before you pitch. Her answer shapes your entire UK GTM approach.</div>
+            <div class="card-action-label">Action by 30 Apr — Intelligence First</div>
+            <div class="card-action">Reference her summit session → Ask about Procurement Act implications for international GovTech platforms → Listen and log → Strategy conversation, not a sales call</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-2">Tier 2</span>
+            <span class="stage stage-engaged">Engaged</span>
+            <span class="market-tag">UK · Procurement</span>
+            <span class="follow-date urgent">23 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 08 Gavin Hayman -->
+        <div class="contact-card" data-tier="2">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Gavin Hayman</div>
+              <div class="card-role">Chief Executive</div>
+              <div class="card-org">Open Contracting Partnership</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Gavin+Hayman+Open+Contracting" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.open-contracting.org" target="_blank" class="icon-btn" title="OCP">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Reinventing public procurement as a smart digital service globally. OCP operates across governments, business and civil society. Open contracting + Liquio open-source = shared mission. Africa and global government reach.</div>
+            <div class="card-action-label">Action by 30 Apr</div>
+            <div class="card-action">Mission alignment angle → Open source + open contracting → Explore OCP global network as Liquio channel → Africa pipeline via OCP relationships → Roundtable invitation</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-2">Tier 2</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Africa · Global</span>
+            <span class="follow-date">30 Apr 2026</span>
+          </div>
+        </div>
+
+        <!-- 09 Ilyas Khan -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Ilyas Khan</div>
+              <div class="card-role">Founder / Vice Chair / Head of Special Projects</div>
+              <div class="card-org">Quantinuum</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Ilyas+Khan+Quantinuum" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.quantinuum.com" target="_blank" class="icon-btn" title="Quantinuum">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Founded Cambridge Quantum 2014. Founding CEO of Quantinuum. Spoke on 'How Deep Tech Will Transform Government'. One of the most senior technology founders in the UK ecosystem.</div>
+            <div class="card-action-label">Action by 7 May — Long-term</div>
+            <div class="card-action">Founder-to-founder note → Reference his session → Deep tech + government infrastructure intersection → No product mention → Invite to roundtable when timing is right</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Deep Tech</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 10 Nadine Hachach Haram -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Nadine Hachach Haram</div>
+              <div class="card-role">Founder</div>
+              <div class="card-org">Proxime</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Nadine+Hachach+Haram+Proxime" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Spoke on 'Building the Infrastructure for an AI-Enabled State'. Direct thesis alignment with Liquio. Potential co-delivery or referral partner — she is building the AI state layer, Liquio is the infrastructure beneath it.</div>
+            <div class="card-action-label">Action by 7 May</div>
+            <div class="card-action">Shared thesis angle → 'We built it at national scale in Ukraine' → Explore Proxime + Liquio complementary proposition for UK government → Introduce to Oleksandr if fit is clear</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · AI State</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 11 Paul Maltby -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Paul Maltby</div>
+              <div class="card-role">Director of Public Services</div>
+              <div class="card-org">Faculty AI</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Paul+Maltby+Faculty+AI" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://faculty.ai" target="_blank" class="icon-btn" title="Faculty AI">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Works with governments to apply AI to public sector challenges. Faculty AI has existing UK government relationships. Not a competitor — Faculty does AI strategy, Liquio provides the service infrastructure. Different layers of the same stack.</div>
+            <div class="card-action-label">Action by 7 May</div>
+            <div class="card-action">Complementary proposition → Faculty AI strategy + Liquio infrastructure = combined UK government offering → Propose call with Oleksandr to explore joint positioning</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · AI</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 12 Cassandra G. -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Cassandra G.</div>
+              <div class="card-role">AI Governance Advisor</div>
+              <div class="card-org">Local Government Association / Birkbeck University</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Cassandra+AI+Governance+Local+Government+Association" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.local.gov.uk" target="_blank" class="icon-btn" title="LGA">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">AI governance for local government. Recently joined LGA. LinkedIn connection pending — confirm before messaging. Liquio's compliance stack (ISO 27001, GDPR, GovStack) is directly relevant to her governance mandate.</div>
+            <div class="card-action-label">Action by 7 May — Confirm Connection First</div>
+            <div class="card-action">Confirm LinkedIn connection → AI governance for local gov angle → Share Liquio compliance summary → Invite to roundtable</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Governance</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 13 Sir Alex Chisholm -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Sir Alex Chisholm</div>
+              <div class="card-role">Senior Advisor</div>
+              <div class="card-org">Boston Consulting Group (Former Cabinet Office Perm Sec)</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Alex+Chisholm+BCG+Cabinet+Office" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://www.bcg.com" target="_blank" class="icon-btn" title="BCG">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Former Cabinet Office Permanent Secretary — most senior UK civil servant. Now BCG government practice. Highest-level strategic relationship in this set. Patience required. One quality touchpoint per month maximum.</div>
+            <div class="card-action-label">Action by 7 May — Handle with Care</div>
+            <div class="card-action">Brief, considered LinkedIn connection note → No marketing materials → No pitch → 'European GovTech success story, interested in your perspective on where UK digital government is heading' → Escalate to Oleksandr before any meeting</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">UK · Strategic</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 14 Hema Patel -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Hema Patel</div>
+              <div class="card-role">Founder / Partner</div>
+              <div class="card-org">Impeller Labs / Ellen MacArthur Foundation</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Hema+Patel+Impeller+Labs" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://ellenmacarthurfoundation.org" target="_blank" class="icon-btn" title="EMF">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Systems innovation and circular economy. Ellen MacArthur Foundation has significant global government engagement. Warm context — long-term ecosystem relationship, no product push at this stage.</div>
+            <div class="card-action-label">Action by 7 May</div>
+            <div class="card-action">Connect via LinkedIn → Systems innovation + sustainable government technology angle → Understand Impeller Labs focus → Identify Africa or sustainability angle for Liquio → Build relationship over time</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">Global · Ecosystem</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+        <!-- 15 Karen Onuma-Mielke -->
+        <div class="contact-card" data-tier="3">
+          <div class="card-header">
+            <div class="card-header-left">
+              <div class="card-name">Karen Onuma-Mielke</div>
+              <div class="card-role">Co-Founder & COO</div>
+              <div class="card-org">GlobalDeal</div>
+            </div>
+            <div class="card-links">
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Karen+Onuma-Mielke+GlobalDeal" target="_blank" class="icon-btn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:" class="icon-btn" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="https://globaldeal.co" target="_blank" class="icon-btn" title="GlobalDeal">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-angle">Co-Founder & COO of GlobalDeal — AI-native GTM support enabling lean teams to succeed in foreign markets. Japan-based with shared group in Innovation, Tokenisation, Community Capital. GTM expertise directly relevant to Liquio's international expansion.</div>
+            <div class="card-action-label">Action by 7 May</div>
+            <div class="card-action">Accept LinkedIn connection → AI-native GTM angle → Explore GlobalDeal + Liquio international market entry synergy → Japan/APAC expansion conversation</div>
+          </div>
+          <div class="card-footer">
+            <span class="tier tier-3">Tier 3</span>
+            <span class="stage stage-aware">Aware</span>
+            <span class="market-tag">Global · GTM</span>
+            <span class="follow-date">7 May 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIER FILTERED PANELS -->
+    <div id="tab-tier1" class="tab-panel"></div>
+    <div id="tab-tier2" class="tab-panel"></div>
+    <div id="tab-tier3" class="tab-panel"></div>
+
+  </section>
+
+  <!-- ACTION FLOWS -->
+  <section style="margin-bottom:3rem;" id="flows">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">My Team AI — 5-Step Outreach Flow</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <span class="flow-num">01</span>
+        <div class="flow-name">LinkedIn Connection</div>
+        <div class="flow-desc">Personalised note referencing summit. One sentence. Reference something specific.</div>
+        <div class="flow-timing">Within 48 hrs</div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-num">02</span>
+        <div class="flow-name">Value Follow-Up</div>
+        <div class="flow-desc">Share one genuinely useful piece of content. End with an open question about their work. No product mention.</div>
+        <div class="flow-timing">Within 5 days</div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-num">03</span>
+        <div class="flow-name">Book the Call</div>
+        <div class="flow-desc">30-min peer conversation. 'Sharing what we see in UK GovTech' — not a sales call. Frame as a learning exchange.</div>
+        <div class="flow-timing">Within 1 week of reply</div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-num">04</span>
+        <div class="flow-name">Listen & Present</div>
+        <div class="flow-desc">Ask about their biggest digital service friction point. Then present Liquio as the answer to what they described. End with a demo offer.</div>
+        <div class="flow-timing">On the call</div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-num">05</span>
+        <div class="flow-name">Live Demo</div>
+        <div class="flow-desc">20-min bespoke demo. Build a service they recognise. End: 'We can have a proof of concept running for your organisation in 6 weeks.'</div>
+        <div class="flow-timing">Within 1 week of call</div>
+      </div>
+      <div class="flow-step" style="background: var(--gold); ">
+        <span class="flow-num" style="color:rgba(26,58,42,0.25)">→</span>
+        <div class="flow-name" style="color:var(--green)">Proposal</div>
+        <div class="flow-desc" style="color:rgba(26,58,42,0.65)">Commercial terms introduced only after demo. Pilot proposal: one service, one organisation, 6 weeks.</div>
+        <div class="flow-timing" style="color:var(--green)">Post-demo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CADENCE -->
+  <section style="margin-bottom:3rem;" id="cadence">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Weekly Operating Cadence</h2>
+    </div>
+    <table class="cadence-table">
+      <thead>
+        <tr>
+          <th style="width:130px">Frequency</th>
+          <th>Action</th>
+          <th style="width:200px">Success Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cadence-freq">Daily</span></td>
+          <td>Check for replies. Respond within 24 hours. Send one outreach message working through contacts in tier order. Log every interaction in tracker.</td>
+          <td><span class="cadence-signal">Zero unanswered messages. Tracker updated same day.</span></td>
+        </tr>
+        <tr>
+          <td><span class="cadence-freq">Monday</span></td>
+          <td>Review pipeline. Identify contacts ready to move to next step. Send Step 03 call invitations to contacts who replied to Step 02. Prepare demo script for calls booked this week.</td>
+          <td><span class="cadence-signal">At least 1 new call booked per week.</span></td>
+        </tr>
+        <tr>
+          <td><span class="cadence-freq">Friday</span></td>
+          <td>Share one relevant piece of content with every active contact — a Liquio update, GovTech article, or case study. The 1% — one small touchpoint that keeps the relationship warm.</td>
+          <td><span class="cadence-signal">5+ content shares. No contact goes 7+ days without a touchpoint.</span></td>
+        </tr>
+        <tr>
+          <td><span class="cadence-freq">Monthly</span></td>
+          <td>Full pipeline review. Contacts by stage. Follow-up rate. Demos delivered. Proposals submitted. Any contact stuck at the same stage for 3+ weeks — change approach.</td>
+          <td><span class="cadence-signal">At least 1 formal proposal submitted per month.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PREPARATION -->
+  <section style="margin-bottom:1rem;" id="prep">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Materials to Prepare — Before First Message</h2>
+    </div>
+    <div class="prep-grid">
+      <div class="prep-card">
+        <div class="prep-title">1-Page Liquio UK Brief</div>
+        <div class="prep-deadline">Due: 23 April 2026</div>
+        <div class="prep-desc">What Liquio is. What it solves. Diia as proof point. Five key numbers. Contact details. Plain language — no jargon. Designed for a non-technical government buyer.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-title">20-Min Live Demo Script</div>
+        <div class="prep-deadline">Due: 23 April 2026</div>
+        <div class="prep-desc">Liquio building a UK-relevant service in real time. Suggested: planning permit application or social benefit registration. Adapted for UK local authority context.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-title">3 × Case Study One-Pagers</div>
+        <div class="prep-deadline">Due: 23 April 2026</div>
+        <div class="prep-desc">Diia (national scale, 23M users). Kyiv Digital (city-level, 2M users, Smart City Award). One Africa or EU deployment. One page each. Government buyer audience.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-title">Compliance Summary Sheet</div>
+        <div class="prep-deadline">Due: 23 April 2026</div>
+        <div class="prep-desc">ISO 27001, eIDAS 2.0, GDPR, GovStack. UK-specific: WCAG 2.1 AA, UK GDPR. Designed for a public sector procurement officer answering: 'Can we legally buy this?'</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-title">Workshop Concept</div>
+        <div class="prep-deadline">Due: 7 May 2026</div>
+        <div class="prep-desc">'GovTech Deployment in Practice' — half-day for Tier 2 contacts. Live Liquio demo + hands-on service-building exercise. Agenda, format, invitee list.</div>
+      </div>
+      <div class="prep-card">
+        <div class="prep-title">Roundtable Concept</div>
+        <div class="prep-deadline">Due: 7 May 2026</div>
+        <div class="prep-desc">'Building AI-Ready Government Infrastructure' — 6–8 curated attendees from this contact list. Thought leadership positioning. Kitsoft/Oleksandr presents. No product pitch format.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Future<span>Synch</span> · My Team AI</div>
+  <div class="footer-links">
+    <a href="https://futuresynch.com" target="_blank">futuresynch.com</a>
+    <a href="https://my-team-ai.uk" target="_blank">my-team-ai.uk</a>
+    <a href="https://kitsoft.eu" target="_blank">kitsoft.eu</a>
+    <a href="https://liquio.tech" target="_blank">liquio.tech</a>
+  </div>
+  <div class="footer-note">GovTech Summit 2026 · Built by Future Synch Growth Operating System · futuresynch.com/my-team-ai/kitsoft</div>
+</footer>
+
+<script>
+  function showTab(tier, btn) {
+    // Update buttons
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+    if (tier === 'all') {
+      document.getElementById('tab-all').classList.add('active');
+    } else {
+      const tierNum = tier.replace('tier', '');
+      const panel = document.getElementById('tab-' + tier);
+
+      // Clone filtered cards
+      panel.innerHTML = '';
+      const grid = document.createElement('div');
+      grid.className = 'contact-grid';
+
+      document.querySelectorAll(`#tab-all .contact-card[data-tier="${tierNum}"]`).forEach(card => {
+        grid.appendChild(card.cloneNode(true));
+      });
+
+      panel.appendChild(grid);
+      panel.classList.add('active');
+    }
+  }
+
+  // Stagger card animations on load
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.contact-card').forEach((card, i) => {
+      card.style.animationDelay = `${i * 0.05}s`;
+    });
+  });
+</script>
+
+</body>
+</html>
