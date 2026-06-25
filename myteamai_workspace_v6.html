@@ -473,7 +473,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="user-dropdown" id="user-dropdown">
         <div class="user-dd-header">
           <div class="user-dd-name">Olesya Kovalskaya</div>
-          <div class="user-dd-plan">Curtis Sloane workspace <span class="user-dd-plan-badge">Director</span></div>
+          <div class="user-dd-plan">Curtis Sloane workspace <span class="user-dd-plan-badge">Growth</span></div>
         </div>
         <div class="user-dd-item" onclick="openUserPanel('dashboard')">
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="#5F5E5A" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="#5F5E5A" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="#5F5E5A" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="#5F5E5A" stroke-width="1.3"/></svg>
@@ -1422,7 +1422,7 @@ const UP_CONTENT = {
       <div class="up-section-label">Plan &amp; billing</div>
       <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 13px;background:#F9FFFB;border:1px solid #5DCAA5;border-radius:9px">
         <div>
-          <div style="font-size:12px;font-weight:500;color:#1a1a18">Director <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">Current</span></div>
+          <div style="font-size:12px;font-weight:500;color:#1a1a18">Growth <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">Current</span></div>
           <div style="font-size:10px;color:#5F5E5A;margin-top:2px">£490/month · next billing 1 July 2026</div>
         </div>
         <button class="btn-g" style="font-size:11px" onclick="switchUpTab('settings')">Manage →</button>
@@ -1521,7 +1521,7 @@ const UP_CONTENT = {
 
         <div class="up-plan-row" id="plan-starter" onclick="selectPlan('starter')">
           <div class="up-plan-row-left">
-            <div class="up-plan-row-name">Operator</div>
+            <div class="up-plan-row-name">Starter</div>
             <div class="up-plan-row-feat">Core intake and matching flows — welcome, applicant registration, applicant matching</div>
           </div>
           <div class="up-plan-row-price">£290<span>/mo</span></div>
@@ -1530,8 +1530,8 @@ const UP_CONTENT = {
 
         <div class="up-plan-row current" id="plan-growth" onclick="selectPlan('growth')">
           <div class="up-plan-row-left">
-            <div class="up-plan-row-name">Director <span class="up-plan-badge">Current</span></div>
-            <div class="up-plan-row-feat">Operator flows + valuation intelligence + KYC / AML compliance tracking</div>
+            <div class="up-plan-row-name">Growth <span class="up-plan-badge">Current</span></div>
+            <div class="up-plan-row-feat">Starter flows + valuation intelligence + KYC / AML compliance tracking</div>
           </div>
           <div class="up-plan-row-price">£490<span>/mo</span></div>
           <div class="up-plan-row-check current" id="pc-growth">✓</div>
@@ -1540,7 +1540,7 @@ const UP_CONTENT = {
         <div class="up-plan-row" id="plan-growth-social" onclick="selectPlan('growth-social')">
           <div class="up-plan-row-left">
             <div class="up-plan-row-name">Reach</div>
-            <div class="up-plan-row-feat">Director flows + social media management, content automation, and brand voice enforcement</div>
+            <div class="up-plan-row-feat">Growth flows + social media management, content automation, and brand voice enforcement</div>
           </div>
           <div class="up-plan-row-price">£990<span>/mo</span></div>
           <div class="up-plan-row-check" id="pc-growth-social"></div>
@@ -1548,7 +1548,7 @@ const UP_CONTENT = {
 
         <div class="up-plan-row" id="plan-scale" onclick="selectPlan('scale')">
           <div class="up-plan-row-left">
-            <div class="up-plan-row-name">Chief of Staff</div>
+            <div class="up-plan-row-name">Scale</div>
             <div class="up-plan-row-feat">Reach flows + financial operations or Business Development Synch module</div>
           </div>
           <div class="up-plan-row-price">£1,490<span>/mo</span></div>
@@ -1557,7 +1557,7 @@ const UP_CONTENT = {
 
         <div class="up-plan-row" id="plan-enterprise" onclick="selectPlan('enterprise')" style="border-style:dashed">
           <div class="up-plan-row-left">
-            <div class="up-plan-row-name">Command</div>
+            <div class="up-plan-row-name">Enterprise</div>
             <div class="up-plan-row-feat">Full-stack Operational Intelligence — white-label, portfolio reporting, API access, accelerators, VCs, ecosystem operators</div>
           </div>
           <div class="up-plan-row-price" style="font-size:13px;color:#888780;font-weight:400">Custom</div>
@@ -1647,9 +1647,9 @@ const UP_CONTENT = {
     <div class="up-section">
       <div class="up-section-label">Billing history</div>
       <div style="display:flex;flex-direction:column">
-        ${[['1 May 2026','Director — £490.00','Paid'],
-           ['1 Apr 2026','Director — £490.00','Paid'],
-           ['1 Mar 2026','Director — £490.00','Paid'],
+        ${[['1 May 2026','Growth — £490.00','Paid'],
+           ['1 Apr 2026','Growth — £490.00','Paid'],
+           ['1 Mar 2026','Growth — £490.00','Paid'],
         ].map(([d,desc,s])=>`<div style="display:flex;align-items:center;gap:10px;font-size:11px;padding:8px 0;border-bottom:1px solid #F5F4F0">
           <span style="color:#888780;min-width:78px">${d}</span>
           <span style="flex:1;color:#1a1a18">${desc}</span>
@@ -1707,11 +1707,11 @@ document.addEventListener('click', ()=> closeAllDropdowns());
 
 // ── SETTINGS — PLAN SELECTION ─────────────────────────────────
 const PLAN_LABELS = {
-  'starter':      'Operator — £290/mo',
-  'growth':       'Director — £490/mo',
+  'starter':      'Starter — £290/mo',
+  'growth':       'Growth — £490/mo',
   'growth-social':'Reach — £990/mo',
-  'scale':        'Chief of Staff — £1,490/mo',
-  'enterprise':   'Command — Custom pricing'
+  'scale':        'Scale — £1,490/mo',
+  'enterprise':   'Enterprise — Custom pricing'
 };
 let pendingPlan = null;
 let currentPlan = 'growth';
@@ -1932,12 +1932,12 @@ function saveCard(){
     <div class="mob-card" style="display:flex;flex-direction:column;gap:8px">
 
       <div style="display:flex;align-items:flex-start;gap:10px">
-        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Operator</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">Core intake & matching flows</div></div>
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Starter</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">Core intake & matching flows</div></div>
         <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£290<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:10px;border:2px solid #1D9E75;background:#F9FFFB;border-radius:8px;padding:9px 10px;margin:0 -2px">
-        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Director <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">Current</span></div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ valuation intelligence + KYC / AML</div></div>
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Growth <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">Current</span></div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ valuation intelligence + KYC / AML</div></div>
         <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£490<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
       </div>
 
@@ -1947,12 +1947,12 @@ function saveCard(){
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:10px">
-        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Chief of Staff</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ financial ops or BD Synch module</div></div>
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Scale</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ financial ops or BD Synch module</div></div>
         <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£1,490<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:10px">
-        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Command</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">White-label, portfolio reporting, API</div></div>
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Enterprise</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">White-label, portfolio reporting, API</div></div>
         <div style="font-size:13px;font-weight:400;color:#888780;white-space:nowrap">Custom</div>
       </div>
 
