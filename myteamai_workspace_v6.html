@@ -1539,7 +1539,7 @@ const UP_CONTENT = {
 
         <div class="up-plan-row" id="plan-growth-social" onclick="selectPlan('growth-social')">
           <div class="up-plan-row-left">
-            <div class="up-plan-row-name">Operational Manager</div>
+            <div class="up-plan-row-name">Reach</div>
             <div class="up-plan-row-feat">Director flows + social media management, content automation, and brand voice enforcement</div>
           </div>
           <div class="up-plan-row-price">£990<span>/mo</span></div>
@@ -1549,7 +1549,7 @@ const UP_CONTENT = {
         <div class="up-plan-row" id="plan-scale" onclick="selectPlan('scale')">
           <div class="up-plan-row-left">
             <div class="up-plan-row-name">Chief of Staff</div>
-            <div class="up-plan-row-feat">Operational Manager flows + financial operations or Business Development Synch module</div>
+            <div class="up-plan-row-feat">Reach flows + financial operations or Business Development Synch module</div>
           </div>
           <div class="up-plan-row-price">£1,490<span>/mo</span></div>
           <div class="up-plan-row-check" id="pc-scale"></div>
@@ -1709,7 +1709,7 @@ document.addEventListener('click', ()=> closeAllDropdowns());
 const PLAN_LABELS = {
   'starter':      'Operator — £290/mo',
   'growth':       'Director — £490/mo',
-  'growth-social':'Operational Manager — £990/mo',
+  'growth-social':'Reach — £990/mo',
   'scale':        'Chief of Staff — £1,490/mo',
   'enterprise':   'Command — Custom pricing'
 };
@@ -1926,6 +1926,36 @@ function saveCard(){
       <div class="mob-flow"><div style="font-size:18px">📅</div><div style="flex:1"><div class="mob-flow-name">Google Calendar</div><div class="mob-flow-meta">Viewings sync enabled</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
       <div class="mob-flow"><div style="font-size:18px">💼</div><div style="flex:1"><div class="mob-flow-name">HubSpot CRM</div><div class="mob-flow-meta">Contacts & pipeline synced</div></div><span class="mob-sbadge" style="background:#E1F5EE;color:#085041">Active</span></div>
       <div class="mob-flow"><div style="font-size:18px">📸</div><div style="flex:1"><div class="mob-flow-name">Instagram Business</div><div class="mob-flow-meta">Approval workflow active</div></div><span class="mob-sbadge" style="background:#FAEEDA;color:#633806">Pending</span></div>
+    </div>
+
+    <div class="mob-slbl">Subscription plan</div>
+    <div class="mob-card" style="display:flex;flex-direction:column;gap:8px">
+
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Operator</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">Core intake & matching flows</div></div>
+        <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£290<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:10px;border:2px solid #1D9E75;background:#F9FFFB;border-radius:8px;padding:9px 10px;margin:0 -2px">
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Director <span style="font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:#E1F5EE;color:#085041;margin-left:4px">Current</span></div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ valuation intelligence + KYC / AML</div></div>
+        <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£490<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Reach</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ social media, content & brand voice</div></div>
+        <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£990<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Chief of Staff</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">+ financial ops or BD Synch module</div></div>
+        <div style="font-size:14px;font-weight:500;color:#1a1a18;white-space:nowrap">£1,490<span style="font-size:10px;font-weight:300;color:#888780">/mo</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:#1a1a18">Command</div><div style="font-size:11px;color:#888780;line-height:1.4;margin-top:2px">White-label, portfolio reporting, API</div></div>
+        <div style="font-size:13px;font-weight:400;color:#888780;white-space:nowrap">Custom</div>
+      </div>
+
     </div>
   </div>
 
