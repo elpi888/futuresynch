@@ -103,140 +103,87 @@
     {
       "source": "/terms",
       "destination": "/terms.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.com"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.com"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.co.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.co.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.info"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.info"
+        }
+      ],
+      "destination": "/myteamai.html"
     }
   ],
-  "redirects": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.my-team-ai.com"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.co.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.co.uk"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.info"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "my-team-ai.info"
-        }
-      ],
-      "destination": "https://futuresynch.com/my-team-ai",
-      "permanent": false
-    }
-  ]
+  "redirects": []
 }
