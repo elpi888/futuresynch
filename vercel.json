@@ -1,72 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/my-team-ai/curtis-sloane",
-      "destination": "/myteamai_workspace_v6.html"
-    },
-    {
-      "source": "/my-team-ai/curtis-sloane/",
-      "destination": "/myteamai_workspace_v6.html"
-    },
-    {
-      "source": "/my-team-ai/kitsoft-pipeline",
-      "destination": "/kitsoft-pipeline.html"
-    },
-    {
-      "source": "/my-team-ai/kitsoft-pipeline/",
-      "destination": "/kitsoft-pipeline.html"
-    },
-    {
-      "source": "/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/terms",
-      "destination": "/terms.html"
-    },
-
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "my-team-ai.com" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.my-team-ai.com" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "my-team-ai.uk" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.my-team-ai.uk" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "my-team-ai.co.uk" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.my-team-ai.co.uk" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "my-team-ai.info" }],
-      "destination": "/myteamai.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.my-team-ai.info" }],
-      "destination": "/myteamai.html"
-    },
-
-    {
       "source": "/",
       "destination": "/futuresynch-index.html"
     },
@@ -81,6 +15,22 @@
     {
       "source": "/myteamai",
       "destination": "/myteamai.html"
+    },
+    {
+      "source": "/my-team-ai/curtis-sloane",
+      "destination": "/myteamai_workspace_v6.html"
+    },
+    {
+      "source": "/my-team-ai/curtis-sloane/",
+      "destination": "/myteamai_workspace_v6.html"
+    },
+    {
+      "source": "/my-team-ai/kitsoft-pipeline",
+      "destination": "/kitsoft-pipeline.html"
+    },
+    {
+      "source": "/my-team-ai/kitsoft-pipeline/",
+      "destination": "/kitsoft-pipeline.html"
     },
     {
       "source": "/blog",
@@ -139,12 +89,176 @@
       "destination": "/why-ai-tools-fail-without-operational-system.html"
     },
     {
+      "source": "/property-playbook",
+      "destination": "/property-playbook.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
       "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.co.uk"
+        }
+      ],
       "destination": "/investor-memo.html"
     },
     {
-      "source": "/property-playbook",
-      "destination": "/property-playbook.html"
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.co.uk"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.com"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.com"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.uk"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.uk"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.info"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/investor-memo",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.info"
+        }
+      ],
+      "destination": "/investor-memo.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.com"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.com"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.co.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.co.uk"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "my-team-ai.info"
+        }
+      ],
+      "destination": "/myteamai.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.my-team-ai.info"
+        }
+      ],
+      "destination": "/myteamai.html"
     }
   ],
   "redirects": []
