@@ -261,5 +261,11 @@
       "destination": "/myteamai.html"
     }
   ],
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/investor-memo",
+      "destination": "https://www.my-team-ai.co.uk/investor-memo",
+      "permanent": false
+    }
+  ]
 }
