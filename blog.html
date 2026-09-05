@@ -474,21 +474,40 @@ document.querySelector('.newsletter-submit').addEventListener('click', async fun
   if (!input.value.trim() || !input.value.includes('@')) { input.focus(); return; }
   btn.textContent = 'Sending...';
   btn.disabled = true;
+  const HS_PORTAL_ID = '148226118';
+  const HS_FORM_GUID = '71bcc6af-6c76-4ee4-81d9-4372ede57700';
+
+  const payload = {
+    fields: [{ name: 'email', value: input.value.trim() }],
+    context: { pageUri: window.location.href, pageName: 'Insights newsletter signup' },
+    legalConsentOptions: {
+      consent: {
+        consentToProcess: true,
+        text: 'I agree to receive occasional emails from Future Synch and understand I can unsubscribe at any time.'
+      }
+    }
+  };
+
   try {
-    const res = await fetch('https://formspree.io/f/xeevqggq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ email: input.value })
-    });
+    const res = await fetch(
+      'https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL_ID + '/' + HS_FORM_GUID,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }
+    );
     if (res.ok) {
       btn.textContent = 'Subscribed ✓';
       btn.style.background = '#2e6648';
       input.value = '';
     } else {
+      console.error('Newsletter signup failed: HTTP ' + res.status);
       btn.textContent = 'Try again';
       btn.disabled = false;
     }
   } catch(e) {
+    console.error('Newsletter signup failed:', e);
     btn.textContent = 'Try again';
     btn.disabled = false;
   }
