@@ -465,6 +465,11 @@ footer { border-top: 0.5px solid var(--border); padding: 2rem; }
         <p>Thank you. We review all applications within 5 business days. If accepted, we will be in touch to discuss next steps.</p>
       </div>
 
+      <div class="success-message" id="errorMsg" style="display:none;border-color:#c0392b">
+        <h3>Submission failed</h3>
+        <p>Your application did not send. Please email the details to synch@futuresynch.com and we will pick it up from there.</p>
+      </div>
+
     </form>
   </main>
 </div>
@@ -488,18 +493,111 @@ footer { border-top: 0.5px solid var(--border); padding: 2rem; }
 </footer>
 
 <script>
-document.getElementById('growthForm').addEventListener('submit', function(e) {
+const HS_PORTAL_ID = '148226118';
+const HS_FORM_GUID = '722af13d-e5eb-4dc1-92d0-cef877cabead';
+
+function fieldValues(form) {
+  const fd = new FormData(form);
+  const out = {};
+  for (const [k, v] of fd.entries()) {
+    if (v === '' || v == null) continue;
+    out[k] = out[k] ? out[k] + ';' + v : v;
+  }
+  return out;
+}
+
+document.getElementById('growthForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  const form = this;
+  const btn = form.querySelector('.btn-submit');
+
   let valid = true;
-  this.querySelectorAll('[required]').forEach(f => {
+  form.querySelectorAll('[required]').forEach(f => {
     if (f.type === 'checkbox' && !f.checked) { f.style.outline = '2px solid red'; valid = false; }
     else if (f.type !== 'checkbox' && !f.value.trim()) { f.style.borderColor = '#c0392b'; valid = false; }
     else { f.style.borderColor = ''; f.style.outline = ''; }
   });
-  if (!valid) { this.querySelector('[required]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
-  document.getElementById('successMsg').style.display = 'block';
-  this.querySelector('.btn-submit').style.display = 'none';
-  document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (!valid) { form.querySelector('[required]').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+
+  btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = 'Sending\u2026';
+  document.getElementById('errorMsg').style.display = 'none';
+
+  const v = fieldValues(form);
+  const name = (v.founderName || '').trim();
+
+  // Everything beyond the five standard fields is packed into one
+  // multi-line property, because the HubSpot form only carries six fields.
+  const detailPairs = [
+    ['Development stage', v.stage],
+    ['One-sentence description', v.oneSentence],
+    ['Primary ICP', v.icp],
+    ['Acquisition channels', v.channels],
+    ['Structured pipeline', v.pipeline],
+    ['Tracks weekly metrics', v.metrics],
+    ['Metrics tracked', v.metricsDetail],
+    ['Primary growth constraint', v.primaryChallenge],
+    ['Tried in last 6 months that failed', v.tried],
+    ['Top 3 priorities next 90 days', v.priorities],
+    ['Competitors', v.competitors],
+    ['Why customers choose them', v.whyChoose],
+    ['Why customers leave them', v.whyLeave],
+    ['CRM', v.crm],
+    ['Project management', v.pm],
+    ['Finance', v.finance],
+    ['Marketing automation', v.marketing],
+    ['Uses AI internally', v.usesAI],
+    ['Uses automation workflows', v.usesAutomation],
+    ['Automation used for', v.automationFor],
+    ['Fundraising', v.fundraising],
+    ['Fundraising stage', v.fundraisingStage],
+    ['Biggest fundraising friction', v.fundraisingChallenge],
+    ['Implementation timeline', v.timeline]
+  ];
+
+  const detail = detailPairs
+    .filter(function (pair) { return pair[1] && String(pair[1]).trim() !== ''; })
+    .map(function (pair) { return pair[0] + ': ' + pair[1]; })
+    .join('\n\n');
+
+  const fields = [
+    { name: 'firstname', value: name.split(' ')[0] || '' },
+    { name: 'lastname', value: name.split(' ').slice(1).join(' ') },
+    { name: 'email', value: v.email || '' },
+    { name: 'company', value: v.org || '' },
+    { name: 'website', value: v.website || '' },
+    { name: 'application_detail', value: detail }
+  ].filter(function (f) { return f.value !== ''; });
+
+  const payload = {
+    fields: fields,
+    context: { pageUri: window.location.href, pageName: 'Strategic Growth Review application' },
+    legalConsentOptions: {
+      consent: {
+        consentToProcess: true,
+        text: 'I consent to Future Synch storing and processing my information to respond to this application.'
+      }
+    }
+  };
+
+  try {
+    const res = await fetch(
+      'https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL_ID + '/' + HS_FORM_GUID,
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }
+    );
+    if (!res.ok) throw new Error('HubSpot responded ' + res.status);
+    document.getElementById('successMsg').style.display = 'block';
+    btn.style.display = 'none';
+    document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (err) {
+    console.error('Application submission failed:', err);
+    const em = document.getElementById('errorMsg');
+    em.style.display = 'block';
+    em.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    btn.disabled = false;
+    btn.textContent = label;
+  }
 });
 </script>
 </body>

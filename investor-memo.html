@@ -274,21 +274,45 @@ document.getElementById('investor-form').addEventListener('submit', async functi
     ]
   };
 
+  const PORTAL_ID = '148226118';
+  const FORM_GUID = '1aef3242-d65a-4f02-9bcc-6b6e97343b4c';
+
+  payload.context = { pageUri: window.location.href, pageName: 'My Team AI investor memo request' };
+  payload.legalConsentOptions = {
+    consent: {
+      consentToProcess: true,
+      text: 'I consent to My Team AI Limited storing and processing my information to respond to this request.'
+    }
+  };
+
   try {
-    // POST to HubSpot Forms API
-    // Replace PORTAL_ID and FORM_GUID with your HubSpot form details
-    const PORTAL_ID = 'YOUR_PORTAL_ID';
-    const FORM_GUID = 'YOUR_INVESTOR_FORM_GUID';
-    await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`, {
+    const res = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
+    if (!res.ok) throw new Error('HubSpot responded ' + res.status);
   } catch(err) {
-    // Fail silently — show success regardless (form submission still captured)
-    console.log('HubSpot submission error:', err);
+    console.error('Investor memo submission failed:', err);
+    btn.disabled = false;
+    btn.textContent = 'Request the memo';
+    let em = document.getElementById('submit-error');
+    if (!em) {
+      em = document.createElement('p');
+      em.id = 'submit-error';
+      em.style.cssText = 'color:#c0392b;font-size:14px;margin-top:12px';
+      btn.parentNode.insertBefore(em, btn.nextSibling);
+    }
+    em.textContent = 'That did not send. Please email ok@my-team-ai.co.uk and we will respond directly.';
+    return;
   }
 
   // Show success
   document.getElementById('investor-form').style.display = 'none';
-  document.getElement
+  const ok = document.getElementById('success');
+  ok.style.display = 'block';
+  ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+</body>
+</html>
