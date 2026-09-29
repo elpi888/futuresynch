@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Olesya Kovalskaya</title>
+<meta name="description" content="Olesya Kovalskaya, founder of My Team AI and Future Synch. Operational intelligence for relationship-led firms and commercial infrastructure for creators, government and asset companies.">
+<link rel="canonical" href="https://futuresynch.com/olesya-kovalskaya">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Olesya Kovalskaya">
+<meta property="og:description" content="Olesya Kovalskaya, founder of My Team AI and Future Synch. Operational intelligence for relationship-led firms and commercial infrastructure for creators, government and asset companies.">
+<meta property="og:url" content="https://futuresynch.com/olesya-kovalskaya">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1A3A29">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: single phone-first column, like an operations dashboard card stack. Brand green header, status chips, action tiles. */
+html{color-scheme:light}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{
+  --bg:#F3F5F2; --surface:#FFFFFF; --ink:#16211B; --muted:#56655C; --line:#DCE3DD;
+  --brand:#1A3A29; --brand-ink:#FFFFFF; --accent:#3E8A5E; --chip:#E4EEE7;
+  --live:#2E9E5B;
+  --f-display:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1612; --surface:#15201A; --ink:#E7EEE9; --muted:#9FB1A6; --line:#26352C;
+  --brand:#1A3A29; --brand-ink:#F1F6F2; --accent:#7CC79B; --chip:#1F3027; --live:#5BD08A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1612; --surface:#15201A; --ink:#E7EEE9; --muted:#9FB1A6; --line:#26352C;
+  --brand:#1A3A29; --brand-ink:#F1F6F2; --accent:#7CC79B; --chip:#1F3027; --live:#5BD08A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:18px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.hero{background:var(--brand);color:var(--brand-ink);border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;gap:14px}
+.tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#5BD08A;box-shadow:0 0 0 3px rgba(91,208,138,.25)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,7vw,36px);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lede{margin:0;font-size:15px;opacity:.92;max-width:52ch}
+.roles{display:flex;flex-wrap:wrap;gap:6px}
+.roles a{text-decoration:none;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.12)}
+
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:14px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer;min-width:0}
+.btn strong{font-size:15px;font-weight:700}
+.btn small{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary small{color:rgba(255,255,255,.85)}
+:root[data-theme="dark"] .btn.primary, :root[data-theme="dark"] .btn.primary small{color:#0E1612}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary, :root:not([data-theme="light"]) .btn.primary small{color:#0E1612}}
+.btn:hover{border-color:var(--accent)}
+.span2{grid-column:1/-1}
+
+section{display:flex;flex-direction:column;gap:10px}
+h2{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+
+.ventures{display:flex;flex-direction:column;gap:10px}
+.v{text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.v-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.v h3{margin:0;font-size:16px;font-weight:700}
+.v .role{font-size:12px;color:var(--muted);font-weight:600}
+.v p{margin:0;color:var(--ink);font-size:14px}
+.v-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.chip.live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--live);margin-right:6px;vertical-align:1px}
+a.v:hover{border-color:var(--accent)}
+.v .link{font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;margin-left:auto}
+
+.meet{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.meet li{display:flex;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:14px}
+.meet li:first-child{border-top:0}
+.meet b{min-width:92px;font-size:12px;color:var(--muted);font-weight:600;padding-top:1px}
+
+.foot{font-size:12px;color:var(--muted);text-align:center;padding-top:6px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px}
+@media (max-width:380px){.actions{grid-template-columns:1fr}.meet li{flex-direction:column;gap:2px}.meet b{min-width:0}}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="tag"><span class="dot"></span>London · Growth Architecture</div>
+    <h1>Olesya Kovalskaya</h1>
+    <p class="lede">Founder of My Team AI, the operational intelligence platform for relationship-led firms, and Future Synch, commercial infrastructure for creators, government and asset companies.</p>
+    <div class="roles"><a href="https://my-team-ai.uk" target="_blank" rel="noopener">My Team AI</a><a href="https://futuresynch.com" target="_blank" rel="noopener">Future Synch</a><a href="https://myreeldream.ai" target="_blank" rel="noopener">MyReelDream</a><a href="https://raisetalks.com" target="_blank" rel="noopener">RaiseTalks</a><a href="https://acumen-finance.com" target="_blank" rel="noopener">Acumen Finance</a></div>
+  </header>
+
+  <div class="actions" aria-label="Ways to connect">
+    <a class="btn primary span2" href="https://www.linkedin.com/in/olesyakovalskaya" target="_blank" rel="noopener"><strong>Connect on LinkedIn</strong><small>linkedin.com/in/olesyakovalskaya</small></a>
+    <a class="btn" href="mailto:ok@futuresynch.com"><strong>Email</strong><small>ok@futuresynch.com</small></a>
+    <a class="btn" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AN%3AKovalskaya%3BOlesya%3B%3B%3B%0D%0AFN%3AOlesya%20Kovalskaya%0D%0AORG%3AFuture%20Synch%0D%0ATITLE%3AFounder%2C%20My%20Team%20AI%20and%20Future%20Synch%0D%0AEMAIL%3BTYPE%3DWORK%3Aok%40futuresynch.com%0D%0AURL%3Ahttps%3A//futuresynch.com/olesya-kovalskaya%0D%0AURL%3BTYPE%3DLinkedIn%3Ahttps%3A//www.linkedin.com/in/olesyakovalskaya%0D%0AADR%3BTYPE%3DWORK%3A%3B%3B%3BLondon%3B%3B%3BUnited%20Kingdom%0D%0AEND%3AVCARD%0D%0A" download="Olesya-Kovalskaya.vcf"><strong>Save contact</strong><small>Add to your phone</small></a>
+    <a class="btn span2" href="#portfolio"><strong>Portfolio</strong><small>5 projects</small></a>
+  </div>
+
+  <section>
+    <h2 id="portfolio">Portfolio</h2>
+    <div class="ventures">
+      <a class="v" href="https://my-team-ai.uk" target="_blank" rel="noopener">
+        <div class="v-head"><h3>My Team AI</h3><span class="role">Founder</span></div>
+        <p>Operational intelligence for relationship-led firms. We turn a team's operational memory into workflows that run every day, then layer AI on top. Estate agencies now, private equity next.</p>
+        <div class="v-foot"><span class="chip live">Live</span><span class="chip">Boutique agency, Holland Park and Notting Hill</span><span class="link">my-team-ai.uk ↗</span></div>
+      </a>
+      <a class="v" href="https://futuresynch.com" target="_blank" rel="noopener">
+        <div class="v-head"><h3>Future Synch</h3><span class="role">Founder</span></div>
+        <p>Commercial infrastructure for creators, government and asset companies, across PropTech, GovTech, social impact and real assets.</p>
+        <div class="v-foot"><span class="chip">Growth operating agency</span><span class="link">futuresynch.com ↗</span></div>
+      </a>
+      <a class="v" href="https://myreeldream.ai" target="_blank" rel="noopener">
+        <div class="v-head"><h3>MyReelDream</h3><span class="role">Growth and Partnerships</span></div>
+        <p>AI-native media infrastructure for the creative industries, developed with Future Synch.</p>
+        <div class="v-foot"><span class="chip">Creative industries</span><span class="link">myreeldream.ai ↗</span></div>
+      </a>
+      <a class="v" href="https://raisetalks.com" target="_blank" rel="noopener">
+        <div class="v-head"><h3>RaiseTalks</h3><span class="role">Building</span></div>
+        <p>AI-powered fundraising workspace for founders.</p>
+        <div class="v-foot"><span class="chip">In build</span><span class="link">raisetalks.com ↗</span></div>
+      </a>
+      <a class="v" href="https://acumen-finance.com" target="_blank" rel="noopener">
+        <div class="v-head"><h3>Acumen Finance</h3><span class="role">Head of Mandate Qualifications</span></div>
+        <p>Qualifying real-world asset mandates and the tokenisation of high-value assets.</p>
+        <div class="v-foot"><span class="chip">Real-world assets</span><span class="link">acumen-finance.com ↗</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Good reasons to talk</h2>
+    <ul class="meet">
+      <li><b>Operators</b><span>A workflow in your business that still depends on one person remembering.</span></li>
+      <li><b>VC and PE</b><span>How your firm keeps deal flow and relationship memory when people move on.</span></li>
+      <li><b>Property</b><span>Prime London agencies ready to run matching and follow-up as a system.</span></li>
+      <li><b>Media</b><span>Studios, agencies and broadcasters exploring AI-native production.</span></li>
+      <li><b>Founders</b><span>Preparing a raise and want a better way to run it.</span></li>
+      <li><b>Assets</b><span>Owners and family offices considering tokenisation of high-value assets.</span></li>
+    </ul>
+  </section>
+
+  <p class="foot">Met at the AI Dinner? Connect on LinkedIn with a line about what we discussed.</p>
+</main>
+</body>
+</html>
