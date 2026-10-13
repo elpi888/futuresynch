@@ -36,7 +36,7 @@
     { "source": "/apply-for-strategic-growth-review", "destination": "/futuresynch-apply.html" },
     { "source": "/my-team-ai", "destination": "/myteamai.html" },
     { "source": "/myteamai", "destination": "/myteamai.html" },
-    { "source": "/my-team-ai/curtis-sloane", "destination": "/real_estate_demo.html" },
+    { "source": "/my-team-ai/curtis-sloane", "destination": "/real-estate-demo.html" },
     { "source": "/my-team-ai/curtis-sloane/", "destination": "/myteamai_workspace_v6.html" },
     { "source": "/my-team-ai/kitsoft-pipeline", "destination": "/kitsoft-pipeline.html" },
     { "source": "/my-team-ai/kitsoft-pipeline/", "destination": "/kitsoft-pipeline.html" },
