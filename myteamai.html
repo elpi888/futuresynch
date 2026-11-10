@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Team AI — Operational Intelligence for Your Business</title>
-<meta name="description" content="My Team AI is operational intelligence deployed for your business in 90 days. It coordinates autonomous agents across your apps, files, and cloud services — moving you from click-based work to AI-driven outcomes." />
+<title>My Team AI | Your agency's operational memory, running inside your CRM</title>
+<meta name="description" content="My Team AI turns how your agency works into AI workflows on the CRM you already use. Every step is visible; compliance steps are signed off by a person." />
 <meta name="keywords" content="operational intelligence, business AI, autonomous agents, AI automation, My Team AI, AI workflow, Future Synch" />
 <meta name="author" content="Future Synch" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.futuresynch.com/my-team-ai" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="My Team AI — Operational Intelligence for Your Business" />
-<meta property="og:description" content="My Team AI is operational intelligence deployed for your business in 90 days. It coordinates autonomous agents across your apps, files, and cloud services — moving you from click-based work to AI-driven outcomes." />
+<meta property="og:title" content="My Team AI | Your agency's operational memory, running inside your CRM" />
+<meta property="og:description" content="My Team AI turns how your agency works into AI workflows on the CRM you already use. Every step is visible; compliance steps are signed off by a person." />
 <meta property="og:url" content="https://www.futuresynch.com/my-team-ai" />
 <meta property="og:site_name" content="My Team AI" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="My Team AI — Operational Intelligence for Your Business" />
-<meta name="twitter:description" content="My Team AI is operational intelligence deployed for your business in 90 days. It coordinates autonomous agents across your apps, files, and cloud services — moving you from click-based work to AI-driven outcomes." />
+<meta name="twitter:title" content="My Team AI | Your agency's operational memory, running inside your CRM" />
+<meta name="twitter:description" content="My Team AI turns how your agency works into AI workflows on the CRM you already use. Every step is visible; compliance steps are signed off by a person." />
 <meta name="twitter:site" content="@FutureSynch" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a3a2a'/><text y='22' x='5' font-size='18' font-family='Arial,sans-serif' font-weight='700' fill='white'>FS</text></svg>" />
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a3a2a'/><text y='22' x='5' font-size='18' font-family='Arial,sans-serif' font-weight='700' fill='white'>FS</text></svg>" />
@@ -82,6 +82,8 @@
     transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--accent-mid); }
+  .nav-back { font-size: 0.8125rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; }
+  .nav-back:hover { color: var(--ink); }
 
   /* HERO */
   .hero {
@@ -471,25 +473,34 @@
 .mobile-menu a { font-size: 0.9375rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu .mobile-cta { color: var(--accent); font-weight: 700; }
+
+.tiers.tiers-4 { grid-template-columns: repeat(4, 1fr); border-radius: 8px; overflow: hidden; }
+.tiers-4 .tier, .tiers-4 .tier:first-child, .tiers-4 .tier:last-child { border-radius: 0; }
+.tiers-4 .tier-price .amount { font-size: 2rem; }
+.tiers-4 .tier-price { white-space: nowrap; }
+@media (max-width: 900px) { .tiers.tiers-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .tiers.tiers-4 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="https://www.futuresynch.com" class="nav-logo">My Team AI</a>
+  <a href="https://www.my-team-ai.co.uk" class="nav-logo">My Team AI</a>
+  <a href="https://www.futuresynch.com" class="nav-back">Future Synch &rarr;</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <span class="hero-eyebrow">My Team AI — Operational Intelligence</span>
-  <h1>A team that runs<br>your business<br><em>without you managing it</em></h1>
+  <span class="hero-eyebrow">My Team AI &middot; Operational Intelligence</span>
+  <h1>Your agency's operational memory,<br><em>running inside your CRM</em></h1>
   <p class="hero-sub">
-    My Team AI is deployed for your business in 90 days. It coordinates autonomous agents across your apps, files, and cloud services, so the work gets done, not just tracked.
+    My Team AI turns how your agency works into AI workflows on the CRM you already use. Every step is visible; compliance steps are signed off by a person.
   </p>
   <div class="hero-actions">
     <a href="/apply-for-strategic-growth-review" class="btn-primary">Deploy your team</a>
     <a href="#how-it-works" class="btn-secondary">See how it works</a>
   </div>
+  <p style="margin-top: 1.75rem; font-size: 0.8125rem; color: var(--ink-faint);">First client: a premium London estate agency, live on HubSpot.</p>
 </div>
 
 <hr class="divider">
@@ -611,131 +622,94 @@
     <p class="section-label">Pricing</p>
     <h2>Built for you first.<br>Then it runs itself.</h2>
     <p class="section-lead">
-      Choose the build that fits where you are — then subscribe to keep it running and growing. Three ways to get started, one standard of delivery.
+      Start where it makes sense for your agency: a tailored Playbook, the Agent Kit or the Readiness Check, or go straight to deployment. Deployment is a fixed fee, then a monthly subscription based on the flows you have running.
     </p>
 
-    <!-- Step 1: Pick your build -->
-    <div style="margin-bottom: 0.5rem;">
-      <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 1 — choose your build</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;">
-
-        <div style="background: var(--surface-card); padding: 1.75rem;">
-          <div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem;">Starter build</div>
-          <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">£3,500</div>
-          <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">30 days · 1–2 workflows</div>
-          <ul style="list-style: none; font-size: 0.8125rem; color: var(--ink-muted);">
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> 1–2 core workflows configured</li>
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Key integrations connected</li>
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Handover + documentation</li>
-            <li style="padding: 0.35rem 0; display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Upgradeable to full build anytime</li>
-          </ul>
-          <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--ink-faint);">£1,750 deposit · £1,750 on delivery</div>
-        </div>
-
-        <div style="background: var(--surface-card); padding: 1.75rem; border-left: 2px solid var(--accent);">
-          <div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.5rem;">Full build</div>
-          <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">£12,000</div>
-          <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">90 days · complete ops layer</div>
-          <ul style="list-style: none; font-size: 0.8125rem; color: var(--ink-muted);">
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Full workflow audit + architecture</li>
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> AI agents across sales, ops, content</li>
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> 200+ integrations configured</li>
-            <li style="padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Engineer + advisor + tools included</li>
-            <li style="padding: 0.35rem 0; display: flex; gap: 0.5rem;"><span style="color: var(--accent-mid);">→</span> Handover running, not just documented</li>
-          </ul>
-          <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--ink-faint);">£6,000 deposit · £6,000 on delivery</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 2: How to pay -->
-    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 2 — choose how to pay</p>
+    <!-- Ladder -->
+    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 2rem; margin-bottom: 1.25rem;">Where to start</p>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;">
-
       <div style="background: var(--surface-card); padding: 1.5rem 1.25rem;">
-        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Pay in full</div>
-        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Deposit + completion. Standard terms. Subscription begins after handover.</div>
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">The Property CRM Playbook</div>
+        <div style="font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.6rem;">&pound;400</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Tailored to your agency from 12 short questions, within 5 working days. Data model, UK consent rules, a daily relationship routine and a 90-day roadmap. Launch price for the first 10 agencies.</div>
+        <a href="https://www.futuresynch.com/property-playbook" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light);">See the Playbook &rarr;</a>
       </div>
-
       <div style="background: var(--surface-card); padding: 1.5rem 1.25rem;">
-        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Payment plan</div>
-        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Spread the build cost over 6 months. £2,000/mo for full build. Subscription begins after handover.</div>
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Playbook + Agent Kit + CRM Build Pack</div>
+        <div style="font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.6rem;">&pound;950</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">The Playbook, plus instruction files that let your own AI agent, such as Claude, run the daily desk, and build sheets for any CRM.</div>
+        <a href="https://www.futuresynch.com/agent-kit" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light);">See the Agent Kit &rarr;</a>
       </div>
-
-      <div style="background: var(--surface-card); padding: 1.5rem 1.25rem; position: relative;">
-        <div style="position: absolute; top: 0; right: 0; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.2rem 0.6rem; border-radius: 0 0 0 4px;">10 spots only</div>
-        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">Equity swap</div>
-        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">No cash upfront. We build in exchange for a small equity stake. Early cohort founders only — applied for privately.</div>
-        <a href="/apply-for-strategic-growth-review" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light);">Apply for equity cohort →</a>
+      <div style="background: var(--surface-card); padding: 1.5rem 1.25rem;">
+        <div style="font-size: 0.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem;">The Readiness Check</div>
+        <div style="font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.6rem;">&pound;1,500</div>
+        <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">We test your CRM, data, connections and consent records. A written report (ready, ready with gaps, or not ready) and a 60-minute call. Credited if you bought the Playbook or kit in the last 60 days.</div>
+        <a href="https://www.futuresynch.com/readiness-check" style="display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light);">See the Readiness Check &rarr;</a>
       </div>
     </div>
 
-    <!-- Step 3: Subscription -->
-    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Step 3 — subscribe after go-live</p>
-    <div class="tiers">
+    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Deployment</p>
+    <div style="background: var(--surface-card); border: 0.5px solid var(--border); border-left: 2px solid var(--accent); border-radius: 8px; padding: 1.75rem; margin-bottom: 2.5rem; max-width: 520px;">
+      <div style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.5rem;">Deployment</div>
+      <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">&pound;12,000</div>
+      <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">Over three months</div>
+      <p style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Knowledge base build and workflow configuration on your CRM.</p>
+      <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--ink-faint);">50% on signing &middot; 50% at go-live</div>
+    </div>
+
+    <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem;">Then a subscription by active flows</p>
+    <div class="tiers tiers-4">
       <div class="tier">
         <p class="tier-name">Starter</p>
-        <p class="tier-desc">Solo founders who completed the starter build and want to keep it running.</p>
-        <div class="tier-price">
-          <span class="amount">£290</span>
-          <span class="period">/ month</span>
-        </div>
+        <p class="tier-desc">Intake and matching.</p>
+        <div class="tier-price"><span class="amount">&pound;290</span><span class="period">/ month</span></div>
         <ul class="tier-features">
-          <li>1–2 active workflows maintained</li>
-          <li>Platform access + updates</li>
-          <li>Core integrations kept live</li>
-          <li>Async support</li>
-          <li>1 seat</li>
+          <li>Register Applicant</li>
+          <li>Match Applicant</li>
+          <li>Match Property</li>
         </ul>
-        <a href="/apply-for-strategic-growth-review" class="tier-cta tier-cta-default">Apply for starter build</a>
       </div>
-
-      <div class="tier featured">
-        <div class="tier-badge">Most popular</div>
+      <div class="tier">
         <p class="tier-name">Growth</p>
-        <p class="tier-desc">Founders and small teams running the full ops layer across sales, content, and operations.</p>
-        <div class="tier-price">
-          <span class="amount">£490–1,490</span>
-          <span class="period">/ month</span>
-        </div>
+        <p class="tier-desc">Adds valuation and compliance.</p>
+        <div class="tier-price"><span class="amount">&pound;490</span><span class="period">/ month</span></div>
         <ul class="tier-features">
-          <li>Unlimited active workflows</li>
-          <li>Full platform + integrations</li>
-          <li>Sales, content, and ops coverage</li>
-          <li>Up to 5 team seats</li>
-          <li>Monthly strategy call (30 min)</li>
-          <li>Guided workflow expansion</li>
+          <li>Everything in Starter</li>
+          <li>Valuation Brief</li>
+          <li>KYC</li>
         </ul>
-        <a href="/apply-for-strategic-growth-review" class="tier-cta tier-cta-featured">Apply for full build</a>
       </div>
-
+      <div class="tier">
+        <p class="tier-name">Retainer</p>
+        <p class="tier-desc">Adds social media management.</p>
+        <div class="tier-price"><span class="amount">&pound;990</span><span class="period">/ month</span></div>
+        <ul class="tier-features">
+          <li>Everything in Growth</li>
+          <li>Social media management</li>
+        </ul>
+      </div>
       <div class="tier">
         <p class="tier-name">Scale</p>
-        <p class="tier-desc">Accelerators, VCs, and ecosystem operators managing multiple ventures.</p>
-        <div class="tier-price">
-          <span class="amount">£3,490</span>
-          <span class="period">/ month</span>
-        </div>
+        <p class="tier-desc">Adds finance and business development.</p>
+        <div class="tier-price"><span class="amount">&pound;1,490</span><span class="period">/ month</span></div>
         <ul class="tier-features">
-          <li>Everything in Growth, plus:</li>
-          <li>Multi-portfolio dashboard</li>
-          <li>10+ team seats</li>
-          <li>Cross-portfolio AI reporting</li>
-          <li>API access + data security</li>
-          <li>Dedicated monthly strategy session</li>
+          <li>Everything in Retainer</li>
+          <li>Financial operations</li>
+          <li>Business development</li>
         </ul>
-        <a href="/apply-for-strategic-growth-review" class="tier-cta tier-cta-default">Apply for full build</a>
       </div>
     </div>
+    <p style="margin-top: 1rem; font-size: 0.8125rem; color: var(--ink-muted);">Billing starts at go-live. Move up a tier as flows are added.</p>
 
     <!-- Enterprise -->
     <div class="enterprise-bar">
       <div>
-        <h3>Enterprise & custom deployments</h3>
+        <h3>Enterprise &amp; custom deployments</h3>
         <p>White-label, custom integration architecture, compliance requirements, large team rollouts, or property management / operations-specific builds. Scoped and priced to match the system you need.</p>
       </div>
       <a href="/apply-for-strategic-growth-review" class="btn-enterprise">Book a scoping call</a>
     </div>
+
   </div>
 </section>
 
@@ -748,9 +722,25 @@
       <div style="max-width: 540px;">
         <p class="section-label" style="margin-bottom: 0.6rem;">Built for your industry</p>
         <h3 style="font-family: var(--serif); font-size: 1.625rem; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; letter-spacing: -0.01em;">Now live: My Team AI for Estate Agencies</h3>
-        <p style="font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.7;">Client and applicant onboarding, valuation prep, off-market matching, and KYC/AML compliance, running the way a Holland Park agency trading since 1987 already proved it could.</p>
+        <p style="font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.7;">Client and applicant onboarding, valuation prep, off-market matching, and KYC/AML compliance, running the way a premium London estate agency already proved it could.</p>
       </div>
       <a href="/estate-agencies" class="btn-primary" style="white-space: nowrap; flex-shrink: 0;">See the estate agency edition →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYBOOK / READINESS CHECK POINTER -->
+<hr class="divider">
+<section>
+  <div class="section-inner">
+    <p class="section-label">Not ready to deploy yet?</p>
+    <h2>Start with the data,<br>then build on it</h2>
+    <p class="section-lead">
+      Most agencies get more from a clean CRM and clear consent records than from any tool on top of it. FutureSynch sells the first steps separately, so you can see the value before committing to a deployment.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
+      <a href="https://www.futuresynch.com/property-playbook" class="btn-primary">The Property CRM Playbook</a>
+      <a href="https://www.futuresynch.com/readiness-check" class="btn-secondary">The Readiness Check</a>
     </div>
   </div>
 </section>
@@ -781,54 +771,6 @@
           The memo is sent directly to you within 2 business days. No calls required before you read it.
         </p>
         <a href="/investor-memo" class="btn-invest">Request the Investor Memo →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROPERTY PLAYBOOK -->
-<hr class="divider">
-<section>
-  <div class="section-inner">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-      <div>
-        <p class="section-label" style="margin-bottom: 0.6rem;">Self-Serve · Property</p>
-        <h2 style="font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin-bottom: 1rem;">The Property Business<br>Database Automation<br><em style="font-style: italic; color: var(--accent-mid);">Playbook</em></h2>
-        <p style="font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 1.5rem;">A complete growth system for estate agencies ready to turn their contact database into a revenue engine. Strategy, architecture, Claude prompts, automation workflows, and a 90-day roadmap — in one document.</p>
-        <p style="font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem;">What's included</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">Growth strategy framework</span>
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">Claude analysis prompts</span>
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">Segmentation system</span>
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">5 automation workflows</span>
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">90-day implementation roadmap</span>
-          <span style="font-size: 0.8rem; color: var(--ink-muted); border: 0.5px solid var(--border-strong); border-radius: 100px; padding: 0.3rem 0.875rem;">Database architecture blueprints</span>
-        </div>
-      </div>
-      <div>
-        <div style="background: var(--surface-card); border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden;">
-          <div style="padding: 1.5rem 1.75rem; border-bottom: 0.5px solid var(--border);">
-            <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 0.35rem;">01 — Buy and open the Playbook</div>
-            <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Download the PDF. It contains everything you need — strategy, architecture, prompts, and the full 90-day roadmap.</div>
-          </div>
-          <div style="padding: 1.5rem 1.75rem; border-bottom: 0.5px solid var(--border);">
-            <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 0.35rem;">02 — Add it to Notion AI</div>
-            <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Upload the Playbook into a Notion page. Then ask Notion AI: <em>"Break this down into a task list for my marketing and sales team, week by week."</em></div>
-          </div>
-          <div style="padding: 1.5rem 1.75rem; border-bottom: 0.5px solid var(--border);">
-            <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 0.35rem;">03 — Follow step by step</div>
-            <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">Assign tasks. Work the roadmap. Month 1 foundation, Month 2 activation, Month 3 optimisation.</div>
-          </div>
-          <div style="padding: 1.5rem 1.75rem; border-bottom: 0.5px solid var(--border);">
-            <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 0.35rem;">04 — You have three months of work to do</div>
-            <div style="font-size: 0.8125rem; color: var(--ink-muted); line-height: 1.6;">The system is built, running, and compounding. A database that surfaces opportunities automatically — without relying on anyone's memory.</div>
-          </div>
-          <div style="padding: 1.75rem; background: var(--surface-alt);">
-            <div style="font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem;">£400</div>
-            <div style="font-size: 0.75rem; color: var(--ink-faint); margin-bottom: 1.25rem;">One-time · Instant PDF download · Yours to keep</div>
-            <a href="https://buy.stripe.com/5kQ6oH7zAfuh5Fj0x16EU0d" class="btn-primary" target="_blank" rel="noopener" style="display: block; text-align: center;">Buy the Playbook →</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -880,18 +822,21 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-brand">My Team AI · Future Synch</span>
+    <span class="footer-brand">My Team AI Limited</span>
     <div class="footer-links">
       <a href="https://www.my-team-ai.co.uk">My Team AI</a>
       <a href="/apply-for-strategic-growth-review">Apply for review</a>
-      <a href="/property-playbook">Property Playbook</a>
+      <a href="https://futuresynch.com/readiness-check">Readiness Check</a>
     </div>
       <div class="footer-socials">
         <a href="https://www.linkedin.com/company/future-synch/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5M12 13a2 2 0 0 1 4 0v3"/></svg>
         </a>
       </div>
-    <span class="footer-copy">© 2026 Future Synch. All rights reserved.</span>
+    <span class="footer-copy">© 2026 My Team AI Limited. All rights reserved.</span>
+  </div>
+  <div class="footer-inner" style="margin-top: 1rem;">
+    <span class="footer-copy">My Team AI Limited &middot; Company No. 17345724 &middot; 128 City Road, London EC1V 2NX &middot; <a href="mailto:ok@my-team-ai.co.uk" style="color: inherit;">ok@my-team-ai.co.uk</a></span>
   </div>
 </footer>
 

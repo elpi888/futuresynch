@@ -61,6 +61,9 @@
     { "source": "/olesya-kovalskaya", "destination": "/olesya-kovalskaya.html" },
     { "source": "/olesya-kovalskaya/", "destination": "/olesya-kovalskaya.html" },
     { "source": "/property-playbook", "destination": "/property-playbook.html" },
+    { "source": "/agent-kit", "destination": "/agent-kit.html" },
+    { "source": "/playbook-intake", "destination": "/playbook-intake.html" },
+    { "source": "/readiness-check", "destination": "/readiness-check.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" }
   ]

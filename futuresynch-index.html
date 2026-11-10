@@ -190,6 +190,22 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
 .mobile-menu a { font-size: 0.9375rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); }
 .mobile-menu a:last-child { border-bottom: none; }
 .mobile-menu .mobile-cta { color: var(--accent); font-weight: 700; }
+
+/* LADDER (replaces the old Playbook band) */
+.ladder-band { background: var(--surface-alt); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 5rem 2rem; }
+.ladder-band h2 { font-size: clamp(1.625rem, 3vw, 2.25rem); line-height: 1.15; letter-spacing: -0.025em; font-weight: 700; color: var(--ink); margin-bottom: 1rem; max-width: 640px; }
+.ladder-band .section-lead { max-width: 640px; }
+.ladder-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 3rem; }
+.ladder-card { border: 0.5px solid var(--border); border-radius: 8px; padding: 1.5rem; background: var(--surface-card); display: flex; flex-direction: column; }
+.ladder-step { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.75rem; }
+.ladder-card h3 { font-size: 0.9375rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.ladder-card p { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.65; flex: 1; }
+.ladder-price { margin-top: 1rem; padding-top: 0.75rem; border-top: 0.5px solid var(--border); font-size: 0.8125rem; color: var(--ink); font-weight: 600; }
+.ladder-price span { display: block; font-size: 0.7rem; color: var(--ink-faint); font-weight: 500; margin-top: 0.15rem; }
+.ladder-link { margin-top: 0.75rem; font-size: 0.75rem; font-weight: 600; color: var(--accent-mid); text-decoration: none; border-bottom: 0.5px solid var(--accent-light); align-self: flex-start; }
+.ladder-note { margin-top: 2rem; font-size: 0.75rem; color: var(--ink-faint); }
+@media (max-width: 900px) { .ladder-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .ladder-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -423,44 +439,20 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
   </div>
 </section>
 
-<div class="playbook-band" id="playbook">
-  <div class="playbook-inner">
-    <div>
-      <p class="playbook-meta">Self-Serve · Property</p>
-      <h2>The Property Business<br>Database Automation<br>Playbook</h2>
-      <p class="section-lead">A complete growth system for estate agencies ready to turn their contact database into a revenue engine. Strategy, architecture, Claude prompts, automation workflows, and a 90-day roadmap — in one document.</p>
-      <div style="margin-top:2rem;">
-        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:0.625rem;">What's included</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Growth strategy framework</span>
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Claude analysis prompts</span>
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Segmentation system</span>
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">5 automation workflows</span>
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">90-day implementation roadmap</span>
-          <span style="font-size:0.775rem;color:var(--ink-muted);background:var(--surface-card);border:0.5px solid var(--border-strong);padding:0.3rem 0.75rem;border-radius:100px;">Database architecture blueprints</span>
-        </div>
-      </div>
+<section class="ladder-band" id="playbook">
+  <div class="section-inner">
+    <p class="section-label">For estate agencies</p>
+    <h2>Professional relationship management on the CRM you already have</h2>
+    <p class="section-lead">Most agencies run on an entry-level CRM and a team that is too busy to log every call. We give your CRM an AI operator: every morning it tells each negotiator who to contact and why, drafts the personal follow-up in their own inbox, and proposes the updates after each call. Your team approves and sends everything.</p>
+    <div class="ladder-grid">
+      <div class="ladder-card"><div class="ladder-step">01</div><h3>The Playbook</h3><p>Tailored to your agency. The rules, data model and 90-day plan.</p><div class="ladder-price">&pound;400<span>Launch price for the first 10 agencies</span></div><a href="/property-playbook" class="ladder-link">See the Playbook &rarr;</a></div>
+      <div class="ladder-card"><div class="ladder-step">02</div><h3>Playbook + Agent Kit</h3><p>Everything your own AI agent needs to run it.</p><div class="ladder-price">&pound;950</div><a href="/agent-kit" class="ladder-link">See the Agent Kit &rarr;</a></div>
+      <div class="ladder-card"><div class="ladder-step">03</div><h3>Readiness Check</h3><p>We test your CRM, data and connections and tell you exactly what is ready.</p><div class="ladder-price">&pound;1,500<span>Credited if you bought the playbook or kit in the last 60 days</span></div><a href="/readiness-check" class="ladder-link">See the Readiness Check &rarr;</a></div>
+      <div class="ladder-card"><div class="ladder-step">04</div><h3>Deployment and subscription</h3><p>By My Team AI. We build and run it for you.</p><div class="ladder-price">Sold by My Team AI Limited</div><a href="https://my-team-ai.uk" class="ladder-link">my-team-ai.uk &rarr;</a></div>
     </div>
-    <div>
-      <div class="playbook-how">
-        <div class="playbook-step"><span class="playbook-step-num">01</span><div><div class="playbook-step-title">Buy and open the Playbook</div><div class="playbook-step-desc">Download the PDF. It contains everything you need — strategy, architecture, prompts, and the full 90-day roadmap.</div></div></div>
-        <div class="playbook-step"><span class="playbook-step-num">02</span><div><div class="playbook-step-title">Add it to Notion AI</div><div class="playbook-step-desc">Upload the Playbook into a Notion page. Then ask Notion AI: <em>"Break this down into a task list for my marketing and sales team, week by week."</em> It will do it in minutes.</div></div></div>
-        <div class="playbook-step"><span class="playbook-step-num">03</span><div><div class="playbook-step-title">Follow step by step</div><div class="playbook-step-desc">Assign tasks. Work the roadmap. Month 1 foundation, Month 2 activation, Month 3 optimisation.</div></div></div>
-        <div class="playbook-step"><span class="playbook-step-num">04</span><div><div class="playbook-step-title">You have three months of work to do</div><div class="playbook-step-desc">The system is built, running, and compounding. A database that surfaces opportunities automatically — without relying on anyone's memory.</div></div></div>
-      </div>
-      <div class="playbook-purchase">
-        <div class="playbook-purchase-inner">
-          <div>
-            <div class="playbook-price">£400</div>
-            <div class="playbook-price-note">One-time · Instant PDF download · Yours to keep</div>
-          </div>
-          <a href="/property-playbook" class="btn-purchase" target="_blank" rel="noopener">Buy the Playbook →</a>
-        </div>
-        <div class="playbook-guarantee">Setup works if you use it. This is not advisory theatre. It is a working system — built, tested, and refined with real property agencies.</div>
-      </div>
-    </div>
+    <p class="ladder-note">FutureSynch is a trading name of Olesya Kovalskaya LTD.</p>
   </div>
-</div>
+</section>
 
 <div class="cta-section">
   <h2>Ready to stand at full height?</h2>
@@ -485,6 +477,9 @@ footer { border-top: 0.5px solid var(--border); padding: 2.5rem 2rem; }
       </a>
     </div>
     <span class="footer-copy">© 2026 Future Synch. All rights reserved.</span>
+  </div>
+  <div class="footer-inner" style="margin-top: 1rem;">
+    <span class="footer-copy">FutureSynch is a trading name of Olesya Kovalskaya LTD.</span>
   </div>
 </footer>
 
